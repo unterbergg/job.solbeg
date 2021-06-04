@@ -45,7 +45,7 @@
             </ul>
         </div>
         <div class="footer__button popup-open__link">
-            <button>Отправить резюме</button>
+            <button>Отправить резюме </button>
         </div>
         <div class="footer__copyright">
             <ul>
