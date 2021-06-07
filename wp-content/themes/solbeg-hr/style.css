@@ -127,6 +127,19 @@ button:focus {
   padding-right: 24px;
 }
 
+@media (max-width: 1599px) {
+  .container.main-page-soc-pack {
+    max-width: unset;
+  }
+  .container.main-page-soc-pack .main-page-soc-pack__tabs {
+    margin-left: 24px;
+  }
+  .container.main-page-soc-pack .tab_content {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
+
 @media (min-width: 1600px) {
   .container {
     max-width: 1340px;
@@ -856,6 +869,7 @@ header {
   padding-bottom: 40px;
   overflow-x: scroll;
   position: relative;
+  justify-content: space-between;
 }
 
 .main-page-soc-pack__tab {
@@ -870,6 +884,9 @@ header {
   color: rgba(0, 0, 0, 0.7);
   border: 2px solid transparent;
 }
+/*.main-page-soc-pack__tab:last-child {*/
+/*  margin-right: 0;*/
+/*}*/
 
 .main-page-soc-pack__tab.active {
   border: 2px solid rgba(0, 0, 0, 0.1);
