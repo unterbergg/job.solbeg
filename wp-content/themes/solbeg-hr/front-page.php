@@ -205,9 +205,6 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
 
     <div class="page-anchor" id="soc-pack"></div>
     <section class="main-page-soc-pack container">
-        <style>
-
-        </style>
 
         <div class="main-page-soc-pack__title">
             <h2 class="h2"><?= $main_page_soc_pack_title ?></h2>
