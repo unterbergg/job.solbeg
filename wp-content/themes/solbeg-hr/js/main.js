@@ -64,6 +64,7 @@ $(document).ready(function () {
     fade: true,
     focusOnSelect: true,
     asNavFor: ".main-page-history-company__year",
+    infinite: false,
     responsive: [
       {
         breakpoint: 797,

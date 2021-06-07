@@ -510,6 +510,10 @@ header {
 .main-page-history-company .slick-arrow:hover {
   border: 1px solid rgba(255, 255, 255, 1);
 }
+.main-page-history-company .slick-arrow.slick-disabled:hover {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  cursor: default;
+}
 
 .main-page-history-company .slick-prev {
   left: 0px;
@@ -2522,8 +2526,9 @@ footer {
 
 .slick-active-first.slick-current .company-year-item__year {
   margin: 0;
-  background: #d64045;
+  background-color: #d64045;
   border-radius: 50%;
+  transition: background-color 0.55s;
 }
 
 .prev-year-link {
