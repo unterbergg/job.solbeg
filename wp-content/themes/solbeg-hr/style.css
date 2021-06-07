@@ -854,7 +854,8 @@ header {
 .main-page-soc-pack__tabs {
   display: flex;
   padding-bottom: 40px;
-  overflow: auto;
+  overflow-x: scroll;
+  position: relative;
 }
 
 .main-page-soc-pack__tab {
