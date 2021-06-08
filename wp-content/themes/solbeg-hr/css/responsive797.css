@@ -603,13 +603,17 @@
 
     .accordion-button {
         padding: 24px 0;
+        display: flex;
+        justify-content: space-between;
     }
 
     .accordion-button:before {
         display: none;
     }
     .accordion-button-first {
-        padding-right: 80px;
+        padding-right: 10px;
+        display: flex;
+        align-items: center;
     }
     .accordion-button-second {
         width: fit-content;
@@ -618,13 +622,16 @@
     }
     .accordion-button-second__wrapper {
         width: fit-content;
+        position: initial;
         top: 24px;
         flex-direction: column;
     }
     .accordion-button-second:not(:first-child)::before {
       display: none;
     }
+    .vacancy_location{
 
+    }
     /* ///////////////// */
     .video_wrapper {
         height: 220px;
@@ -764,12 +771,16 @@
         display: flex;
         align-items: center;
     }
-
+    .footer__social-icon ul{
+        flex-wrap: wrap;
+    }
     .footer__social-icon ul li {
         margin-left: 0;
         margin-right: 20px;
     }
-
+    .footer__social-icon ul li:last-child{
+        margin-right: 0;
+    }
     .footer__copyright {
         grid-area: 3 / 1 / 4 / 3;
         width: 100%;
