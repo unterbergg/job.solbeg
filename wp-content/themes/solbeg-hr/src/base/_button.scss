@@ -1,0 +1,23 @@
+.main-page {
+  &__button {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 200%;
+    text-align: center;
+    letter-spacing: -0.2px;
+    color: #FFFFFF;
+    padding: 14px 0;
+
+    display: inline-block;
+    background: #D64045;
+    border-radius: 50px;
+
+    @include respond-to(mobilefix) {
+      padding: 14px 62px;
+      font-size: 20px;
+      line-height: 160%;
+    }
+  }
+}
