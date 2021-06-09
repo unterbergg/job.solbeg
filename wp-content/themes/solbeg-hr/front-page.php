@@ -577,6 +577,62 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
         </div>
     </section>
 
+    <!-- traineeship block-->
+    <section id="trainee" class="main-page__trainee">
+        <div class="container">
+            <div class="main-page-soc-pack__title">
+                <h2 class="h2">
+                    <?='Стажировка';?>
+                </h2>
+                <img src="<?= esc_url(get_template_directory_uri()); ?>/img/svg/trainee.svg" alt="">
+            </div>
+            <div class="trainee__container">
+                <div class="trainee__item">
+                    <ul>
+                        <li>Длительность 1–3 месяца</li>
+                        <li>Не оплачивается</li>
+                        <li>С возможным трудоустройством</li>
+                    </ul>
+                    <img class="trainee__underline"
+                         src="<?= esc_url(get_template_directory_uri()); ?>/img/svg/underline.svg"
+                         alt=""
+                    >
+                </div>
+                <div class="trainee__item">
+                    <h3>Как проходит стажировка?</h3>
+                    <ol>
+                        <li>Стажера прикрепляют к команде и выделяют ментора (куратора)
+                            для сопровождения на протяжении всей стажировки.
+                        </li>
+                        <li>
+                            Стажировка заканчивается «защитой», на которой стажер
+                            рассказывает о своей работе. На основании «защиты» принимается решение о трудоустройстве.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="trainee__container trainee__background">
+                <div class="trainee__image">
+                    <img src="/wp-content/themes/solbeg-hr/img/trainee.svg" alt="">
+                </div>
+                <div class="trainee__item">
+                    <h3>Как попасть на стажировку?</h3>
+                    <ul class="trainee__ul">
+                        <li>Подать заявку</li>
+                        <li>Прикрепить резюме</li>
+                    </ul>
+                    <p>
+                        После рассмотрения заявки мы свяжемся с вами для назначения интервью, по результатам которого будет принято решение
+                        о приглашении вас на стажировку.
+                    </p>
+                    <a href="#" class="main-page__button">
+                        Подать заявку
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 </main><!-- #main -->
 <?php get_footer(); ?>

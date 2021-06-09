@@ -150,6 +150,9 @@ function solbeg_hr_scripts() {
 	wp_enqueue_style( 'solbeg-hr-797', get_template_directory_uri() . '/css/responsive797.css', array(), null );
 	wp_enqueue_style( 'solbeg-hr-1024', get_template_directory_uri() . '/css/responsive1024.css', array(), null );
 	wp_enqueue_style( 'solbeg-hr-1440', get_template_directory_uri() . '/css/responsive1440.css', array(), null );
+	wp_enqueue_style( 'solbeg-new', get_template_directory_uri() . '/dist/style.css',
+        array('slick-theme-style', 'slick-style', 'solbeg-hr-main', 'solbeg-hr-burger','solbeg-hr-797','solbeg-hr-1024','solbeg-hr-1440'),
+        null );
 
 
 	// scripts
