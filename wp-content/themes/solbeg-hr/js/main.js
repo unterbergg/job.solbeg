@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  //LEGACY
   $(".main-page-history-company__year").slick({
     slidesToShow: 5,
     slidesToScroll: 1,
