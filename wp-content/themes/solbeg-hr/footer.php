@@ -62,16 +62,22 @@
             <a id="popup-close__link" href=""><img
                     src="<?php echo esc_url(get_template_directory_uri()); ?>/img/icon/times.png" alt=""></a>
         </div>
-        <div class="main-page-comtact-form__inner">
-            <!--                 <form class="comtact-form" id="commentForm" method="get" action=""> -->
+        <div class="main-page-comtact-form__inner" id="contact-form">
             <div class="comtact-form">
+                <!--<fieldset>
+                    <legend class="h3">Связаться с нами</legend>-->
+<!--                    --><?php //echo do_shortcode( '[contact-form-7 id="307" title="Contact form"]' ); ?>
+                    <?php get_template_part('/template-parts/contact-form');?>
+                <!--</fieldset>-->
+            </div>
+        </div>
+        <div class="main-page-comtact-form__inner" id="trainee">
+           <div class="comtact-form">
                 <fieldset>
-                    <legend class="h3">Связаться с нами</legend>
-                    <?php echo do_shortcode( '[contact-form-7 id="307" title="Contact form"]' ); ?>
-                    <!-- <?php get_template_part( 'template-parts/contact-form' ); ?> -->
+                    <legend class="h3">Заявка на стажировку</legend>
+                    <?php echo do_shortcode( '[contact-form-7 id="839" title="Trainee Form"]' ); ?>
                 </fieldset>
             </div>
-            <!--                 </form> -->
         </div>
     </div>
 </div>
