@@ -282,6 +282,9 @@
           list-style: none;
           counter-reset: li;
         }
+        .base__button {
+          display: block;
+        }
       }
     }
   }

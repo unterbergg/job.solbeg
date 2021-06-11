@@ -197,7 +197,7 @@ $(document).ready(function () {
 
   $(document).on(
     "change",
-    ".comtact-form__resume input[type='file']",
+    ".contact-form__resume input[type='file']",
     function (e) {
       if ($(this).val()) {
         var filename = $(this).val().split("\\");

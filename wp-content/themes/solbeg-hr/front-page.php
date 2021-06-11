@@ -616,7 +616,7 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
                         После рассмотрения заявки мы свяжемся с вами для назначения интервью, по результатам которого будет принято решение
                         о приглашении вас на стажировку.
                     </p>
-                    <a href="#" class="main-page__button popup-open__link" data-form="trainee">
+                    <a href="#" class="base__button popup-open__link" data-form="trainee">
                         Подать заявку
                     </a>
                 </div>

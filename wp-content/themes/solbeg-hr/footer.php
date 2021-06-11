@@ -64,11 +64,8 @@
         </div>
         <div class="main-page-comtact-form__inner" id="contact-form">
             <div class="comtact-form">
-                <!--<fieldset>
-                    <legend class="h3">Связаться с нами</legend>-->
-<!--                    --><?php //echo do_shortcode( '[contact-form-7 id="307" title="Contact form"]' ); ?>
-                    <?php get_template_part('/template-parts/contact-form');?>
-                <!--</fieldset>-->
+                <?= do_shortcode( '[contact-form-7 id="307" title="Contact form"]' ); ?>
+                <? //get_template_part('/template-parts/contact-form');?>
             </div>
         </div>
         <div class="main-page-comtact-form__inner" id="trainee">

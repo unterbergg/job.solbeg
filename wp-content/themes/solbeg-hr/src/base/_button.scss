@@ -1,4 +1,4 @@
-.main-page {
+.base {
   &__button {
     font-family: Montserrat;
     font-style: normal;
@@ -8,16 +8,21 @@
     text-align: center;
     letter-spacing: -0.2px;
     color: #FFFFFF;
-    padding: 14px 0;
-
+    padding: 11px 22px;
+    border: none;
     display: inline-block;
     background: #D64045;
     border-radius: 50px;
+    cursor: pointer;
 
     @include respond-to(mobilefix) {
       padding: 14px 62px;
       font-size: 20px;
       line-height: 160%;
+    }
+
+    &:hover {
+      background: #f0474d;
     }
   }
 }
