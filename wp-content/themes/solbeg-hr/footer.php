@@ -22,35 +22,57 @@
 <footer>
     <div class="footer">
         <div class="footer__minsk-adress">
-            <?= $footer_address_1 ?>
+            <?= $footer_address_1;?>
         </div>
         <div class="footer__brest-adress">
-            <?= $footer_address_2 ?>
+            <?= $footer_address_2;?>
         </div>
         <div class="footer__social-icon">
             <ul>
-                <?php  foreach ($footer_social_icons as $social_icon) {?>
+                <?php foreach ($footer_social_icons as $social_icon) :?>
                 <li>
-                    <a href="<?= $social_icon['social_icon_link'] ?>">
-                        <img src="<?= $social_icon['social_icon_img'] ?>" alt="instagram">
+                    <a href="<?= $social_icon['social_icon_link'] ?>"
+                       aria-label="<?= $social_icon['social_icon_img']['alt'];?>"
+                    >
+                        <img src="<?= $social_icon['social_icon_img']['url'];?>"
+                             alt="<?= $social_icon['social_icon_img']['alt'];?>"
+                        >
                     </a>
                 </li>
-                <?php }; ?>
+                <?php endforeach; ?>
             </ul>
         </div>
         <div class="footer__contacts">
             <ul>
-                <li><a href="tel:<?= $footer_phone ?>"><?= $footer_phone ?></a></li>
-                <li><a href="mailto:<?= $footer_email ?>"><?= $footer_email ?></a></li>
+                <li>
+                    <?php foreach($footer_phone as $key => $item) :?>
+                        <a href="tel:<?= $item['item'];?>">
+                            <?= $item['item'] . " " . $item['text'];?>
+                        </a>
+                    <?php endforeach;?>
+                </li>
+                <li>
+                    <a href="mailto:<?= $footer_email;?>">
+                        <?= $footer_email;?>
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="footer__button popup-open__link">
-            <button>Отправить резюме </button>
+            <button>
+                Отправить резюме
+            </button>
         </div>
         <div class="footer__copyright">
             <ul>
-                <li><a href="<?= $footer_privacy_policy_link ?>"><?= $footer_privacy_policy ?></a></li>
-                <li><?= $footer_copyright ?></li>
+                <li>
+                    <a href="<?= $footer_privacy_policy_link;?>">
+                        <?= $footer_privacy_policy;?>
+                    </a>
+                </li>
+                <li>
+                    <?= $footer_copyright;?>
+                </li>
             </ul>
         </div>
 
