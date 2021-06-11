@@ -149,11 +149,23 @@ $(document).ready(function () {
   //popup-close
   $("#popup-close__link").on("click", function (e) {
     e.preventDefault();
+    $('body').css('overflow', 'auto');
     $(".popup").hide();
+    $('.main-page-comtact-form__inner#trainee').hide();
+    $('.main-page-comtact-form__inner#contact-form').hide();
   });
   $(".popup-open__link").on("click", function (e) {
     e.preventDefault();
+    $('body').css('overflow', 'hidden');
+    if($(e.target).attr('data-form') === 'trainee') {
+      $('.main-page-comtact-form__inner#contact-form').hide();
+      $('.main-page-comtact-form__inner#trainee').show();
+    }
+    else {
+      $('.main-page-comtact-form__inner#contact-form').show();
+    }
     $(".popup").show();
+
   });
   ///////////////////////
   document.getElementById("burger-menu").addEventListener("click", (event) => {
@@ -185,21 +197,20 @@ $(document).ready(function () {
 
   $(document).on(
     "change",
-    ".comtact-form__resume input[type='file']",
-    function () {
+    ".contact-form__resume input[type='file']",
+    function (e) {
       if ($(this).val()) {
         var filename = $(this).val().split("\\");
-
+        let curForm = $(e.target).closest(".wpcf7-form");
         filename = filename[filename.length - 1];
 
-        $(".comtact-form__resume-text").text(filename);
-        $(".comtact-form__resume-plus").toggleClass(
+        curForm.find(".comtact-form__resume-text").text(filename);
+        curForm.find(".comtact-form__resume-plus").toggleClass(
           "comtact-form__resume-attach comtact-form__resume-plus"
         );
-        $(".comtact-form__resume-after").toggleClass(
+        curForm.find(".comtact-form__resume-after").toggleClass(
           "comtact-form__resume-remove comtact-form__resume-after"
         );
-        console.log($(".comtact-form__resume input[type='file']").val());
       }
     }
   );
@@ -213,22 +224,9 @@ $(document).ready(function () {
       "comtact-form__resume-after comtact-form__resume-remove"
     );
 
-    console.log($(".comtact-form__resume input[type='file']").val());
   });
   // ------------ File upload END ------------
 
-  // $('.wpcf7').on('wpcf7invalid', function () {
-  //   console.log('wpcf7invalid');
-  // });
-  // $('.wpcf7').on('wpcf7spam', function () {
-  //   console.log('wpcf7spam');
-  // });
-  // $('.wpcf7').on('wpcf7mailsent', function () {
-  //   console.log('wpcf7mailsent');
-  // });
-  // $('.wpcf7').on('wpcf7mailfailed', function () {
-  //   console.log('wpcf7mailfailed');
-  // });
 
   $(".comtact-form__resume-after")
     .mouseenter(function () {
@@ -271,104 +269,105 @@ $(document).ready(function () {
     $(".fill-in-required-fields").hide();
   });
   // required phone
-  var elemToObservePhone = document.getElementById("phone");
-  var prevClassStatePhone = elemToObservePhone.classList.contains(
-    "wpcf7-not-valid"
-  );
+  // var elemToObservePhone = document.getElementById("phone");
+  // var prevClassStatePhone = elemToObservePhone.classList.contains(
+  //   "wpcf7-not-valid"
+  // );
+  //
+  // var observer = new MutationObserver(function (mutations) {
+  //   mutations.forEach(function (mutation) {
+  //     if (mutation.attributeName == "class") {
+  //       var currentClassState = mutation.target.classList.contains(
+  //         "wpcf7-not-valid"
+  //       );
+  //       if (prevClassStatePhone !== currentClassState) {
+  //         prevClassStatePhone = currentClassState;
+  //         if (currentClassState) {
+  //           console.log("class added!");
+  //           $(".invalid__phone").show();
+  //           $(".comtact-form__phone").css("border", "2px solid black");
+  //
+  //         } else {
+  //           $(".invalid__phone").hide();
+  //           console.log("class removed!");
+  //           $(".comtact-form__phone").css(
+  //             "border",
+  //             "2px solid rgba(0, 0, 0, 0.1)"
+  //           );
+  //         }
+  //       }
+  //     }
+  //   });
+  // });
+  // observer.observe(elemToObservePhone, { attributes: true });
+  // // end required phone
+  // // required email
+  // var elemToObserveEmail = document.getElementById("email");
+  // var prevClassStateEmail = elemToObserveEmail.classList.contains(
+  //   "wpcf7-not-valid"
+  // );
+  //
+  // var observer = new MutationObserver(function (mutations) {
+  //   mutations.forEach(function (mutation) {
+  //     console.log('observer');
+  //     if (mutation.attributeName == "class") {
+  //       var currentClassState = mutation.target.classList.contains(
+  //         "wpcf7-not-valid"
+  //       );
+  //       if (prevClassStateEmail !== currentClassState) {
+  //         prevClassStateEmail = currentClassState;
+  //         if (currentClassState) {
+  //           console.log("class added!");
+  //           $(".invalid__email").show();
+  //           $(".comtact-form__email").css("border", "2px solid black");
+  //         } else {
+  //           $(".invalid__email").hide();
+  //           console.log("class removed!");
+  //           $(".comtact-form__email").css(
+  //             "border",
+  //             "2px solid rgba(0, 0, 0, 0.1)"
+  //           );
+  //         }
+  //       }
+  //     }
+  //   });
+  // });
+  // observer.observe(elemToObserveEmail, { attributes: true });
+  // // end required email
 
-  var observer = new MutationObserver(function (mutations) {
-    mutations.forEach(function (mutation) {
-      if (mutation.attributeName == "class") {
-        var currentClassState = mutation.target.classList.contains(
-          "wpcf7-not-valid"
-        );
-        if (prevClassStatePhone !== currentClassState) {
-          prevClassStatePhone = currentClassState;
-          if (currentClassState) {
-            console.log("class added!");
-            $(".invalid__phone").show();
-            $(".comtact-form__phone").css("border", "2px solid black");
-            
-          } else {
-            $(".invalid__phone").hide();
-            console.log("class removed!");
-            $(".comtact-form__phone").css(
-              "border",
-              "2px solid rgba(0, 0, 0, 0.1)"
-            );
-          }
-        }
-      }
-    });
-  });
-  observer.observe(elemToObservePhone, { attributes: true });
-  // end required phone
-  // required email
-  var elemToObserveEmail = document.getElementById("email");
-  var prevClassStateEmail = elemToObserveEmail.classList.contains(
-    "wpcf7-not-valid"
-  );
-
-  var observer = new MutationObserver(function (mutations) {
-    mutations.forEach(function (mutation) {
-      if (mutation.attributeName == "class") {
-        var currentClassState = mutation.target.classList.contains(
-          "wpcf7-not-valid"
-        );
-        if (prevClassStateEmail !== currentClassState) {
-          prevClassStateEmail = currentClassState;
-          if (currentClassState) {
-            console.log("class added!");
-            $(".invalid__email").show();
-            $(".comtact-form__email").css("border", "2px solid black");
-          } else {
-            $(".invalid__email").hide();
-            console.log("class removed!");
-            $(".comtact-form__email").css(
-              "border",
-              "2px solid rgba(0, 0, 0, 0.1)"
-            );
-          }
-        }
-      }
-    });
-  });
-  observer.observe(elemToObserveEmail, { attributes: true });
-  // end required email
-
-  // tel mask
-  var phoneInput = document.querySelector("#phone");
-  phoneInput.addEventListener("keydown", function (event) {
-    if (
-      !(
-        event.key == "ArrowLeft" ||
-        event.key == "ArrowRight" ||
-        event.key == "Backspace" ||
-        event.key == "Tab"
-      )
-    ) {
-      event.preventDefault();
-    }
-    var mask = "+375 (11) 111-11-11";
-
-    if (/[0-9\+\ \-\(\)]/.test(event.key)) {
-      var currentString = this.value;
-      var currentLength = currentString.length;
-      if (/[0-9]/.test(event.key)) {
-        if (mask[currentLength] == "1") {
-          this.value = currentString + event.key;
-        } else {
-          for (var i = currentLength; i < mask.length; i++) {
-            if (mask[i] == "1") {
-              this.value = currentString + event.key;
-              break;
-            }
-            currentString += mask[i];
-          }
-        }
-      }
-    }
-  });
+  // // tel mask
+  // var phoneInput = document.querySelector("#phone");
+  // phoneInput.addEventListener("keydown", function (event) {
+  //   if (
+  //     !(
+  //       event.key == "ArrowLeft" ||
+  //       event.key == "ArrowRight" ||
+  //       event.key == "Backspace" ||
+  //       event.key == "Tab"
+  //     )
+  //   ) {
+  //     event.preventDefault();
+  //   }
+  //   var mask = "+375 (11) 111-11-11";
+  //
+  //   if (/[0-9\+\ \-\(\)]/.test(event.key)) {
+  //     var currentString = this.value;
+  //     var currentLength = currentString.length;
+  //     if (/[0-9]/.test(event.key)) {
+  //       if (mask[currentLength] == "1") {
+  //         this.value = currentString + event.key;
+  //       } else {
+  //         for (var i = currentLength; i < mask.length; i++) {
+  //           if (mask[i] == "1") {
+  //             this.value = currentString + event.key;
+  //             break;
+  //           }
+  //           currentString += mask[i];
+  //         }
+  //       }
+  //     }
+  //   }
+  // });
 
   // main-page-comtact-form__thanks
   $(".thanks-inner__button button").on("click", function (event) {

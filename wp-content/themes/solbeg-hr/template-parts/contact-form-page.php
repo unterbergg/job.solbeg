@@ -1,6 +1,6 @@
 <div class="contact-form__wrapper">
-    <h3>Связаться с нами</h3>
-    <div class="contact-form__grid">
+    <h3 class="col-2">Хотите у нас работать? Напишите нам</h3>
+    <div class="contact-form__grid col-2">
         <input id=""
                name="name"
                minlength="2"
@@ -8,6 +8,9 @@
                placeholder="Имя любимое твое"
                required
         >
+
+        <textarea id="" rows="3" name="comment" placeholder="Комментарий" required></textarea>
+
         <input id=""
                type="tel"
                name="phone"
@@ -26,9 +29,7 @@
         </div>
     </div>
 
-    <div class="contact-form__comment">
-        <textarea id="" name="comment" placeholder="Комментарий" required></textarea>
-    </div>
+
 
     <div class="contact-form__submit">
         <input class="submit base__button" type="submit" value="Отправить">

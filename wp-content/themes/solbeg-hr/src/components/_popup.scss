@@ -1,0 +1,18 @@
+.popup {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  &-close {
+    img {
+      width: 20px;
+      height: 20px;
+      top: 30px;
+      right: 30px;
+      @include respond-to(mobile) {
+        width: 30px;
+        height: 30px;
+        top: 40px;
+        right: 40px;
+      }
+    }
+  }
+}

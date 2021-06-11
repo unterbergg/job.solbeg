@@ -468,10 +468,7 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
         </div>
         <div class="main-page-facts__percents">
 
-
-
-
-            <?php   if ($main_page_facts_double_item) { $i = 0; foreach ($main_page_facts_double_item as $fact_double_item) { ?>
+            <?php if ($main_page_facts_double_item) { $i = 0; foreach ($main_page_facts_double_item as $fact_double_item) { ?>
             <?php $i++; ?>
             <?php $fact_double_item_second_percents = 100 - $fact_double_item['percents'] ?>
 
@@ -560,17 +557,11 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
         style='background-image: url("<?php echo esc_url(get_template_directory_uri()); ?>/img/fon.jpg");'>
         <div class="container">
             <div class="main-page-comtact-form__wrapper">
-                <div class="main-page-comtact-form__inner">
-                    <!--                     <form class="comtact-form" id="contact-form" method="get" action=""> -->
-                    <div class="comtact-form">
-                        <!--                         <fieldset> -->
-                        <legend class="h3">Хотите у нас работать? Напишите нам</legend>
-                        <!--               				<?php get_template_part( 'template-parts/contact-form' ); ?> -->
-                        <?php echo do_shortcode( '[contact-form-7 id="307" title="Contact form"]' ); ?>
-                        <!--                         </fieldset> -->
+                <div class="main-page-comtact-form__inner non-popups">
+                    <div class="contact-form">
+                        <? //echo do_shortcode( '[contact-form-7 id="307" title="Contact form"]' ); ?>
+                        <? get_template_part('/template-parts/contact-form-page');?>
                     </div>
-                    <!--                     </form> -->
-
                 </div>
             </div>
 
@@ -625,7 +616,7 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
                         После рассмотрения заявки мы свяжемся с вами для назначения интервью, по результатам которого будет принято решение
                         о приглашении вас на стажировку.
                     </p>
-                    <a href="#" class="main-page__button">
+                    <a href="#" class="base__button popup-open__link" data-form="trainee">
                         Подать заявку
                     </a>
                 </div>

@@ -282,7 +282,59 @@
           list-style: none;
           counter-reset: li;
         }
+        .base__button {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &-comtact-form__inner {
+    &:not(.non-popups) {
+      display: none;
+    }
+    &#trainee {
+      .comtact-form {
+        &__layout {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(313px, 1fr));
+          grid-row-gap: 40px;
+          grid-column-gap: 20px;
+        }
+        &__grid {
+          margin-bottom: 40px;
+          &.col-2 {
+            &.row-2 {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              grid-template-rows: repeat(2, 60px);
+              grid-column-gap: 20px;
+              grid-row-gap: 40px;
+            }
+            &.row-1 {
+              display: grid;
+              grid-template-columns: repeat(1, 1fr);
+              grid-template-rows: repeat(1, 60px);
+              grid-column-gap: 20px;
+              grid-row-gap: 40px;
+            }
+          }
+          &.col-1 {
+            &.row-1 {
+              display: grid;
+              grid-template-columns: repeat(1, 1fr);
+              grid-template-rows: repeat(1, 60px);
+              grid-column-gap: 20px;
+              grid-row-gap: 40px;
+            }
+          }
+          &>div:not(.invalid__phone, .invalid__email, .visible-only-if-file-invalid) {
+            grid-area: unset;
+          }
+        }
       }
     }
   }
 }
+
+
