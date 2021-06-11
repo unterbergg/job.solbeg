@@ -39,7 +39,7 @@
             </ul>
         </div>
         <div class="footer__contacts">
-            <ul>accordion-button
+            <ul>
                 <li><a href="tel:<?= $footer_phone ?>"><?= $footer_phone ?></a></li>
                 <li><a href="mailto:<?= $footer_email ?>"><?= $footer_email ?></a></li>
             </ul>
