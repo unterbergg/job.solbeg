@@ -540,47 +540,5 @@ line-height: 48px;
   }
 
   /* ///////////////// */
-  .footer {
-    grid-template-columns: auto auto auto;
-    grid-column-gap: 44px;
-    grid-row-gap: 66px;
-    padding: 64px 24px;
-    font-size: 16px;
-    line-height: 24px;
-  }
 
-  .footer__button {
-    display: block;
-  }
-
-  .footer__minsk-adress {
-    width: calc(100% + 40px);
-  }
-
-  .footer__brest-adress {
-    padding-left: 60px;
-  }
-
-  .footer__contacts {}
-
-  .footer__social-icon {}
-
-  .footer__social-icon ul li {
-    margin-left: 0;
-    margin-right: 20px;
-  }
-
-  .footer__copyright {}
-
-  .footer__copyright ul {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: revert;
-    align-items: flex-end;
-    width: 100%;
-  }
-
-  .footer__copyright ul li {
-    margin-left: 0;
-  }
 }
