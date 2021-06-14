@@ -52,6 +52,10 @@
       textarea {
         max-height: unset;
         grid-area: 1 / 2 / 3 / 2;
+
+        @include respond-to() {
+          grid-area: 1 / 2 / 3 / 2;
+        }
       }
     }
   }
