@@ -5,7 +5,6 @@
       height: auto;
     }
   }
-
   &__grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
@@ -38,7 +37,6 @@
           line-height: 160%;
         }
       }
-
       @include respond-to(mobile) {
         font-size: 20px;
         line-height: 160%;
@@ -54,7 +52,7 @@
         max-height: unset;
         grid-area: 1 / 2 / 3 / 2;
 
-        @include respond-to() {
+        @include respond-to(mobile) {
           grid-area: 1 / 2 / 3 / 2;
         }
       }
