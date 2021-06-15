@@ -558,9 +558,9 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
         <div class="container">
             <div class="main-page-comtact-form__wrapper">
                 <div class="main-page-comtact-form__inner non-popups">
-                    <div class="contact-form">
-                        <? //echo do_shortcode( '[contact-form-7 id="307" title="Contact form"]' ); ?>
-                        <? get_template_part('/template-parts/contact-form-page');?>
+                    <div class="contact-form col-2">
+                        <?= do_shortcode( '[contact-form-7 id="307" title="Contact form"]' ); ?>
+                        <? //get_template_part('/template-parts/contact-form-page');?>
                     </div>
                 </div>
             </div>

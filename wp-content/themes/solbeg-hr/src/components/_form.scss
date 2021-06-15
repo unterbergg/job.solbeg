@@ -1,4 +1,27 @@
 .contact-form {
+
+  &.col-2 {
+    .contact-form{
+      &__grid {
+        margin-bottom: 40px;
+        grid-gap: 40px;
+        textarea {
+          max-height: unset;
+          grid-area: unset;
+          @include respond-to(mobilefix) {
+            grid-area: 1 / 2 / 3 / 2;
+          }
+        }
+        @include respond-to(mobile) {
+          grid-template-columns: repeat(auto-fill,minmax(405px,1fr));
+        }
+      }
+      &__wrapper {
+        max-width: 850px;
+      }
+    }
+  }
+
   &__wrapper {
     padding: 52px 0;
     .wpcf7-form-control-wrap {
@@ -83,16 +106,7 @@
       grid-template-columns: repeat(auto-fill, minmax(313px, 1fr));
     }
 
-    &.col-2 {
-      margin-bottom: 40px;
-      textarea {
-        max-height: unset;
-        grid-area: unset;
-        @include respond-to(mobilefix) {
-          grid-area: 1 / 2 / 3 / 2;
-        }
-      }
-    }
+
   }
 
   &__comment {
