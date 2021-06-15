@@ -160,6 +160,8 @@ function solbeg_hr_scripts() {
     wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', array(), null, true);
     wp_enqueue_script('slick-js', get_template_directory_uri() . '/js/slick-slider/slick.min.js',  array('jquery'), '1.0', true);
 	wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0', true);
+	wp_enqueue_script('script-js', get_template_directory_uri() . '/dist/script.js', array('jquery', 'main-js'), '1.0',
+        true);
 
 
 	wp_style_add_data( 'solbeg-hr-style', 'rtl', 'replace' );

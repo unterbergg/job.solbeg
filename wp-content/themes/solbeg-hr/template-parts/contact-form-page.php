@@ -9,7 +9,7 @@
                required
         >
 
-        <textarea id="" rows="3" name="comment" placeholder="Комментарий" required></textarea>
+
 
         <input id=""
                type="tel"
@@ -23,6 +23,9 @@
                placeholder="Электронная почта"
                required
         >
+
+        <textarea id="" rows="3" name="comment" placeholder="Комментарий" required></textarea>
+
         <div class="contact-form__resume">
             <input class="contact-form__resume-input" type="file" name="resume">
             <span class="contact-form__resume-after"></span>

@@ -19,67 +19,6 @@
 <?php $footer_privacy_policy_link = get_field('footer_privacy_policy_link', 2); ?>
 <?php $footer_copyright = get_field('footer_copyright', 2); ?>
 
-
-<!--<footer>
-    <div class="footer">
-        <div class="footer__minsk-adress">
-            <?/*= $footer_address_1;*/?>
-        </div>
-        <div class="footer__brest-adress">
-            <?/*= $footer_address_2;*/?>
-        </div>
-        <div class="footer__social-icon">
-            <ul>
-                <?php /*foreach ($footer_social_icons as $social_icon) :*/?>
-                    <li>
-                        <a href="<?/*= $social_icon['social_icon_link'] */?>"
-                           aria-label="<?/*= $social_icon['social_icon_img']['alt'];*/?>"
-                        >
-                            <img src="<?/*= $social_icon['social_icon_img']['url'];*/?>"
-                                 alt="<?/*= $social_icon['social_icon_img']['alt'];*/?>"
-                            >
-                        </a>
-                    </li>
-                <?php /*endforeach; */?>
-            </ul>
-        </div>
-        <div class="footer__contacts">
-            <ul>
-                <li>
-                    <?php /*foreach($footer_phone as $key => $item) :*/?>
-                        <a href="tel:<?/*= $item['item'];*/?>">
-                            <?/*= $item['item'] . " " . $item['text'];*/?>
-                        </a>
-                    <?php /*endforeach;*/?>
-                </li>
-                <li>
-                    <a href="mailto:<?/*= $footer_email;*/?>">
-                        <span class="email">
-                            <?/*= $footer_email;*/?>
-                        </span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="footer__button popup-open__link">
-            <button>
-                Отправить резюме
-            </button>
-        </div>
-        <div class="footer__copyright">
-            <div class="footer__wrapper">
-                <a href="<?/*= $footer_privacy_policy_link;*/?>">
-                    <?/*= $footer_privacy_policy;*/?>
-                </a>
-                <span>
-                    <?/*= $footer_copyright;*/?>
-                </span>
-            </div>
-        </div>
-
-    </div>
-</footer>-->
-
 <footer class="alt">
     <div class="footer">
         <div class="footer__addresses">
