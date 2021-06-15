@@ -1658,18 +1658,6 @@ textarea::placeholder {
 
 }
 
-.comtact-form__resume-plus {
-  width: 20px;
-  position: absolute;
-  top: 18px;
-  left: 12px;
-  height: 20px;
-  cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7 0V5H12V7H7V12H5V6.999L0 7V5L5 4.999V0H7Z' fill='black' fill-opacity='0.8'/%3E%3C/svg%3E%0A");
-  background-repeat: no-repeat;
-  background-position: center;
-
-}
 
 .comtact-form__resume-remove {
   width: 16px;

@@ -20,14 +20,11 @@
                placeholder="Электронная почта"
                required
         >
+        <textarea id="" name="comment" placeholder="Комментарий" rows="3" required></textarea>
         <div class="contact-form__resume">
             <input class="contact-form__resume-input" type="file" name="resume">
             <span class="contact-form__resume-after"></span>
         </div>
-    </div>
-
-    <div class="contact-form__comment">
-        <textarea id="" name="comment" placeholder="Комментарий" required></textarea>
     </div>
 
     <div class="contact-form__submit">
