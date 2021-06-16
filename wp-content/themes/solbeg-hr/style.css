@@ -2353,14 +2353,14 @@ textarea::placeholder {
 }
 
 /* .tab-ul__wrapper */
-.wpcf7 .ajax-loader {
-  display: none;
-}
+/*.wpcf7 .ajax-loader {*/
+/*  display: none;*/
+/*}*/
 
-.wpcf7-form-control-wrap {
-  height: 30px;
+/*.wpcf7-form-control-wrap {*/
+/*  height: 30px;*/
 
-}
+/*}*/
 
 .wpcf7-not-valid-tip,
 .wpcf7-response-output {

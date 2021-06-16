@@ -5,7 +5,7 @@
       &__grid {
         margin-bottom: 40px;
         grid-gap: 40px;
-        textarea {
+        span.comment{
           max-height: unset;
           grid-area: unset;
           @include respond-to(mobilefix) {
@@ -23,10 +23,7 @@
   }
 
   &__wrapper {
-    padding: 52px 0;
-    .wpcf7-form-control-wrap {
-      height: auto;
-    }
+    padding: 52px 0 0 0;
     h3 {
       font-family: Montserrat;
       font-style: normal;
@@ -133,9 +130,11 @@
         line-height: 160%;
       }
     }
-    textarea {
+    span.comment {
       grid-area: unset;
-      max-height: unset;
+      textarea {
+        max-height: unset;
+      }
       @include respond-to(mobilefix) {
         grid-area: 3 / 1 / auto / span 2;
       }
@@ -365,6 +364,18 @@
         font-size: 30px;
         line-height: 107%;
         margin-bottom: 62px;
+      }
+    }
+  }
+
+  .wpcf7 {
+    &-form {
+      &.invalid {
+        .wpcf7 {
+          &-not-valid {
+            border: 2px solid #000000 !important;
+          }
+        }
       }
     }
   }

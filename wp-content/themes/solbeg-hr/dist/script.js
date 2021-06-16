@@ -37,5 +37,12 @@ $(function() {
 
     });
     // ------------ File upload END ------------
+
+    var wpcf7Elm = document.querySelector( '.wpcf7' );
+    console.log(wpcf7Elm);
+    document.addEventListener( 'wpcf7invalid', function( event ) {
+        alert( "Кто-то отправил форму! Какую именно? Пока не знаю." );
+        // Пробежаться по полям формы и найти в каком не валидные данные
+    }, false );
 });
 
