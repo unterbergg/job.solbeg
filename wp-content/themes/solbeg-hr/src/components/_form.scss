@@ -23,7 +23,6 @@
   }
 
   &__wrapper {
-    padding: 52px 0 0 0;
     h3 {
       font-family: Montserrat;
       font-style: normal;
@@ -62,39 +61,41 @@
     margin-bottom: 20px;
     .email {
       position: relative;
-      &:before {
-        display: none;
-        content: '';
-        border-left: 7px solid transparent;
-        border-right: 7px solid transparent;
-        border-bottom: 9px solid #1a1a1a;
-        position:absolute;
-        top:56px;
-        left:35px;
-        z-index:8;
-        font-size:0;
-        line-height:0;
-        width:0;
-        height:0;
-      }
-      &:after {
-        display: none;
-        content: 'Пожалуйста, введите реальный адрес электронной почты';
-        position: absolute;
-        top: 65px;
-        left: 0;
-        right: 0;
-        padding:12px;
-        background:#000000;
-        z-index:9;
-        border-radius: 10px;
+      &.invalid {
+        &:before {
+          display: block;
+          content: '';
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-bottom: 9px solid #1a1a1a;
+          position:absolute;
+          top:56px;
+          left:35px;
+          z-index:8;
+          font-size:0;
+          line-height:0;
+          width:0;
+          height:0;
+        }
+        &:after {
+          display: block;
+          content: 'Пожалуйста, введите реальный адрес электронной почты';
+          position: absolute;
+          top: 65px;
+          left: 0;
+          right: 0;
+          padding:12px;
+          background:#000000;
+          z-index:9;
+          border-radius: 10px;
 
-        font-family: Raleway;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 143%;
-        color: #FFFFFF;
+          font-family: Raleway;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 143%;
+          color: #FFFFFF;
+        }
       }
     }
     input:not([type=file]), textarea {
@@ -179,48 +180,55 @@
 
   &__resume {
     position: relative;
-    max-height: 56px;border: 2px solid rgba(0, 0, 0, 0.1);
+    max-height: 56px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     border-radius: 4px;
     outline: none;
     white-space: nowrap;
     -webkit-user-select: none;
+    &.invalid {
+      border: 2px solid #000!important;
+      &.show-tip {
+        &:before {
+          display: block;
+          content: '';
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-bottom: 9px solid #1a1a1a;
+          position: absolute;
+          top: 54px;
+          right: 22px;
+          z-index: 8;
+          font-size: 0;
+          line-height: 0;
+          width: 0;
+          height: 0;
+        }
 
-    &:before {
-      display: none;
-      content: '';
-      border-left: 7px solid transparent;
-      border-right: 7px solid transparent;
-      border-bottom: 9px solid #1a1a1a;
-      position:absolute;
-      top: 56px;
-      right: 22px;
-      z-index:8;
-      font-size:0;
-      line-height:0;
-      width:0;
-      height:0;
-    }
-    &:after {
-      display: none;
-      content: 'Максимальный размер файла: 10 МБ\0a Типы файлов: pdf, doc, docx, xls, xlsx, txt, rtf, html, zip';
-      position: absolute;
-      top: 65px;
-      left: 0;
-      right: 0;
-      padding:12px;
-      background:#000000;
-      z-index:9;
-      border-radius: 10px;
-      white-space: pre;
+        &:after {
+          display: block;
+          content: 'Максимальный размер файла: 10 МБ\0a Типы файлов: pdf, doc, docx, xls, xlsx, txt, rtf, html, zip';
+          position: absolute;
+          top: 63px;
+          left: 0;
+          right: 0;
+          padding: 12px;
+          background: #000000;
+          z-index: 9;
+          border-radius: 10px;
+          white-space: pre;
 
-      font-family: Raleway;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 143%;
-      color: #FFFFFF;
+          font-family: Raleway;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 143%;
+          color: #FFFFFF;
+        }
+      }
     }
+
 
 
 
@@ -308,6 +316,8 @@
 
       cursor: pointer;
       display: block;
+
+      text-overflow: ellipsis;
       span {
         font-family: Montserrat;
         font-style: normal;
@@ -368,6 +378,81 @@
     }
   }
 
+  &__select {
+    &-wrapper {
+      margin-bottom: -20px;
+      .wpcf7 {
+        &-form-control {
+          width: 100%;
+          background: #FFFFFF;
+          border: 2px solid rgba(0, 0, 0, 0.1);
+          box-sizing: border-box;
+          padding: 14px 20px;
+          font-family: Montserrat;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 200%;
+          letter-spacing: -.2px;
+          max-height: 56px;
+          resize: none;
+          width: 100%;
+          appearance:none;
+          background-image: url(../img/svg/down-arrow.svg);
+          background-repeat: no-repeat;
+          background-position: calc(100% - 25px) center;
+          &-wrap {
+            display: block;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+    .wpcf7 {
+      &-form-control {
+        width: 100%;
+        background: #FFFFFF;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        padding: 14px 20px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 200%;
+        letter-spacing: -.2px;
+        max-height: 56px;
+        resize: none;
+        width: 100%;
+        appearance:none;
+        background-image: url(../img/svg/down-arrow.svg);
+        background-repeat: no-repeat;
+        background-position: calc(100% - 25px) center;
+        &-wrap {
+          display: block;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  &__label {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 160%;
+    letter-spacing: -0.2px;
+    color: #000000;
+
+    margin:20px 0 12px 0;
+  }
+
+
+}
+
+/*fix for spelling issue*/
+.comtact-form {
   .wpcf7 {
     &-form {
       &.invalid {
@@ -377,6 +462,15 @@
           }
         }
       }
+    }
+    &-date {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 160%;
+      letter-spacing: -0.2px;
+      color: #A6A4A4;
     }
   }
 }
