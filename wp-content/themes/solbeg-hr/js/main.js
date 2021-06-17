@@ -225,30 +225,30 @@ $(document).ready(function () {
     });
   //////////////////////
 
-  $(".wpcf7").on("wpcf7invalid", function (event) {
-    $(".fill-in-required-fields").show();
-  });
+  // $(".wpcf7").on("wpcf7invalid", function (event) {
+  //   $(".fill-in-required-fields").show();
+  // });
   
   $(".wpcf7-validates-as-required").bind("DOMSubtreeModified", function () {
     if ($(".comtact-form__resume-input").attr("aria-invalid", "false")) {
       $(".visible-only-if-file-invalid").show();
     }
   });
-  // mailsent
-  $(".wpcf7").on("wpcf7mailsent", function (event) {
-    $(".wpcf7-validates-as-required")
-      .closest("div")
-      .css("border", "2px solid rgba(0, 0, 0, 0.1)");
-    $(".main-page-comtact-form__thanks").show();
-    $(".comtact-form__resume-text").text("Прикрепить резюме");
-    $(".comtact-form__resume-attach").toggleClass(
-      "comtact-form__resume-plus comtact-form__resume-attach"
-    );
-    $(".comtact-form__resume-remove").toggleClass(
-      "comtact-form__resume-after comtact-form__resume-remove"
-    );
-    $(".fill-in-required-fields").hide();
-  });
+  // // mailsent
+  // $(".wpcf7").on("wpcf7mailsent", function (event) {
+  //   $(".wpcf7-validates-as-required")
+  //     .closest("div")
+  //     .css("border", "2px solid rgba(0, 0, 0, 0.1)");
+  //   $(".main-page-comtact-form__thanks").show();
+  //   $(".comtact-form__resume-text").text("Прикрепить резюме");
+  //   $(".comtact-form__resume-attach").toggleClass(
+  //     "comtact-form__resume-plus comtact-form__resume-attach"
+  //   );
+  //   $(".comtact-form__resume-remove").toggleClass(
+  //     "comtact-form__resume-after comtact-form__resume-remove"
+  //   );
+  //   $(".fill-in-required-fields").hide();
+  // });
   $(window.document).on("click", function (event) {
     $(".invalid__phone").hide();
     $(".invalid__email").hide();

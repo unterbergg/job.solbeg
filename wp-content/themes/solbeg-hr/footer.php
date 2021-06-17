@@ -90,15 +90,11 @@
         <div class="main-page-comtact-form__inner" id="contact-form">
             <div class="comtact-form">
                 <?= do_shortcode( '[contact-form-7 id="307" title="Contact form"]' ); ?>
-                <? //get_template_part('/template-parts/contact-form');?>
             </div>
         </div>
         <div class="main-page-comtact-form__inner" id="trainee">
            <div class="comtact-form">
-                <fieldset>
-                    <legend class="h3">Заявка на стажировку</legend>
-                    <?php echo do_shortcode( '[contact-form-7 id="839" title="Trainee Form"]' ); ?>
-                </fieldset>
+                <?= do_shortcode( '[contact-form-7 id="839" title="Trainee Form"]' ); ?>
             </div>
         </div>
     </div>
@@ -123,6 +119,7 @@
 </section>
 
 <?php wp_footer(); ?>
+
 </body>
 
 </html>

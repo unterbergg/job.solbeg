@@ -433,8 +433,7 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
         }
 
         .videoPoster:before {
-            background-image: url(<?php echo esc_url(get_template_directory_uri());
-            ?>/img/icon/play.png);
+            background-image: url(<?php echo esc_url(get_template_directory_uri());?>/img/icon/play.png);
         }
         </style>
         <div class="video_wrapper js-videoWrapper">
