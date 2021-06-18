@@ -453,8 +453,11 @@
 
 /*fix for spelling issue*/
 .comtact-form {
+  max-width: 646px;
+  margin: auto;
   .wpcf7 {
     &-form {
+      padding: 52px 0;
       &.invalid {
         .wpcf7 {
           &-not-valid {
@@ -473,4 +476,8 @@
       color: #A6A4A4;
     }
   }
+}
+
+.main-page-comtact-form__inner {
+  margin: auto;
 }

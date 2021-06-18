@@ -1,6 +1,6 @@
 .popup {
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: auto;
   &-close {
     img {
       width: 20px;
