@@ -188,11 +188,13 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
             </div>
             <!-- //////////////////////////////// -->
             <div class="main-page-working-on__company container">
-                <?php foreach ($main_page_working_on_partners as $working_on_partners) { ?>
+                <?php foreach ($main_page_working_on_partners as $working_on_partners) : ?>
                 <div class="main-page-working-on__company_item">
-                    <img src="<?= $working_on_partners['main_page_working_on_partners_image'] ?>" alt="">
+                    <img src="<?= $working_on_partners['main_page_working_on_partners_image']['url']; ?>"
+                         alt="<?= $working_on_partners['main_page_working_on_partners_image']['alt']; ?>"
+                    >
                 </div>
-                <?php } ?>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
@@ -328,11 +330,13 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
         <div class="main-page-what-they-say__our-partners main-page__partners">
             <h3 class="h3"><?= $main_page_what_they_say_our_partners_title ?></h3>
             <ul>
-                <?php foreach ($main_page_what_they_say_our_partners as $our_partners) { ?>
+                <?php foreach ($main_page_what_they_say_our_partners as $our_partners) : ?>
                 <li>
-                    <img src="<?= $our_partners['our_partners'] ?>" alt="">
+                    <img src="<?= $our_partners['our_partners']['url'] ?>"
+                         alt="<?= $our_partners['our_partners']['alt'] ?>"
+                    >
                 </li>
-                <?php } ?>
+                <?php endforeach; ?>
             </ul>
         </div>
     </section>
