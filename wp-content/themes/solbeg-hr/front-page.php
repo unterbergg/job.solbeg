@@ -325,7 +325,7 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
                 <li class="what-they-say-slide-arrow what-they-say__slide-arrows-right"></li>
             </ul>
         </div>
-        <div class="main-page-what-they-say__our-partners">
+        <div class="main-page-what-they-say__our-partners main-page__partners">
             <h3 class="h3"><?= $main_page_what_they_say_our_partners_title ?></h3>
             <ul>
                 <?php foreach ($main_page_what_they_say_our_partners as $our_partners) { ?>
