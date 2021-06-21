@@ -52,6 +52,47 @@
         }
       }
     }
+
+    .wpcf7-acceptance {
+      .wpcf7-list-item {
+        margin: 0 0 20px 0;
+      }
+      input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        &+span {
+          display: inline-flex;
+          align-items: center;
+          user-select: none;
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            flex-grow: 0;
+            margin-right: 0.5em;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50% 50%;
+            background: #FFFFFF;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            border-radius: 4px;
+          }
+        }
+        &:checked {
+          &+span {
+            &::before {
+              border-color: #000000;
+              background-color: #000000;
+              background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+            }
+          }
+        }
+      }
+    }
   }
 
   &__grid {
@@ -404,6 +445,7 @@
           &-wrap {
             display: block;
             margin-bottom: 20px;
+
           }
         }
       }
@@ -431,6 +473,12 @@
         &-wrap {
           display: block;
           margin-bottom: 20px;
+          &.time {
+            margin-bottom: -20px;
+            @include respond-to(desktop) {
+              margin-bottom: 20px;
+            }
+          }
         }
       }
     }
@@ -440,14 +488,56 @@
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
-    font-size: 20px;
-    line-height: 160%;
     letter-spacing: -0.2px;
     color: #000000;
+    font-size: 16px;
+    line-height: 200%;
 
     margin:20px 0 12px 0;
+    @include respond-to(mobile) {
+      font-size: 20px;
+      line-height: 160%;
+    }
   }
 
+  &__date {
+    display: flex;
+    flex-wrap: wrap;
+    .wpcf7 {
+      &-form-control {
+        width: 100%;
+        max-width: 243px;
+        background: #FFFFFF;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        padding: 14px 20px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 200%;
+        letter-spacing: -.2px;
+        max-height: 56px;
+        resize: none;
+        width: 100%;
+        appearance:none;
+        &-wrap {
+          display: block;
+
+        }
+      }
+    }
+    .divider {
+      width: 21px;
+      height: 3px;
+      background: #000000;
+      display: block;
+      margin: 28px 16px auto 16px;
+    }
+    input {
+      margin-bottom: 20px;
+    }
+  }
 
 }
 
@@ -470,11 +560,33 @@
       font-family: Montserrat;
       font-style: normal;
       font-weight: 500;
-      font-size: 20px;
-      line-height: 160%;
       letter-spacing: -0.2px;
       color: #A6A4A4;
+      font-size: 16px;
+      line-height: 200%;
+      @include respond-to(mobile) {
+        font-size: 20px;
+        line-height: 160%;
+      }
     }
+    &-list-item {
+      &-label {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 200%;
+        letter-spacing: -0.2px;
+        color: #000000;
+        @include respond-to(mobile) {
+          font-size: 20px;
+          line-height: 160%;
+        }
+      }
+    }
+  }
+  .date-label {
+    margin-top: -20px;
   }
 }
 
