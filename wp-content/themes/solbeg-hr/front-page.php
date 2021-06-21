@@ -372,7 +372,7 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
                 $args = [
                     'post_type' => 'post',
                     'posts_per_page' => -1,
-                    'category_name' => 'all vacancy',
+                    'post_status' => 'publish'
                 ];
                 $wp_query = new WP_Query($args);
                 if ($wp_query->have_posts()) { ?>
