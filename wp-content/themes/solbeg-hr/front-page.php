@@ -160,6 +160,7 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
                 </div>
             </div>
             <!-- //////////////////////////////// -->
+            <?php /*
             <div class="main-page-working-on__slider-wrapper container">
                 <div class="main-page-working-on__slider-header">
                     <h3 class="h3"><?= $main_page_working_on_slider_title ?></h3>
@@ -186,6 +187,7 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
                     <?php } ?>
                 </div>
             </div>
+            */?>
             <!-- //////////////////////////////// -->
             <div class="main-page-working-on__company container">
                 <?php foreach ($main_page_working_on_partners as $working_on_partners) : ?>
