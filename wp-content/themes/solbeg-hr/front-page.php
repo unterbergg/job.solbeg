@@ -18,10 +18,12 @@ url("<?= $main_page_top_block_background ?>");'>
             <source src="<?= $main_page_top_block_background_video ?>" type="video/webm">
         </video>
         <div class="container">
-            <h1 class="main-page-top-block__title"><?= $main_page_top_block_title ?></h1>
-            <div class="anchor-down">
-                <a href="<?= $main_page_top_block_button_link ?>"><?= $main_page_top_block_button ?></a>
-            </div>
+            <h1 class="main-page-top-block__title">
+                <?= $main_page_top_block_title ?>
+            </h1>
+            <a  class="anchor-down" href="<?= $main_page_top_block_button_link ?>">
+                <?= $main_page_top_block_button ?>
+            </a>
         </div>
     </section>
 
