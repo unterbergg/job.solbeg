@@ -453,7 +453,8 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
 
 
 
-    <!-- //////////////////////////////// -->
+    <!-- //////////////////////////////// FACTS-->
+    <?php /*
     <?php $main_page_facts_title = get_field('main_page_facts_title'); ?>
     <?php $main_page_facts_text = get_field('main_page_facts_text'); ?>
     <?php $main_page_facts_item = get_field('main_page_facts_item'); ?>
@@ -555,7 +556,10 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
 
         </div>
     </section>
+    */?>
     <!-- //////////////////////////////// -->
+
+
     <section id="contacts" class="main-page-comtact-form"
         style='background-image: url("<?php echo esc_url(get_template_directory_uri()); ?>/img/fon.jpg");'>
         <div class="container">
