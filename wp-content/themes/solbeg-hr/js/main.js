@@ -77,6 +77,7 @@ $(document).ready(function () {
     prevArrow: $(".what-they-say__slide-arrows-left"),
     nextArrow: $(".what-they-say__slide-arrows-right"),
     fade: true,
+    adaptiveHeight: true
   });
   //tabs
   $(".main-page-soc-pack__tab-wrapper .main-page-soc-pack__tab")

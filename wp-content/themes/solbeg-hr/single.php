@@ -25,12 +25,19 @@ get_header();
             <div class="page-top-block__name">
                 <h1><?php the_title() ?></h1>
             </div>
-            <?php     $posttags = get_the_tags();
-                if( $posttags ){
-                foreach( $posttags as $tag ){?>
-
-            <div class="page-top-block__loc"><?php echo $tag->name . ' ';  ?></div>
-            <?php } }  ?>
+            <div class="page-top-block__loc">
+                <?php
+                    $posttags = get_the_tags();
+                    if( $posttags ){
+                        foreach( $posttags as $key => $tag ){
+                            echo $tag->name;
+                            if( $key != ( count($posttags) - 1 ) ) {
+                                echo " / ";
+                            }
+                        }
+                    }
+                ?>
+            </div>
 
 
         </div>
