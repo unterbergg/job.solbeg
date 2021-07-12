@@ -319,7 +319,7 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
                         </div>
                     </div>
                     <div class="what-they-say__slide-img">
-                        <img src="<?= $what_they_say_slide['slide_img'] ?>" alt="">
+                        <img src="<?= $what_they_say_slide['slide_img']['url']; ?>" alt="<?= $what_they_say_slide['slide_img']['alt']; ?>">
                     </div>
                 </div>
             </div>
