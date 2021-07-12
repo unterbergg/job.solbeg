@@ -2487,10 +2487,10 @@ textarea::placeholder {
     display: none;
   }
 }
-.main-page-working-on__slider,
-.main-page-what-they-say__title,
-.main-page-what-they-say__slider,
-.main-page-what-they-say__slide-arrows,
-.main-page-facts {
-  display: none !important;
-}
+/*.main-page-working-on__slider,*/
+/*.main-page-what-they-say__title,*/
+/*.main-page-what-they-say__slider,*/
+/*.main-page-what-they-say__slide-arrows,*/
+/*.main-page-facts {*/
+/*  display: none !important;*/
+/*}*/
