@@ -89,12 +89,12 @@
         </div>
         <div class="main-page-comtact-form__inner" id="contact-form">
             <div class="comtact-form">
-                <?= do_shortcode( '[contact-form-7 id="307" title="Contact form"]' ); ?>
+                <?= do_shortcode( '[contact-form-7 title="Contact form"]' ); ?>
             </div>
         </div>
         <div class="main-page-comtact-form__inner" id="trainee">
            <div class="comtact-form">
-                <?= do_shortcode( '[contact-form-7 id="839" title="Trainee Form"]' ); ?>
+                <?= do_shortcode( '[contact-form-7 title="Trainee Form"]' ); ?>
             </div>
         </div>
     </div>
