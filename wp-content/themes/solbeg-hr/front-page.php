@@ -570,7 +570,8 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
             <div class="main-page-comtact-form__wrapper">
                 <div class="main-page-comtact-form__inner non-popups">
                     <div class="contact-form col-2">
-                        <?= do_shortcode( '[contact-form-7 id="307" title="Contact form"]' ); ?>
+                        <h2>Хотите у нас работать? Напишите нам</h2>
+                        <?= do_shortcode( '[contact-form-7 title="Contact form"]' ); ?>
                         <? // get_template_part('/template-parts/contact-form-page');?>
                     </div>
                 </div>

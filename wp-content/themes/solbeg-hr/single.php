@@ -69,7 +69,9 @@ get_header();
                                 <span class="nav-title">
                                     <?= get_the_title(get_next_post()->ID);?>
                                 </span>
-                            </a></div><div class="nav-next">
+                            </a>
+                        </div>
+                        <div class="nav-next">
                             <a href="<?= get_permalink($next_post->ID)?>" rel="next">
                                 <span class="nav-subtitle">Следующая:</span>
                                 <span class="nav-title">
