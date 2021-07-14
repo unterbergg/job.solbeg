@@ -241,3 +241,18 @@ add_filter('wpcf7_form_elements', function($content) {
 
     return $content;
 });
+
+
+add_filter( "wpcf7_validate_date*", 'filter_wpcf7_validate_type', 10, 2 );
+function filter_wpcf7_validate_type( $result, $tag) {
+    if ( 'start_date' == $tag->name || 'end_date' == $tag->name) {
+        $start = isset( $_POST['start_date'] ) ? trim( $_POST['start_date'] ) : '';
+        $end = isset( $_POST['end_date'] ) ? trim( $_POST['end_date'] ) : '';
+
+        if(strtotime($start) > strtotime($end)) {
+            $result->invalidate($tag, "Неверная дата");
+        }
+    }
+    return $result;
+};
+
