@@ -85,10 +85,31 @@ $(function() {
         $(".fill-in-required-fields").hide();
     });
 
-    // $(window.document).on("click", function (event) {
-    //     $(".email").removeClass('invalid');
-    //     $(".fill-in-required-fields").hide();
-    //     $('.contact-form__resume').removeClass('show-tip');
+    $('.contact-form__resume-after').hover(
+        function() { //hover
+            var $resume = $(this).closest('.wpcf7-form').find('.contact-form__resume');
+            if(!$resume.hasClass('invalid')) {
+                $(this).closest('.wpcf7-form').find('.contact-form__resume').addClass('show-tip')
+            }
+        },
+        function() { //out
+            var $resume = $(this).closest('.wpcf7-form').find('.contact-form__resume');
+            if(!$resume.hasClass('invalid')) {
+                $(this).closest('.wpcf7-form').find('.contact-form__resume').removeClass('show-tip')
+            }
+        }
+    );
+    $('.contact-form__resume-after').on('click', function(e) {
+        e.preventDefault();
+        var $resume = $(this).closest('.wpcf7-form').find('.contact-form__resume');
+        if(!$resume.hasClass('invalid')) {
+            $(this).closest('.wpcf7-form').find('.contact-form__resume').toggleClass('show-tip')
+        }
+    });
+
+    // $('.wpcf7-date').datepicker({
+    //     minDate: new Date(2007, 1 - 1, 1),
+    //     maxDate: "+1m +1w"
     // });
 });
 
