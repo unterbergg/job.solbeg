@@ -620,3 +620,18 @@
     }
   }
  }
+
+
+.wpcf7 {
+  &-form {
+    .submit {
+      &[disabled] {
+        cursor: default;
+        opacity: 0.5;
+        &:hover {
+          background: #d64045;
+        }
+      }
+    }
+  }
+}
