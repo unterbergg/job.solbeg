@@ -68,6 +68,30 @@ $(function() {
 
     }, false );
 
+    var test = document.getElementsByClassName('wpcf7');
+    const config = {
+        attributes: true,
+        childList: true,
+        subtree: true
+    };
+    const callback = function(mutationsList, observer) {
+        for (let mutation of mutationsList) {
+            if (mutation.type === 'attributes' && mutation.target.classList.contains('wpcf7-form')) {
+                if(mutation.target.classList.contains('submitting')) {
+                    mutation.target.querySelector('.submit').disabled = true;
+                }
+                else {
+                    mutation.target.querySelector('.submit').disabled = false;
+                }
+            }
+        }
+    };
+    const observer = new MutationObserver(callback);
+    for(var i = 0; i < test.length; i++) {
+        observer.observe(test[i], config);
+    }
+
+
     // mailsent
     document.addEventListener("wpcf7mailsent", function ( event) {
         $(".main-page-comtact-form__thanks").show();
