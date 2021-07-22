@@ -216,24 +216,24 @@ $(document).ready(function () {
   // // ------------ File upload END ------------
 
 
-  $(".comtact-form__resume-after")
-    .mouseenter(function () {
-      $(".comtact-form__resume .visible-only-if-file-invalid").show();
-    })
-    .mouseleave(function () {
-      $(".comtact-form__resume .visible-only-if-file-invalid").hide();
-    });
+  // $(".comtact-form__resume-after")
+  //   .mouseenter(function () {
+  //     $(".comtact-form__resume .visible-only-if-file-invalid").show();
+  //   })
+  //   .mouseleave(function () {
+  //     $(".comtact-form__resume .visible-only-if-file-invalid").hide();
+  //   });
   //////////////////////
 
   // $(".wpcf7").on("wpcf7invalid", function (event) {
   //   $(".fill-in-required-fields").show();
   // });
   
-  $(".wpcf7-validates-as-required").bind("DOMSubtreeModified", function () {
-    if ($(".comtact-form__resume-input").attr("aria-invalid", "false")) {
-      $(".visible-only-if-file-invalid").show();
-    }
-  });
+  // $(".wpcf7-validates-as-required").bind("DOMSubtreeModified", function () {
+  //   if ($(".comtact-form__resume-input").attr("aria-invalid", "false")) {
+  //     $(".visible-only-if-file-invalid").show();
+  //   }
+  // });
   // // mailsent
   // $(".wpcf7").on("wpcf7mailsent", function (event) {
   //   $(".wpcf7-validates-as-required")
@@ -249,13 +249,13 @@ $(document).ready(function () {
   //   );
   //   $(".fill-in-required-fields").hide();
   // });
-  $(window.document).on("click", function (event) {
-    $(".invalid__phone").hide();
-    $(".invalid__email").hide();
-    $(".visible-only-if-file-invalid").hide();
-    $(".comtact-form__grid>div").css("border", "2px solid rgba(0, 0, 0, 0.1)");
-    $(".fill-in-required-fields").hide();
-  });
+  // $(window.document).on("click", function (event) {
+  //   $(".invalid__phone").hide();
+  //   $(".invalid__email").hide();
+  //   $(".visible-only-if-file-invalid").hide();
+  //   $(".comtact-form__grid>div").css("border", "2px solid rgba(0, 0, 0, 0.1)");
+  //   $(".fill-in-required-fields").hide();
+  // });
   // required phone
   // var elemToObservePhone = document.getElementById("phone");
   // var prevClassStatePhone = elemToObservePhone.classList.contains(
@@ -358,10 +358,7 @@ $(document).ready(function () {
   // });
 
   // main-page-comtact-form__thanks
-  $(".thanks-inner__button button").on("click", function (event) {
-    $(".popup").hide();
-    $(".main-page-comtact-form__thanks").hide();
-  });
+
 
   // accordion-panel__show-more
   if ($(window).width() > 1024) {

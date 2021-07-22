@@ -229,6 +229,7 @@
     white-space: nowrap;
     -webkit-user-select: none;
     &.show-tip {
+      border: 2px solid #000!important;
       &:before {
         display: block;
         content: '';
@@ -247,7 +248,7 @@
 
       &:after {
         display: block;
-        content: 'Максимальный размер файла: 10 МБ\0a Типы файлов: pdf, doc, docx, xls, xlsx, txt, rtf, html, zip';
+        content: 'Максимальный размер файла: 10 МБ\0a Типы файлов: pdf, doc, docx, xls, xlsx, txt,\0a rtf, html, zip';
         position: absolute;
         top: 63px;
         left: 0;

@@ -1,0 +1,18 @@
+header {
+  .header {
+    .popup {
+      &-open {
+        &__link {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.page-anchor {
+  height: 69px;
+  @include respond-to(desktop) {
+    height: 44px;
+  }
+}
