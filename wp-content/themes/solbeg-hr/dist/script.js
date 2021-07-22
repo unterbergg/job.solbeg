@@ -54,6 +54,12 @@ $(function() {
                         $(".fill-in-required-fields").show();
                     }
                 }
+                else if($(event.target).is(".wpcf7-file") && $(event.target).hasClass('wpcf7-not-valid')) {
+                    if($(event.target).val().length == 0) {
+                        $(".fill-in-required-fields").show();
+                    }
+                    $(event.target).closest('.contact-form__resume').addClass('invalid').addClass('show-tip');
+                }
                 else {
                     if($(event.target).val().length == 0) {
                         $(".fill-in-required-fields").show();
@@ -62,10 +68,10 @@ $(function() {
             });
         });
     }, false );
+
     document.addEventListener( 'wpcf7submit', function( event ) {
         $(".email").removeClass('invalid');
         $(".fill-in-required-fields").hide();
-
     }, false );
 
     var test = document.getElementsByClassName('wpcf7');
@@ -90,6 +96,8 @@ $(function() {
     for(var i = 0; i < test.length; i++) {
         observer.observe(test[i], config);
     }
+
+
 
 
     // mailsent
@@ -131,9 +139,10 @@ $(function() {
         }
     });
 
-    // $('.wpcf7-date').datepicker({
-    //     minDate: new Date(2007, 1 - 1, 1),
-    //     maxDate: "+1m +1w"
-    // });
+    $(".thanks-inner__button button").on("click", function (event) {
+        $(".popup").hide();
+        $(".main-page-comtact-form__thanks").hide();
+        $('body').css('overflow', 'auto');
+    });
 });
 

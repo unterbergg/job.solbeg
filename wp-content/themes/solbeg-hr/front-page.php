@@ -581,7 +581,8 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
     </section>
 
     <!-- traineeship block-->
-    <section id="trainee" class="main-page__trainee">
+    <div class="page-anchor" id="trainee"></div>
+    <section class="main-page__trainee">
         <div class="container">
             <div class="main-page-soc-pack__title">
                 <h2 class="h2">
