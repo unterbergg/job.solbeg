@@ -74,8 +74,8 @@ url("<?= $main_page_top_block_background ?>");'>
             <h3 class="h3"><?= $main_page_our_offices_title ?></h3>
             <div class="main-page-our-offices__grid">
 
-                <?php if ($main_page_our_offices_item) {
-                    foreach ($main_page_our_offices_item as $offices_item) { ?>
+                <?php if ($main_page_our_offices_item) :
+                    foreach ($main_page_our_offices_item as $offices_item) : ?>
                 <div class="main-page-our-offices__item">
                     <img class="main-page-our-offices__img"
                          src="<?= wp_get_attachment_image_url($offices_item['offices_item_img']['ID'], 'medium'); ?>"
@@ -85,13 +85,8 @@ url("<?= $main_page_top_block_background ?>");'>
                     <span><?= $offices_item['offices_item_text'] ?></span>
                 </div>
 
-                <?php }
-                } ?>
-                <?php if ($main_page_our_offices_new) { ?>
-                <div class="main-page-our-offices__item-new">
-                    <span><?= $main_page_our_offices_new ?></span>
-                </div>
-                <?php } ?>
+                <?php endforeach;
+                endif; ?>
             </div>
         </div>
     </section>
