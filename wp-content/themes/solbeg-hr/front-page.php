@@ -77,7 +77,9 @@ url("<?= $main_page_top_block_background ?>");'>
                 <?php if ($main_page_our_offices_item) {
                     foreach ($main_page_our_offices_item as $offices_item) { ?>
                 <div class="main-page-our-offices__item">
-                    <img class="main-page-our-offices__img" src="<?= $offices_item['offices_item_img'] ?>" alt="">
+                    <img class="main-page-our-offices__img"
+                         src="<?= wp_get_attachment_image_url($offices_item['offices_item_img']['ID'], 'medium'); ?>"
+                         alt="<?= $offices_item['offices_item_img']['alt']; ?>">
                     <img class="main-page-our-offices__img-back"
                         src="<?php echo esc_url(get_template_directory_uri()); ?>/img/miniback.png" alt="">
                     <span><?= $offices_item['offices_item_text'] ?></span>
@@ -319,7 +321,10 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
                         </div>
                     </div>
                     <div class="what-they-say__slide-img">
-                        <img src="<?= $what_they_say_slide['slide_img']['url']; ?>" alt="<?= $what_they_say_slide['slide_img']['alt']; ?>">
+                        <?php //var_dump(wp_get_attachment_image_url($what_they_say_slide['slide_img']['ID'],
+                        // 'medium_large'));?>
+                        <img src="<?= wp_get_attachment_image_url($what_they_say_slide['slide_img']['ID'], 'medium_large'); ?>"
+                             alt="<?= $what_they_say_slide['slide_img']['alt']; ?>">
                     </div>
                 </div>
             </div>
