@@ -165,6 +165,7 @@ $(document).ready(function () {
   });
   ///////////////////////
   $(".main-page-vacancy__filter-item").on("click", function (e) {
+    console.log('click filter');
     $(".main-page-vacancy__filter-item").removeClass("active");
     $(this).toggleClass("active");
     if ($(this).hasClass("Минск")) {
@@ -175,9 +176,14 @@ $(document).ready(function () {
       $(".vacancy_location").hide();
       $(".vacancy_location.Брест").show();
     }
+    if ($(this).hasClass("Москва")) {
+      $(".vacancy_location").hide();
+      $(".vacancy_location.Москва").show();
+    }
     if ($(this).hasClass("main-page-vacancy__filter-item-show-all")) {
       $(".vacancy_location.Минск").show();
       $(".vacancy_location.Брест").show();
+      $(".vacancy_location.Москва").show();
     }
   });
 
