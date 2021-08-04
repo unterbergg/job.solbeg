@@ -165,7 +165,6 @@ $(document).ready(function () {
   });
   ///////////////////////
   $(".main-page-vacancy__filter-item").on("click", function (e) {
-    console.log('click filter');
     $(".main-page-vacancy__filter-item").removeClass("active");
     $(this).toggleClass("active");
     if ($(this).hasClass("Минск")) {

@@ -816,17 +816,22 @@
     .footer {
         grid-column-gap: 16px;
     }
+
+
+
+
+    .privacy-policy-text {
+        padding: 60px 0;
+    }
+}
+
+@media (min-width: 50px) and (max-width: 600px) {
+    .main-page-vacancy__filter {
+        padding-top: 50px;
+    }
     .main-page-vacancy__header {
         margin-bottom: 42px;
         flex-direction: column;
         align-items: flex-start;
-    }
-
-    .main-page-vacancy__filter {
-        padding-top: 50px;
-    }
-
-    .privacy-policy-text {
-        padding: 60px 0;
     }
 }

@@ -12,7 +12,10 @@
             grid-area: 1 / 2 / 3 / 2;
           }
         }
-        @include respond-to(mobile) {
+        /*@include respond-to(mobile) {
+          grid-template-columns: repeat(auto-fill,minmax(405px,1fr));
+        }*/
+        @media (min-width: 790px) {
           grid-template-columns: repeat(auto-fill,minmax(405px,1fr));
         }
       }
