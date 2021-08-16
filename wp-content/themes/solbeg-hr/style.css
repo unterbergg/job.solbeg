@@ -1261,13 +1261,21 @@ header {
 }
 
 .main-page-vacancy__filter {
-  padding-right: 18px;
+  /*padding-right: 18px;*/
   padding-top: 4px;
 }
-
+@media (max-width: 352px) {
+  .main-page-vacancy__filter {
+    position: relative;
+    overflow-x: scroll;
+    width: 100%;
+    padding-bottom: 8px;
+  }
+}
 .main-page-vacancy__filter ul {
   display: flex;
   min-width: 464px;
+  justify-content: flex-end;
 }
 
 .main-page-vacancy__filter-item {

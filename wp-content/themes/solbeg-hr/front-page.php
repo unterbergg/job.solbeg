@@ -358,7 +358,20 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
                     <h2 class="h2">Вакансии</h2>
                 </div>
                 <div class="main-page-vacancy__filter">
-                    <?php         
+                    <ul class="main-page-vacancy__filter-items">
+                        <li class="main-page-vacancy__filter-item main-page-vacancy__filter-item-show-all active">
+                            <button>Все</button>
+                        </li>
+                        <?php
+                            $tags = get_tags();
+                            foreach ( $tags as $tag ) {
+                                $tag_link = get_tag_link( $tag->term_id );
+                                echo "<li class='main-page-vacancy__filter-item {$tag->name}'><button class='{$tag->slug}'>";
+                                echo "{$tag->name}</button></li>";
+                            }
+                        ?>
+                    </ul>
+                    <?php /*
                     $tags = get_tags();
                     $html = ' <ul><li class="main-page-vacancy__filter-item main-page-vacancy__filter-item-show-all active"><button>Все</button></li>';
                     foreach ( $tags as $tag ) {
@@ -370,7 +383,7 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
 
                     $html .= ' </ul>';
 
-                    echo $html; ?>
+                    echo $html; */?>
 
                 </div>
             </div>
