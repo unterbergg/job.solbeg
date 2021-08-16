@@ -103,6 +103,9 @@
     grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
     grid-gap: 20px;
     margin-bottom: 20px;
+    @media (max-width: 352px) {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
     .email {
       position: relative;
       &.invalid {
