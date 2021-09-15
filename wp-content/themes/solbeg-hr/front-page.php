@@ -466,6 +466,10 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
             <button class="videoPoster js-videoPoster"></button>
         </div>
     </section>
+
+
+
+
     <!-- //////////////////////////////// FACTS-->
     <?php /*
     <?php $main_page_facts_title = get_field('main_page_facts_title'); ?>
