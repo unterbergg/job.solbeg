@@ -150,6 +150,9 @@ function solbeg_hr_scripts() {
 	wp_enqueue_style( 'solbeg-hr-797', get_template_directory_uri() . '/css/responsive797.css', array(), null );
 	wp_enqueue_style( 'solbeg-hr-1024', get_template_directory_uri() . '/css/responsive1024.css', array(), null );
 	wp_enqueue_style( 'solbeg-hr-1440', get_template_directory_uri() . '/css/responsive1440.css', array(), null );
+	wp_enqueue_style( 'solbeg-new', get_template_directory_uri() . '/dist/style.css',
+        array('slick-theme-style', 'slick-style', 'solbeg-hr-main', 'solbeg-hr-burger','solbeg-hr-797','solbeg-hr-1024','solbeg-hr-1440'),
+        null );
 
 
 	// scripts
@@ -157,6 +160,8 @@ function solbeg_hr_scripts() {
     wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', array(), null, true);
     wp_enqueue_script('slick-js', get_template_directory_uri() . '/js/slick-slider/slick.min.js',  array('jquery'), '1.0', true);
 	wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0', true);
+	wp_enqueue_script('script-js', get_template_directory_uri() . '/dist/script.js', array('jquery', 'main-js'), '1.0',
+        true);
 
 
 	wp_style_add_data( 'solbeg-hr-style', 'rtl', 'replace' );
@@ -227,3 +232,27 @@ function create_posttype() {
 }
 // Hooking up our function to theme setup
 add_action( 'init', 'create_posttype' );
+
+/*Contact form 7 remove span and br*/
+add_filter( 'wpcf7_autop_or_not', '__return_false' );
+add_filter('wpcf7_form_elements', function($content) {
+
+    $content = str_replace('<option value="">---</option>', '<option value=""></option>', $content);
+
+    return $content;
+});
+
+
+add_filter( "wpcf7_validate_date*", 'filter_wpcf7_validate_type', 10, 2 );
+function filter_wpcf7_validate_type( $result, $tag) {
+    if ( 'start_date' == $tag->name || 'end_date' == $tag->name) {
+        $start = isset( $_POST['start_date'] ) ? trim( $_POST['start_date'] ) : '';
+        $end = isset( $_POST['end_date'] ) ? trim( $_POST['end_date'] ) : '';
+
+        if(strtotime($start) > strtotime($end)) {
+            $result->invalidate($tag, "Неверная дата");
+        }
+    }
+    return $result;
+};
+

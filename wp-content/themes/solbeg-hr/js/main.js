@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  //LEGACY
   $(".main-page-history-company__year").slick({
     slidesToShow: 5,
     slidesToScroll: 1,
@@ -37,18 +38,6 @@ $(document).ready(function () {
       },
     ],
   });
-  // if ($(window).width() < 450) {
-  //   $(".main-page-soc-pack__tabs").slick({
-  //     slidesToShow: 2,
-  //     slidesToScroll: 1,
-  //     dots: false,
-  //     arrows: false,
-  //     centerPadding: '60px',
-  //     focusOnSelect: true,
-  //     centerMode: false,
-  //     infinite: false
-  //   });
-  // }
 
   $('.main-page-history-company__year').on('afterChange', function(event, slick, currentSlide, nextSlide){
     $('.slick-slide').removeClass('slick-active-first slick-active-last');
@@ -87,7 +76,7 @@ $(document).ready(function () {
     arrows: true,
     prevArrow: $(".what-they-say__slide-arrows-left"),
     nextArrow: $(".what-they-say__slide-arrows-right"),
-    fade: true,
+    fade: true
   });
   //tabs
   $(".main-page-soc-pack__tab-wrapper .main-page-soc-pack__tab")
@@ -148,11 +137,23 @@ $(document).ready(function () {
   //popup-close
   $("#popup-close__link").on("click", function (e) {
     e.preventDefault();
+    $('body').css('overflow', 'auto');
     $(".popup").hide();
+    $('.main-page-comtact-form__inner#trainee').hide();
+    $('.main-page-comtact-form__inner#contact-form').hide();
   });
   $(".popup-open__link").on("click", function (e) {
     e.preventDefault();
+    $('body').css('overflow', 'hidden');
+    if($(e.target).attr('data-form') === 'trainee') {
+      $('.main-page-comtact-form__inner#contact-form').hide();
+      $('.main-page-comtact-form__inner#trainee').show();
+    }
+    else {
+      $('.main-page-comtact-form__inner#contact-form').show();
+    }
     $(".popup").show();
+
   });
   ///////////////////////
   document.getElementById("burger-menu").addEventListener("click", (event) => {
@@ -174,206 +175,195 @@ $(document).ready(function () {
       $(".vacancy_location").hide();
       $(".vacancy_location.Брест").show();
     }
+    if ($(this).hasClass("Москва")) {
+      $(".vacancy_location").hide();
+      $(".vacancy_location.Москва").show();
+    }
     if ($(this).hasClass("main-page-vacancy__filter-item-show-all")) {
       $(".vacancy_location.Минск").show();
       $(".vacancy_location.Брест").show();
+      $(".vacancy_location.Москва").show();
     }
   });
 
-  // ------------  File upload BEGIN ------------
-
-  $(document).on(
-    "change",
-    ".comtact-form__resume input[type='file']",
-    function () {
-      if ($(this).val()) {
-        var filename = $(this).val().split("\\");
-
-        filename = filename[filename.length - 1];
-
-        $(".comtact-form__resume-text").text(filename);
-        $(".comtact-form__resume-plus").toggleClass(
-          "comtact-form__resume-attach comtact-form__resume-plus"
-        );
-        $(".comtact-form__resume-after").toggleClass(
-          "comtact-form__resume-remove comtact-form__resume-after"
-        );
-        console.log($(".comtact-form__resume input[type='file']").val());
-      }
-    }
-  );
-  $(document).on("click", ".comtact-form__resume-remove", function () {
-    $(".comtact-form__resume input[type='file']").val(null);
-    $(".comtact-form__resume-text").text("Прикрепить резюме");
-    $(".comtact-form__resume-attach").toggleClass(
-      "comtact-form__resume-plus comtact-form__resume-attach"
-    );
-    $(".comtact-form__resume-remove").toggleClass(
-      "comtact-form__resume-after comtact-form__resume-remove"
-    );
-
-    console.log($(".comtact-form__resume input[type='file']").val());
-  });
-  // ------------ File upload END ------------
-
-  // $('.wpcf7').on('wpcf7invalid', function () {
-  //   console.log('wpcf7invalid');
+  // // ------------  File upload BEGIN ------------
+  //
+  // $(document).on(
+  //   "change",
+  //   ".contact-form__resume input[type='file']",
+  //   function (e) {
+  //     if ($(this).val()) {
+  //       var filename = $(this).val().split("\\");
+  //       let curForm = $(e.target).closest(".wpcf7-form");
+  //       filename = filename[filename.length - 1];
+  //
+  //       curForm.find(".comtact-form__resume-text").text(filename);
+  //       curForm.find(".comtact-form__resume-plus").toggleClass(
+  //         "comtact-form__resume-attach comtact-form__resume-plus"
+  //       );
+  //       curForm.find(".comtact-form__resume-after").toggleClass(
+  //         "comtact-form__resume-remove comtact-form__resume-after"
+  //       );
+  //     }
+  //   }
+  // );
+  // $(document).on("click", ".comtact-form__resume-remove", function () {
+  //   $(".comtact-form__resume input[type='file']").val(null);
+  //   $(".comtact-form__resume-text").text("Прикрепить резюме");
+  //   $(".comtact-form__resume-attach").toggleClass(
+  //     "comtact-form__resume-plus comtact-form__resume-attach"
+  //   );
+  //   $(".comtact-form__resume-remove").toggleClass(
+  //     "comtact-form__resume-after comtact-form__resume-remove"
+  //   );
+  //
   // });
-  // $('.wpcf7').on('wpcf7spam', function () {
-  //   console.log('wpcf7spam');
-  // });
-  // $('.wpcf7').on('wpcf7mailsent', function () {
-  //   console.log('wpcf7mailsent');
-  // });
-  // $('.wpcf7').on('wpcf7mailfailed', function () {
-  //   console.log('wpcf7mailfailed');
-  // });
+  // // ------------ File upload END ------------
 
-  $(".comtact-form__resume-after")
-    .mouseenter(function () {
-      $(".comtact-form__resume .visible-only-if-file-invalid").show();
-    })
-    .mouseleave(function () {
-      $(".comtact-form__resume .visible-only-if-file-invalid").hide();
-    });
+
+  // $(".comtact-form__resume-after")
+  //   .mouseenter(function () {
+  //     $(".comtact-form__resume .visible-only-if-file-invalid").show();
+  //   })
+  //   .mouseleave(function () {
+  //     $(".comtact-form__resume .visible-only-if-file-invalid").hide();
+  //   });
   //////////////////////
 
-  $(".wpcf7").on("wpcf7invalid", function (event) {
-    $(".fill-in-required-fields").show();
-  });
+  // $(".wpcf7").on("wpcf7invalid", function (event) {
+  //   $(".fill-in-required-fields").show();
+  // });
   
-  $(".wpcf7-validates-as-required").bind("DOMSubtreeModified", function () {
-    if ($(".comtact-form__resume-input").attr("aria-invalid", "false")) {
-      $(".visible-only-if-file-invalid").show();
-    }
-  });
-  // mailsent
-  $(".wpcf7").on("wpcf7mailsent", function (event) {
-    $(".wpcf7-validates-as-required")
-      .closest("div")
-      .css("border", "2px solid rgba(0, 0, 0, 0.1)");
-    $(".main-page-comtact-form__thanks").show();
-    $(".comtact-form__resume-text").text("Прикрепить резюме");
-    $(".comtact-form__resume-attach").toggleClass(
-      "comtact-form__resume-plus comtact-form__resume-attach"
-    );
-    $(".comtact-form__resume-remove").toggleClass(
-      "comtact-form__resume-after comtact-form__resume-remove"
-    );
-    $(".fill-in-required-fields").hide();
-  });
-  $(window.document).on("click", function (event) {
-    $(".invalid__phone").hide();
-    $(".invalid__email").hide();
-    $(".visible-only-if-file-invalid").hide();
-    $(".comtact-form__grid>div").css("border", "2px solid rgba(0, 0, 0, 0.1)");
-    $(".fill-in-required-fields").hide();
-  });
+  // $(".wpcf7-validates-as-required").bind("DOMSubtreeModified", function () {
+  //   if ($(".comtact-form__resume-input").attr("aria-invalid", "false")) {
+  //     $(".visible-only-if-file-invalid").show();
+  //   }
+  // });
+  // // mailsent
+  // $(".wpcf7").on("wpcf7mailsent", function (event) {
+  //   $(".wpcf7-validates-as-required")
+  //     .closest("div")
+  //     .css("border", "2px solid rgba(0, 0, 0, 0.1)");
+  //   $(".main-page-comtact-form__thanks").show();
+  //   $(".comtact-form__resume-text").text("Прикрепить резюме");
+  //   $(".comtact-form__resume-attach").toggleClass(
+  //     "comtact-form__resume-plus comtact-form__resume-attach"
+  //   );
+  //   $(".comtact-form__resume-remove").toggleClass(
+  //     "comtact-form__resume-after comtact-form__resume-remove"
+  //   );
+  //   $(".fill-in-required-fields").hide();
+  // });
+  // $(window.document).on("click", function (event) {
+  //   $(".invalid__phone").hide();
+  //   $(".invalid__email").hide();
+  //   $(".visible-only-if-file-invalid").hide();
+  //   $(".comtact-form__grid>div").css("border", "2px solid rgba(0, 0, 0, 0.1)");
+  //   $(".fill-in-required-fields").hide();
+  // });
   // required phone
-  var elemToObservePhone = document.getElementById("phone");
-  var prevClassStatePhone = elemToObservePhone.classList.contains(
-    "wpcf7-not-valid"
-  );
+  // var elemToObservePhone = document.getElementById("phone");
+  // var prevClassStatePhone = elemToObservePhone.classList.contains(
+  //   "wpcf7-not-valid"
+  // );
+  //
+  // var observer = new MutationObserver(function (mutations) {
+  //   mutations.forEach(function (mutation) {
+  //     if (mutation.attributeName == "class") {
+  //       var currentClassState = mutation.target.classList.contains(
+  //         "wpcf7-not-valid"
+  //       );
+  //       if (prevClassStatePhone !== currentClassState) {
+  //         prevClassStatePhone = currentClassState;
+  //         if (currentClassState) {
+  //           console.log("class added!");
+  //           $(".invalid__phone").show();
+  //           $(".comtact-form__phone").css("border", "2px solid black");
+  //
+  //         } else {
+  //           $(".invalid__phone").hide();
+  //           console.log("class removed!");
+  //           $(".comtact-form__phone").css(
+  //             "border",
+  //             "2px solid rgba(0, 0, 0, 0.1)"
+  //           );
+  //         }
+  //       }
+  //     }
+  //   });
+  // });
+  // observer.observe(elemToObservePhone, { attributes: true });
+  // // end required phone
+  // // required email
+  // var elemToObserveEmail = document.getElementById("email");
+  // var prevClassStateEmail = elemToObserveEmail.classList.contains(
+  //   "wpcf7-not-valid"
+  // );
+  //
+  // var observer = new MutationObserver(function (mutations) {
+  //   mutations.forEach(function (mutation) {
+  //     console.log('observer');
+  //     if (mutation.attributeName == "class") {
+  //       var currentClassState = mutation.target.classList.contains(
+  //         "wpcf7-not-valid"
+  //       );
+  //       if (prevClassStateEmail !== currentClassState) {
+  //         prevClassStateEmail = currentClassState;
+  //         if (currentClassState) {
+  //           console.log("class added!");
+  //           $(".invalid__email").show();
+  //           $(".comtact-form__email").css("border", "2px solid black");
+  //         } else {
+  //           $(".invalid__email").hide();
+  //           console.log("class removed!");
+  //           $(".comtact-form__email").css(
+  //             "border",
+  //             "2px solid rgba(0, 0, 0, 0.1)"
+  //           );
+  //         }
+  //       }
+  //     }
+  //   });
+  // });
+  // observer.observe(elemToObserveEmail, { attributes: true });
+  // // end required email
 
-  var observer = new MutationObserver(function (mutations) {
-    mutations.forEach(function (mutation) {
-      if (mutation.attributeName == "class") {
-        var currentClassState = mutation.target.classList.contains(
-          "wpcf7-not-valid"
-        );
-        if (prevClassStatePhone !== currentClassState) {
-          prevClassStatePhone = currentClassState;
-          if (currentClassState) {
-            console.log("class added!");
-            $(".invalid__phone").show();
-            $(".comtact-form__phone").css("border", "2px solid black");
-            
-          } else {
-            $(".invalid__phone").hide();
-            console.log("class removed!");
-            $(".comtact-form__phone").css(
-              "border",
-              "2px solid rgba(0, 0, 0, 0.1)"
-            );
-          }
-        }
-      }
-    });
-  });
-  observer.observe(elemToObservePhone, { attributes: true });
-  // end required phone
-  // required email
-  var elemToObserveEmail = document.getElementById("email");
-  var prevClassStateEmail = elemToObserveEmail.classList.contains(
-    "wpcf7-not-valid"
-  );
-
-  var observer = new MutationObserver(function (mutations) {
-    mutations.forEach(function (mutation) {
-      if (mutation.attributeName == "class") {
-        var currentClassState = mutation.target.classList.contains(
-          "wpcf7-not-valid"
-        );
-        if (prevClassStateEmail !== currentClassState) {
-          prevClassStateEmail = currentClassState;
-          if (currentClassState) {
-            console.log("class added!");
-            $(".invalid__email").show();
-            $(".comtact-form__email").css("border", "2px solid black");
-          } else {
-            $(".invalid__email").hide();
-            console.log("class removed!");
-            $(".comtact-form__email").css(
-              "border",
-              "2px solid rgba(0, 0, 0, 0.1)"
-            );
-          }
-        }
-      }
-    });
-  });
-  observer.observe(elemToObserveEmail, { attributes: true });
-  // end required email
-
-  // tel mask
-  var phoneInput = document.querySelector("#phone");
-  phoneInput.addEventListener("keydown", function (event) {
-    if (
-      !(
-        event.key == "ArrowLeft" ||
-        event.key == "ArrowRight" ||
-        event.key == "Backspace" ||
-        event.key == "Tab"
-      )
-    ) {
-      event.preventDefault();
-    }
-    var mask = "+375 (11) 111-11-11";
-
-    if (/[0-9\+\ \-\(\)]/.test(event.key)) {
-      var currentString = this.value;
-      var currentLength = currentString.length;
-      if (/[0-9]/.test(event.key)) {
-        if (mask[currentLength] == "1") {
-          this.value = currentString + event.key;
-        } else {
-          for (var i = currentLength; i < mask.length; i++) {
-            if (mask[i] == "1") {
-              this.value = currentString + event.key;
-              break;
-            }
-            currentString += mask[i];
-          }
-        }
-      }
-    }
-  });
+  // // tel mask
+  // var phoneInput = document.querySelector("#phone");
+  // phoneInput.addEventListener("keydown", function (event) {
+  //   if (
+  //     !(
+  //       event.key == "ArrowLeft" ||
+  //       event.key == "ArrowRight" ||
+  //       event.key == "Backspace" ||
+  //       event.key == "Tab"
+  //     )
+  //   ) {
+  //     event.preventDefault();
+  //   }
+  //   var mask = "+375 (11) 111-11-11";
+  //
+  //   if (/[0-9\+\ \-\(\)]/.test(event.key)) {
+  //     var currentString = this.value;
+  //     var currentLength = currentString.length;
+  //     if (/[0-9]/.test(event.key)) {
+  //       if (mask[currentLength] == "1") {
+  //         this.value = currentString + event.key;
+  //       } else {
+  //         for (var i = currentLength; i < mask.length; i++) {
+  //           if (mask[i] == "1") {
+  //             this.value = currentString + event.key;
+  //             break;
+  //           }
+  //           currentString += mask[i];
+  //         }
+  //       }
+  //     }
+  //   }
+  // });
 
   // main-page-comtact-form__thanks
-  $(".thanks-inner__button button").on("click", function (event) {
-    $(".popup").hide();
-    $(".main-page-comtact-form__thanks").hide();
-  });
+
 
   // accordion-panel__show-more
   if ($(window).width() > 1024) {

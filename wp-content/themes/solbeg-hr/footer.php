@@ -19,59 +19,83 @@
 <?php $footer_privacy_policy_link = get_field('footer_privacy_policy_link', 2); ?>
 <?php $footer_copyright = get_field('footer_copyright', 2); ?>
 
-<footer>
+<footer class="alt">
     <div class="footer">
-        <div class="footer__minsk-adress">
-            <?= $footer_address_1 ?>
+        <div class="footer__addresses">
+            <div class="footer__address">
+                <?= $footer_address_1;?>
+            </div>
+            <div class="footer__address">
+                <?= $footer_address_2;?>
+            </div>
         </div>
-        <div class="footer__brest-adress">
-            <?= $footer_address_2 ?>
-        </div>
-        <div class="footer__social-icon">
+        <div class="footer__socials">
             <ul>
-                <?php  foreach ($footer_social_icons as $social_icon) {?>
-                <li>
-                    <a href="<?= $social_icon['social_icon_link'] ?>">
-                        <img src="<?= $social_icon['social_icon_img'] ?>" alt="instagram">
-                    </a>
-                </li>
-                <?php }; ?>
+                <?php foreach ($footer_social_icons as $social_icon) :?>
+                    <li>
+                        <a href="<?= $social_icon['social_icon_link'] ?>"
+                           aria-label="<?= $social_icon['social_icon_img']['alt'];?>"
+                        >
+                            <img src="<?= $social_icon['social_icon_img']['url'];?>"
+                                 alt="<?= $social_icon['social_icon_img']['alt'];?>"
+                            >
+                        </a>
+                    </li>
+                <?php endforeach; ?>
             </ul>
         </div>
         <div class="footer__contacts">
-            <ul>accordion-button
-                <li><a href="tel:<?= $footer_phone ?>"><?= $footer_phone ?></a></li>
-                <li><a href="mailto:<?= $footer_email ?>"><?= $footer_email ?></a></li>
+            <ul>
+                <li>
+                    <?php foreach($footer_phone as $key => $item) :?>
+                        <a href="tel:<?= $item['item'];?>">
+                            <?= $item['item'] . " " . $item['text'];?>
+                        </a>
+                    <?php endforeach;?>
+                </li>
+                <li>
+                    <a href="mailto:<?= $footer_email;?>">
+                        <span class="email">
+                            <?= $footer_email;?>
+                        </span>
+                    </a>
+                </li>
             </ul>
-        </div>
-        <div class="footer__button popup-open__link">
-            <button>Отправить резюме </button>
+            <div class="footer__button popup-open__link">
+                <button>
+                    Отправить резюме
+                </button>
+            </div>
+
         </div>
         <div class="footer__copyright">
-            <ul>
-                <li><a href="<?= $footer_privacy_policy_link ?>"><?= $footer_privacy_policy ?></a></li>
-                <li><?= $footer_copyright ?></li>
-            </ul>
+            <a href="<?= $footer_privacy_policy_link;?>">
+                <?= $footer_privacy_policy;?>
+            </a>
+            <span>
+                    <?= $footer_copyright;?>
+                </span>
         </div>
-
     </div>
 </footer>
+
+
+
 <div class="popup">
     <div class="popup-form__wrapper">
         <div class="popup-close">
             <a id="popup-close__link" href=""><img
                     src="<?php echo esc_url(get_template_directory_uri()); ?>/img/icon/times.png" alt=""></a>
         </div>
-        <div class="main-page-comtact-form__inner">
-            <!--                 <form class="comtact-form" id="commentForm" method="get" action=""> -->
+        <div class="main-page-comtact-form__inner" id="contact-form">
             <div class="comtact-form">
-                <fieldset>
-                    <legend class="h3">Связаться с нами</legend>
-                    <?php echo do_shortcode( '[contact-form-7 id="307" title="Contact form"]' ); ?>
-                    <!-- <?php get_template_part( 'template-parts/contact-form' ); ?> -->
-                </fieldset>
+                <?= do_shortcode( '[contact-form-7 title="Contact form"]' ); ?>
             </div>
-            <!--                 </form> -->
+        </div>
+        <div class="main-page-comtact-form__inner" id="trainee">
+           <div class="comtact-form">
+                <?= do_shortcode( '[contact-form-7 title="Trainee Form"]' ); ?>
+            </div>
         </div>
     </div>
 </div>
@@ -95,6 +119,7 @@
 </section>
 
 <?php wp_footer(); ?>
+
 </body>
 
 </html>

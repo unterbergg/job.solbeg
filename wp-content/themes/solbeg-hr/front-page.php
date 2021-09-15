@@ -18,10 +18,12 @@ url("<?= $main_page_top_block_background ?>");'>
             <source src="<?= $main_page_top_block_background_video ?>" type="video/webm">
         </video>
         <div class="container">
-            <h1 class="main-page-top-block__title"><?= $main_page_top_block_title ?></h1>
-            <div class="anchor-down">
-                <a href="<?= $main_page_top_block_button_link ?>"><?= $main_page_top_block_button ?></a>
-            </div>
+            <h1 class="main-page-top-block__title">
+                <?= $main_page_top_block_title ?>
+            </h1>
+            <a  class="anchor-down" href="<?= $main_page_top_block_button_link ?>">
+                <?= $main_page_top_block_button ?>
+            </a>
         </div>
     </section>
 
@@ -72,22 +74,19 @@ url("<?= $main_page_top_block_background ?>");'>
             <h3 class="h3"><?= $main_page_our_offices_title ?></h3>
             <div class="main-page-our-offices__grid">
 
-                <?php if ($main_page_our_offices_item) {
-                    foreach ($main_page_our_offices_item as $offices_item) { ?>
+                <?php if ($main_page_our_offices_item) :
+                    foreach ($main_page_our_offices_item as $offices_item) : ?>
                 <div class="main-page-our-offices__item">
-                    <img class="main-page-our-offices__img" src="<?= $offices_item['offices_item_img'] ?>" alt="">
+                    <img class="main-page-our-offices__img"
+                         src="<?= wp_get_attachment_image_url($offices_item['offices_item_img']['ID'], 'medium'); ?>"
+                         alt="<?= $offices_item['offices_item_img']['alt']; ?>">
                     <img class="main-page-our-offices__img-back"
                         src="<?php echo esc_url(get_template_directory_uri()); ?>/img/miniback.png" alt="">
                     <span><?= $offices_item['offices_item_text'] ?></span>
                 </div>
 
-                <?php }
-                } ?>
-                <?php if ($main_page_our_offices_new) { ?>
-                <div class="main-page-our-offices__item-new">
-                    <span><?= $main_page_our_offices_new ?></span>
-                </div>
-                <?php } ?>
+                <?php endforeach;
+                endif; ?>
             </div>
         </div>
     </section>
@@ -160,6 +159,7 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
                 </div>
             </div>
             <!-- //////////////////////////////// -->
+            <?php /*
             <div class="main-page-working-on__slider-wrapper container">
                 <div class="main-page-working-on__slider-header">
                     <h3 class="h3"><?= $main_page_working_on_slider_title ?></h3>
@@ -186,13 +186,16 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
                     <?php } ?>
                 </div>
             </div>
+            */?>
             <!-- //////////////////////////////// -->
             <div class="main-page-working-on__company container">
-                <?php foreach ($main_page_working_on_partners as $working_on_partners) { ?>
+                <?php foreach ($main_page_working_on_partners as $working_on_partners) : ?>
                 <div class="main-page-working-on__company_item">
-                    <img src="<?= $working_on_partners['main_page_working_on_partners_image'] ?>" alt="">
+                    <img src="<?= $working_on_partners['main_page_working_on_partners_image']['url']; ?>"
+                         alt="<?= $working_on_partners['main_page_working_on_partners_image']['alt']; ?>"
+                    >
                 </div>
-                <?php } ?>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
@@ -313,7 +316,10 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
                         </div>
                     </div>
                     <div class="what-they-say__slide-img">
-                        <img src="<?= $what_they_say_slide['slide_img'] ?>" alt="">
+                        <?php //var_dump(wp_get_attachment_image_url($what_they_say_slide['slide_img']['ID'],
+                        // 'medium_large'));?>
+                        <img src="<?= wp_get_attachment_image_url($what_they_say_slide['slide_img']['ID'], 'medium_large'); ?>"
+                             alt="<?= $what_they_say_slide['slide_img']['alt']; ?>">
                     </div>
                 </div>
             </div>
@@ -325,14 +331,16 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
                 <li class="what-they-say-slide-arrow what-they-say__slide-arrows-right"></li>
             </ul>
         </div>
-        <div class="main-page-what-they-say__our-partners">
+        <div class="main-page-what-they-say__our-partners main-page__partners">
             <h3 class="h3"><?= $main_page_what_they_say_our_partners_title ?></h3>
             <ul>
-                <?php foreach ($main_page_what_they_say_our_partners as $our_partners) { ?>
+                <?php foreach ($main_page_what_they_say_our_partners as $our_partners) : ?>
                 <li>
-                    <img src="<?= $our_partners['our_partners'] ?>" alt="">
+                    <img src="<?= $our_partners['our_partners']['url'] ?>"
+                         alt="<?= $our_partners['our_partners']['alt'] ?>"
+                    >
                 </li>
-                <?php } ?>
+                <?php endforeach; ?>
             </ul>
         </div>
     </section>
@@ -350,7 +358,20 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
                     <h2 class="h2">Вакансии</h2>
                 </div>
                 <div class="main-page-vacancy__filter">
-                    <?php         
+                    <ul class="main-page-vacancy__filter-items">
+                        <li class="main-page-vacancy__filter-item main-page-vacancy__filter-item-show-all active">
+                            <button>Все</button>
+                        </li>
+                        <?php
+                            $tags = get_tags();
+                            foreach ( $tags as $tag ) {
+                                $tag_link = get_tag_link( $tag->term_id );
+                                echo "<li class='main-page-vacancy__filter-item {$tag->name}'><button class='{$tag->slug}'>";
+                                echo "{$tag->name}</button></li>";
+                            }
+                        ?>
+                    </ul>
+                    <?php /*
                     $tags = get_tags();
                     $html = ' <ul><li class="main-page-vacancy__filter-item main-page-vacancy__filter-item-show-all active"><button>Все</button></li>';
                     foreach ( $tags as $tag ) {
@@ -362,7 +383,7 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
 
                     $html .= ' </ul>';
 
-                    echo $html; ?>
+                    echo $html; */?>
 
                 </div>
             </div>
@@ -372,7 +393,7 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
                 $args = [
                     'post_type' => 'post',
                     'posts_per_page' => -1,
-                    'category_name' => 'all vacancy',
+                    'post_status' => 'publish'
                 ];
                 $wp_query = new WP_Query($args);
                 if ($wp_query->have_posts()) { ?>
@@ -433,8 +454,7 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
         }
 
         .videoPoster:before {
-            background-image: url(<?php echo esc_url(get_template_directory_uri());
-            ?>/img/icon/play.png);
+            background-image: url(<?php echo esc_url(get_template_directory_uri());?>/img/icon/play.png);
         }
         </style>
         <div class="video_wrapper js-videoWrapper">
@@ -446,11 +466,8 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
             <button class="videoPoster js-videoPoster"></button>
         </div>
     </section>
-
-
-
-
-    <!-- //////////////////////////////// -->
+    <!-- //////////////////////////////// FACTS-->
+    <?php /*
     <?php $main_page_facts_title = get_field('main_page_facts_title'); ?>
     <?php $main_page_facts_text = get_field('main_page_facts_text'); ?>
     <?php $main_page_facts_item = get_field('main_page_facts_item'); ?>
@@ -468,10 +485,7 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
         </div>
         <div class="main-page-facts__percents">
 
-
-
-
-            <?php   if ($main_page_facts_double_item) { $i = 0; foreach ($main_page_facts_double_item as $fact_double_item) { ?>
+            <?php if ($main_page_facts_double_item) { $i = 0; foreach ($main_page_facts_double_item as $fact_double_item) { ?>
             <?php $i++; ?>
             <?php $fact_double_item_second_percents = 100 - $fact_double_item['percents'] ?>
 
@@ -555,25 +569,78 @@ url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
 
         </div>
     </section>
+    */?>
     <!-- //////////////////////////////// -->
     <section id="contacts" class="main-page-comtact-form"
         style='background-image: url("<?php echo esc_url(get_template_directory_uri()); ?>/img/fon.jpg");'>
         <div class="container">
             <div class="main-page-comtact-form__wrapper">
-                <div class="main-page-comtact-form__inner">
-                    <!--                     <form class="comtact-form" id="contact-form" method="get" action=""> -->
-                    <div class="comtact-form">
-                        <!--                         <fieldset> -->
-                        <legend class="h3">Хотите у нас работать? Напишите нам</legend>
-                        <!--               				<?php get_template_part( 'template-parts/contact-form' ); ?> -->
-                        <?php echo do_shortcode( '[contact-form-7 id="307" title="Contact form"]' ); ?>
-                        <!--                         </fieldset> -->
+                <div class="main-page-comtact-form__inner non-popups">
+                    <div class="contact-form col-2">
+                        <h2>Хотите у нас работать? Напишите нам</h2>
+                        <?= do_shortcode( '[contact-form-7 title="Contact form"]' ); ?>
+                        <? // get_template_part('/template-parts/contact-form-page');?>
                     </div>
-                    <!--                     </form> -->
-
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <!-- traineeship block-->
+    <div class="page-anchor" id="trainee"></div>
+    <section class="main-page__trainee">
+        <div class="container">
+            <div class="main-page-soc-pack__title">
+                <h2 class="h2">
+                    <?='Стажировка';?>
+                </h2>
+                <img src="<?= esc_url(get_template_directory_uri()); ?>/img/svg/trainee.svg" alt="">
+            </div>
+            <div class="trainee__container">
+                <div class="trainee__item">
+                    <ul>
+                        <li>Длительность 1–3 месяца</li>
+                        <li>Не оплачивается</li>
+                        <li>С возможным трудоустройством</li>
+                    </ul>
+                    <img class="trainee__underline"
+                         src="<?= esc_url(get_template_directory_uri()); ?>/img/svg/underline.svg"
+                         alt=""
+                    >
+                </div>
+                <div class="trainee__item">
+                    <h3>Как проходит стажировка?</h3>
+                    <ol>
+                        <li>Стажера прикрепляют к команде и выделяют ментора (куратора)
+                            для сопровождения на протяжении всей стажировки.
+                        </li>
+                        <li>
+                            Стажировка заканчивается «защитой», на которой стажер
+                            рассказывает о своей работе. На основании «защиты» принимается решение о трудоустройстве.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="trainee__container trainee__background">
+                <div class="trainee__image">
+                    <img src="/wp-content/themes/solbeg-hr/img/trainee.svg" alt="">
+                </div>
+                <div class="trainee__item">
+                    <h3>Как попасть на стажировку?</h3>
+                    <ul class="trainee__ul">
+                        <li>Подать заявку</li>
+                        <li>Прикрепить резюме</li>
+                    </ul>
+                    <p>
+                        После рассмотрения заявки мы свяжемся с вами для назначения интервью, по результатам которого будет принято решение
+                        о приглашении вас на стажировку.
+                    </p>
+                    <a href="#" class="base__button popup-open__link" data-form="trainee">
+                        Подать заявку
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 

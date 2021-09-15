@@ -25,12 +25,19 @@ get_header();
             <div class="page-top-block__name">
                 <h1><?php the_title() ?></h1>
             </div>
-            <?php     $posttags = get_the_tags();
-                if( $posttags ){
-                foreach( $posttags as $tag ){?>
-
-            <div class="page-top-block__loc"><?php echo $tag->name . ' ';  ?></div>
-            <?php } }  ?>
+            <div class="page-top-block__loc">
+                <?php
+                    $posttags = get_the_tags();
+                    if( $posttags ){
+                        foreach( $posttags as $key => $tag ){
+                            echo $tag->name;
+                            if( $key != ( count($posttags) - 1 ) ) {
+                                echo " / ";
+                            }
+                        }
+                    }
+                ?>
+            </div>
 
 
         </div>
@@ -45,14 +52,57 @@ get_header();
 			<?php get_template_part( 'template-parts/vacancy-block' ); ?>	
         </div>
         <div class="vacancy-info-block__next-vacancy">
-            <?php
-		  the_post_navigation(
-			 	array(
-			 		'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Предыдущая:', 'solbeg-hr' ) . '</span> <span class="nav-title">%title</span>',
-			 		'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Следующая:', 'solbeg-hr' ) . '</span> <span class="nav-title">%title</span>',
-			 	)
-			 );
-			?>
+            <? if(!get_previous_post_link()) :?>
+                <?
+                    global $post;
+                    $args = array(
+                    'numberposts' => 1, 'post_type' => $post->post_type, 'post_status' => 'publish'
+                    );
+                    $recent = wp_get_recent_posts( $args, OBJECT );
+                    $next_post = ! empty( $recent ) ? array_shift( $recent ) : FALSE;
+                ?>
+                <nav class="navigation post-navigation" role="navigation">
+                    <div class="nav-links">
+                        <div class="nav-previous">
+                            <a href="<?= get_permalink(get_next_post()->ID)?>" rel="prev">
+                                <span class="nav-subtitle">Предыдущая:</span>
+                                <span class="nav-title">
+                                    <?= get_the_title(get_next_post()->ID);?>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="nav-next">
+                            <a href="<?= get_permalink($next_post->ID)?>" rel="next">
+                                <span class="nav-subtitle">Следующая:</span>
+                                <span class="nav-title">
+                                    <?= get_the_title($next_post->ID);?>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            <? else :
+                the_post_navigation(
+                    array(
+                        'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Предыдущая:', 'solbeg-hr' ) . '</span> <span class="nav-title">%title</span>',
+                        'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Следующая:', 'solbeg-hr' ) . '</span> <span class="nav-title">%title</span>',
+                    )
+                );
+            endif; ?>
+            <!--<div class="nav-links">
+                <div class="nav-previous">
+                    <a href="http://job.solbeg.loc/2021/03/29/net-developer-2/" rel="prev">
+                        <span class="nav-subtitle">Предыдущая:</span>
+                        <span class="nav-title">.NET Developer</span>
+                    </a>
+                </div>
+                <div class="nav-next">
+                    <a href="http://job.solbeg.loc/2021/04/16/ios-developer-2/" rel="next">
+                        <span class="nav-subtitle">Следующая:</span>
+                        <span class="nav-title">iOS Developer</span>
+                    </a>
+                </div>
+            </div>-->
         </div>
     </section>
     <?php endwhile; ?>
