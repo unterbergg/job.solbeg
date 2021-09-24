@@ -131,7 +131,8 @@
     }
 
     .main-page-our-offices__grid {
-        grid-template-rows: repeat(2, 228px);
+        /*grid-template-rows: repeat(2, 228px);*/
+        grid-template-rows: auto;
     }
 
     .main-page-our-offices__item span {

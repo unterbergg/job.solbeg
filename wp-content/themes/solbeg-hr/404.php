@@ -14,13 +14,6 @@ get_header();
     <div class="page-404__wrapper">
         <div class="page-404__inner">
             <div class="page-404__image">
-
-            </div>
-            <div class="page-404__title">
-                Спасибо!
-            </div>
-            <div class="page-404__text">
-                Ваше сообщение отправлено
             </div>
             <div class="page-404__link">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">

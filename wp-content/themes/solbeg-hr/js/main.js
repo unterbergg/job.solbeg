@@ -164,27 +164,20 @@ $(document).ready(function () {
     }
   });
   ///////////////////////
-  $(".main-page-vacancy__filter-item").on("click", function (e) {
+  $(".main-page-vacancy__filter-item").on("click", function () {
     $(".main-page-vacancy__filter-item").removeClass("active");
-    $(this).toggleClass("active");
-    if ($(this).hasClass("Минск")) {
-      $(".vacancy_location").hide();
-      $(".vacancy_location.Минск").show();
-    }
-    if ($(this).hasClass("Брест")) {
-      $(".vacancy_location").hide();
-      $(".vacancy_location.Брест").show();
-    }
-    if ($(this).hasClass("Москва")) {
-      $(".vacancy_location").hide();
-      $(".vacancy_location.Москва").show();
-    }
-    if ($(this).hasClass("main-page-vacancy__filter-item-show-all")) {
-      $(".vacancy_location.Минск").show();
-      $(".vacancy_location.Брест").show();
-      $(".vacancy_location.Москва").show();
+    $(".main-page-vacancy__filter-item button").removeClass("active");
+    var gorod = $(this).children().attr("class");
+    $(this).addClass("active");
+    $(".main-page-vacancy__accordions ul li").removeClass("active")
+    $(".main-page-vacancy__accordions ul").find( $("." + gorod).addClass("active"));
+    if ($(".main-page-vacancy__filter-item-show-all").hasClass("active")){
+      $(".vacancy_location").addClass("active");
     }
   });
+  if ($(".main-page-vacancy__filter-item-show-all").hasClass("active")){
+    $(".vacancy_location").addClass("active");
+  }
 
   // // ------------  File upload BEGIN ------------
   //
@@ -404,5 +397,13 @@ $(document).ready(function () {
       $(this).find(".main-page-important-to-us__item-back").toggleClass('hover-show');
     });
   }
-  
 });
+
+///////my js 796
+function windowSize(){
+  if ($(window).width() <= '1025'){
+    $('#shelf').show(10);
+  } else if ($(window).width() <= '796'){
+    $('#shelf').hide(10);
+  }
+}
