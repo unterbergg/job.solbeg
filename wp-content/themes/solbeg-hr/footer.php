@@ -19,7 +19,7 @@
 <?php $footer_privacy_policy_link = get_field('footer_privacy_policy_link', 2); ?>
 <?php $footer_copyright = get_field('footer_copyright', 2); ?>
 
-<footer>
+<footer class="alt">
     <div class="footer">
         <?php if ($footer_address): ?>
             <div class="footer__addresses">
@@ -78,7 +78,7 @@
             </div>
         </div>
         <div class="footer__copyright">
-            <?php if ($footer_email): ?>
+            <?php if ($footer_privacy_policy): ?>
                 <a href="<?php echo esc_url($footer_privacy_policy_link); ?>">
                     <?php echo esc_html($footer_privacy_policy); ?>
                 </a>

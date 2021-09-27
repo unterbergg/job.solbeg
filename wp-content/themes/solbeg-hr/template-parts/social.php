@@ -40,6 +40,7 @@
                             <?php echo wp_kses_post($list) ?>
                         </div>
                         <?php echo ($color) ?>
+
                         <style>
                             @media screen and (max-width: 796px) {
                                 .main-page-soc-pack__tab-ul__wrapper-<?php echo ($number) ?> {
