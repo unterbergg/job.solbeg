@@ -24,7 +24,9 @@
                 <?php } ?>
             </div>
             <div class="tab_content">
-                <?php foreach ($main_page_soc_pack_tabs as $soc_pack_tabs) {
+                <?php
+                    $number = 0;
+                    foreach ($main_page_soc_pack_tabs as $soc_pack_tabs) {
                     $image = $soc_pack_tabs['main_page_soc_pack_tabs_image'];
                     $list = $soc_pack_tabs['main_page_soc_pack_tabs_list'];
                     $title = $soc_pack_tabs['main_page_soc_pack_tabs_title'];
@@ -34,20 +36,31 @@
                         <div class="main-page-soc-pack__tab-item-image"
                              style="background-image: url(<?php echo esc_url($image['url']); ?>)">
                         </div>
-                        <div class="main-page-soc-pack__tab-ul__wrapper tab-ul__wrapper--desk"
-                             style="background: linear-gradient(to left, transparent 40%, <?php echo esc_html($color); ?> 58%);">
+                        <div class="main-page-soc-pack__tab-ul__wrapper main-page-soc-pack__tab-ul__wrapper-<?php echo ($number) ?>">
                             <?php echo wp_kses_post($list) ?>
                         </div>
-                        <div class="main-page-soc-pack__tab-ul__wrapper tab-ul__wrapper--tablet"
-                             style="background: linear-gradient(to left, transparent 37%, <?php echo esc_html($color); ?> 48%);">
-                            <?php echo wp_kses_post($list) ?>
-                        </div>
-                        <div class="main-page-soc-pack__tab-ul__wrapper tab-ul__wrapper--mobile"
-                             style="background: linear-gradient(to left, transparent -360%, <?php echo esc_html($color); ?> 100%);">
-                            <?php echo wp_kses_post($list) ?>
-                        </div>
+                        <?php echo ($color) ?>
+                        <style>
+                            @media screen and (max-width: 796px) {
+                                .main-page-soc-pack__tab-ul__wrapper-<?php echo ($number) ?> {
+                                    background: linear-gradient(to left, transparent -360%, <?php echo esc_html($color); ?> 100%)
+                                }
+                            }
+                            @media screen and (min-width: 797px) and (max-width: 1024px)   {
+                                .main-page-soc-pack__tab-ul__wrapper-<?php echo ($number) ?> {
+                                    background: linear-gradient(to left, transparent 37%, <?php echo esc_html($color); ?> 48%)
+                                }
+                            }
+                            @media screen and (min-width: 1025px) {
+                                .main-page-soc-pack__tab-ul__wrapper-<?php echo ($number) ?> {
+                                    background: linear-gradient(to left, transparent 40%, <?php echo esc_html($color); ?> 58%);
+                                }
+                            }
+                        </style>
                     </div>
-                <?php } ?>
+                <?php
+                    $number++;
+                } ?>
             </div>
         </div>
     <?php endif; ?>

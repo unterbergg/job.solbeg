@@ -1,0 +1,16 @@
+.main-page {
+  &__partners {
+    ul {
+      grid-column-gap: 90px;
+      li {
+        margin: 0;
+        &:last-child {
+          margin-left: unset;
+        }
+        &:first-child {
+          margin-right: unset;
+        }
+      }
+    }
+  }
+}

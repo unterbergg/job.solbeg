@@ -1,0 +1,20 @@
+.main-page-soc-pack__tabs {
+  overflow-x: hidden;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  @media screen and (max-width: 1220px){
+    overflow-x: hidden;
+    &:hover {
+      overflow-x: scroll;
+    }
+  }
+  @media screen and (max-width: 1024px){
+    overflow-x: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+}

@@ -398,12 +398,3 @@ $(document).ready(function () {
     });
   }
 });
-
-///////my js 796
-function windowSize(){
-  if ($(window).width() <= '1025'){
-    $('#shelf').show(10);
-  } else if ($(window).width() <= '796'){
-    $('#shelf').hide(10);
-  }
-}
