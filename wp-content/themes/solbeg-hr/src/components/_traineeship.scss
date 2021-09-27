@@ -30,11 +30,10 @@
       &__image {
         padding: 0;
         position: relative;
-
-        background-color: #D9D6DD;
         background-repeat: no-repeat;
         background-position: center;
         border-radius: 20px;
+        height: 100%;
         img {
           object-fit: cover;
           height: 100%;

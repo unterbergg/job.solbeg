@@ -1,0 +1,6 @@
+.vacancy_location{
+  display: none;
+  &.active{
+    display: block;
+  }
+}

@@ -140,7 +140,7 @@
   .main-page-our-offices__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 246px;
+    grid-template-rows: auto;
     grid-column-gap: 3px;
     grid-row-gap: 3px;
   }
