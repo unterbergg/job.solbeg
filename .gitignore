@@ -14,6 +14,7 @@
 # Ignore everything in the root except the "wp-content" directory.
 /*
 !.gitignore
+!gitflow.txt
 !wp-content/
 
 # Ignore everything in the "wp-content" directory, except the "plugins"
@@ -31,3 +32,4 @@ wp-content/plugins/*
 # specify (see the commented-out example for a hint on how to do this.)
 wp-content/themes/*
 !wp-content/themes/solbeg-hr/
+wp-content/themes/solbeg-hr/node_modules

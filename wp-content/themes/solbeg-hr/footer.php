@@ -19,7 +19,7 @@
 <?php $footer_privacy_policy_link = get_field('footer_privacy_policy_link', 2); ?>
 <?php $footer_copyright = get_field('footer_copyright', 2); ?>
 
-<footer class="alt">
+<footer>
     <div class="footer">
         <?php if ($footer_address): ?>
             <div class="footer__addresses">
@@ -127,6 +127,7 @@
     </div>
 </section>
 <?php wp_footer(); ?>
+
 </body>
 
 </html>
