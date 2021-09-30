@@ -38,23 +38,9 @@ $(document).ready(function () {
       },
     ],
   });
-  // if ($(window).width() < 450) {
-  //   $(".main-page-soc-pack__tabs").slick({
-  //     slidesToShow: 2,
-  //     slidesToScroll: 1,
-  //     dots: false,
-  //     arrows: false,
-  //     centerPadding: '60px',
-  //     focusOnSelect: true,
-  //     centerMode: false,
-  //     infinite: false
-  //   });
-  // }
-
   $('.main-page-history-company__year').on('afterChange', function(event, slick, currentSlide, nextSlide){
     $('.slick-slide').removeClass('slick-active-first slick-active-last');
     $('.slick-active').eq(0).addClass('slick-active-first');
-    // $('.slick-active').eq(3).addClass('slick-active-last');
     $('.prev-year-link').text('');
     $('.prev-year-link').append($('.slick-active').eq(0).prev().text());
   }).trigger('afterChange');
@@ -142,7 +128,6 @@ $(document).ready(function () {
       if ($("#burger-menu").hasClass("open")) {
         $("#burger-menu").removeClass("open");
       }
-      // $("body").toggleClass("overflow-hidden");
     });
   }
 
@@ -410,3 +395,7 @@ $(document).ready(function () {
     });
   }
 });
+$( ".index__info__item__marker" ).hover(function() {
+  $(this).prev().toggleClass("active");
+});
+$(".index__rating-col").text($(".total_all").text());
