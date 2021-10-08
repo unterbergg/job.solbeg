@@ -77,7 +77,7 @@
                             <?php endif; ?>
                             <?php if ($manager_linked_in_link): ?>
                                 <li class="manager-linked-in">
-                                    <a href="<?php echo esc_url($manager_linked_in_link); ?>">
+                                    <a target="_blank" href="<?php echo esc_url($manager_linked_in_link); ?>">
                                         <div class="vacancy-info-block__manager-icon">
                                         </div>
                                         <span><?php echo esc_html($manager_linked_in_text); ?></span>

@@ -1,5 +1,4 @@
 <div class="contact-form__wrapper">
-    <h3>Связаться с нами</h3>
     <div class="contact-form__grid">
         <input id=""
                name="name"

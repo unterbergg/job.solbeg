@@ -9,7 +9,7 @@ footer:not(.alt) {
     grid-row-gap: 60px;
     margin: 0 auto;
     padding: 64px 24px;
-    max-width: 1900px;
+
 
     @include respond-to(tablet) {
       padding: 80px 50px;
@@ -179,7 +179,7 @@ footer {
     background: #000;
     color: #fff;
     padding: 64px 24px;
-    max-width: 1900px;
+
 
     display: flex;
     flex-wrap: wrap;
@@ -371,6 +371,10 @@ footer {
         display: flex;
         flex-wrap: wrap;
         min-width: unset;
+        @include respond-to(tablet) {
+          min-width: 280px;
+
+        }
         @include respond-to(desktop) {
           min-width: 280px;
         }
@@ -382,7 +386,7 @@ footer {
           width: 100%;
           display: flex;
           flex-direction: column;
-
+          justify-content: flex-end;
           a {
             display: inline-block;
 
@@ -412,7 +416,9 @@ footer {
         @include respond-to(tablet) {
           display: flex;
         }
-
+        @media screen and (width: 797px){
+          display: none;
+        }
         button {
           padding: 10px 30px;
           border-radius: 50px;

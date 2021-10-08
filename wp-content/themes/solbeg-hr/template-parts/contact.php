@@ -1,3 +1,4 @@
+
 <section id="contacts" class="main-page-comtact-form" style='background-image: url("<?php echo esc_url(get_template_directory_uri()); ?>/img/fon.jpg");'>
     <div class="container">
         <div class="main-page-comtact-form__wrapper">

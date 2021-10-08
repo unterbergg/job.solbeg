@@ -1,5 +1,6 @@
 header {
   .header {
+    max-width: none;
     .popup {
       &-open {
         &__link {
@@ -14,5 +15,8 @@ header {
   height: 69px;
   @include respond-to(desktop) {
     height: 44px;
+  }
+  @include respond-to(tablet) {
+    height: 69px;
   }
 }

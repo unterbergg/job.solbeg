@@ -18,3 +18,34 @@
     }
   }
 }
+.tab_content{
+  .main-page-soc-pack__tab-ul__wrapper{
+    ul{
+      margin-top: 50px;
+      margin-bottom: 50px;
+      //@include respond-to(desktop) {
+      //  margin-top: 108px;
+      //  margin-bottom: 108px;
+      //}
+      li{
+        padding: 12px 20px;
+        @include respond-to(desktop) {
+          padding: 16px 20px;
+        }
+      }
+    }
+  }
+  .main-page-soc-pack__tab-item{
+    height: auto;
+  }
+  .main-page-soc-pack__tab-item-image{
+    @include respond-to(tablet) {
+      background-size: cover;
+      background-position-x: 140px;
+    }
+    @include respond-to(largedesktop) {
+      background-size: contain;
+      background-position-x: right;
+    }
+  }
+}

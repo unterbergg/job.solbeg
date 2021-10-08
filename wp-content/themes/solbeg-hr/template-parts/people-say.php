@@ -23,7 +23,10 @@
                     <div class="main-page-what-they-say__slide-inner">
                         <div class="what-they-say__slide-left">
                             <div class="what-they-say__slide-quote paragraph">
-                                <?php echo esc_html($slide_quote); ?>
+                                <div class="quote-open">
+                                    <?php echo esc_html("Читать полностью"); ?>
+                                </div>
+                                <p><?php echo esc_html($slide_quote); ?></p>
                             </div>
                             <div class="what-they-say__slide-name-prof">
                                 <div class="what-they-say__slide-name">

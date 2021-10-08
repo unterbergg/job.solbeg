@@ -1,8 +1,7 @@
 <?php $main_page_soc_pack_title = get_field('main_page_soc_pack_title'); ?>
 <?php $main_page_soc_pack_tabs = get_field('main_page_soc_pack_tabs'); ?>
 
-<div class="page-anchor" id="soc-pack"></div>
-<section class="main-page-soc-pack container">
+<section class="main-page-soc-pack container" id="soc-packe">
     <div class="main-page-soc-pack__title">
         <?php if ($main_page_soc_pack_title): ?>
             <h2 class="h2">
@@ -39,8 +38,6 @@
                         <div class="main-page-soc-pack__tab-ul__wrapper main-page-soc-pack__tab-ul__wrapper-<?php echo ($number) ?>">
                             <?php echo wp_kses_post($list) ?>
                         </div>
-                        <?php echo ($color) ?>
-
                         <style>
                             @media screen and (max-width: 796px) {
                                 .main-page-soc-pack__tab-ul__wrapper-<?php echo ($number) ?> {
