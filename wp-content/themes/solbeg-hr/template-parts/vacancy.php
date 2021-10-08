@@ -1,5 +1,4 @@
-<div class="page-anchor" id="vacancy"></div>
-<section class="main-page-vacancy">
+<section class="main-page-vacancy" id="vacancy">
     <div class="container">
         <div class="main-page-vacancy__header">
             <div class="main-page-vacancy__title">
@@ -7,9 +6,12 @@
                 <h2 class="h2"><?php echo esc_html("Вакансии"); ?> </h2>
             </div>
             <div class="main-page-vacancy__filter">
+                <div class="main-page-vacancy__filter-check">
+                    <?php echo esc_html("Все города"); ?>
+                </div>
                 <ul class="main-page-vacancy__filter-items">
                     <li class="main-page-vacancy__filter-item main-page-vacancy__filter-item-show-all active">
-                        <button><?php echo esc_html("Все"); ?></button>
+                        <button><?php echo esc_html("Все города"); ?></button>
                     </li>
                     <?php
                     $tags = get_tags();

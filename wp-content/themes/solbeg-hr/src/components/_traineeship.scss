@@ -1,5 +1,15 @@
 .main-page {
   &__trainee {
+    padding-top: 105px;
+    @include respond-to(tablet) {
+      padding-top: 80px;
+    }
+    @include respond-to(desktop) {
+      padding-top: 100px;
+    }
+    @include respond-to(largedesktop) {
+      padding-top: 120px;
+    }
     .main-page__button {
       margin-top: 42px;
       display: block;
@@ -62,7 +72,7 @@
             width: 119px;
           }
           @include respond-to(desktop) {
-            display: none;
+            width: 30px;
           }
         }
       }
@@ -286,6 +296,17 @@
         }
       }
     }
+    .main-page-soc-pack__title{
+      height: auto;
+      margin-bottom: 40px;
+      padding-bottom: 0;
+      @include respond-to(tablet) {
+        margin-bottom: 60px;
+      }
+      @include respond-to(desktop) {
+        margin-bottom: 90px;
+      }
+    }
   }
 
   &-comtact-form__inner {
@@ -335,5 +356,3 @@
     }
   }
 }
-
-

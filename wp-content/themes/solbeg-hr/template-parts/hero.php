@@ -5,9 +5,7 @@
 <?php $main_page_top_block_background_video = get_field('main_page_top_block_background_video'); ?>
 <section class="main-page-top-block"
          style='background-image: linear-gradient(180deg, rgba(47, 46, 94, 0.72) 10.81%, rgba(53, 27, 65, 0.16) 100%),
-                 <?php if ($main_page_top_block_background): echo 'url(' . esc_url($main_page_top_block_background['url']) . ')';
-         else: echo 'url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png")';
-         endif; ?>'>
+                 <?php echo 'url(' . esc_url($main_page_top_block_background['url']) . ')';?>'>
     <?php if ($main_page_top_block_background_video): ?>
         <video autoplay loop muted playsinline="true" class="main-page-top-block__video">
             <source src="<?php echo esc_url($main_page_top_block_background_video); ?>" type="video/mp4">

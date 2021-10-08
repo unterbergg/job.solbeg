@@ -17,7 +17,6 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;500;600&display=swap"
         rel="stylesheet">

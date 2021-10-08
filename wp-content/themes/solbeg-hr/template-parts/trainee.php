@@ -9,8 +9,8 @@ $trainee_form_text = get_field('trainee_form_text');
 $trainee_form_image = get_field('trainee_form_image');
 $trainee_form_button = get_field('trainee_form_button');
 ?>
-<div class="page-anchor" id="trainee"></div>
-<section class="main-page__trainee">
+
+<section class="main-page__trainee" id="trainee">
     <div class="container">
         <div class="main-page-soc-pack__title">
             <?php if ($trainee_title): ?>

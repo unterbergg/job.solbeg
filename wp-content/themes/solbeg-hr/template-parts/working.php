@@ -4,7 +4,8 @@
 <?php $main_page_working_on_slider_title = get_field('main_page_working_on_slider_title'); ?>
 <?php $main_page_working_on_slider_item = get_field('main_page_working_on_slider_item'); ?>
 <?php $main_page_working_on_partners = get_field('main_page_working_on_partners'); ?>
-<section id="projects" class="main-page-working-on">
+
+<section class="main-page-working-on" id="projects">
     <div class="main-page-working-on__grid">
         <div class="main-page-working-on__top"></div>
         <div class="main-page-working-on__down"></div>

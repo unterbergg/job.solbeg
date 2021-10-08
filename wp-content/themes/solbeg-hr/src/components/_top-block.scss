@@ -1,0 +1,47 @@
+.page-top-block{
+  padding: 20px 0;
+  @include respond-to(mobile) {
+    top: 25px;
+    min-height: 180px;
+    height: auto;
+  }
+  @include respond-to(tablet) {
+    top: 38px;
+    min-height: 300px;
+    padding: 0;
+  }
+  @include respond-to(desktop) {
+    top: 60px;
+    min-height: 300px;
+    padding: 0;
+  }
+  .page-top-block__name{
+    h1{
+      padding: 0 20px;
+      @include respond-to(tablet) {
+        font-size: 40px;
+        line-height: 46px;
+        padding: 0 150px;
+      }
+      @include respond-to(desktop){
+        font-size: 60px;
+        line-height: 70px;
+      }
+    }
+  }
+  .page-top-block__loc{
+    margin-bottom: 0;
+  }
+}
+.vacancy-info-block .vacancy-info-block__grid{
+  margin-top: 0;
+  @include respond-to(mobile) {
+    margin-top: 25px;
+  }
+  @include respond-to(tablet) {
+    margin-top: 38px;
+  }
+  @include respond-to(desktop) {
+    margin-top: 60px;
+  }
+}

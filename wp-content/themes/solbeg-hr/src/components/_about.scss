@@ -1,0 +1,22 @@
+.main-page-about{
+  &__grid{
+    .main-page-about__project{
+      border-right: none;
+      border-top: none;
+      border-bottom: 3px solid #f7efe9;
+      @include respond-to(tablet) {
+        border-right: 3px solid #f7efe9;
+        border-bottom:none;
+      }
+      &:last-child{
+        border: none;
+        @include respond-to(tablet) {
+          border: none;
+        }
+      }
+      .main-page-about__box-text{
+        padding: 0 10px;
+      }
+    }
+  }
+}

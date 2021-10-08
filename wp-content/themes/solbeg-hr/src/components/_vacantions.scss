@@ -1,6 +1,118 @@
-.vacancy_location{
+.vacancy_location {
   display: none;
-  &.active{
+
+  &.active {
     display: block;
+  }
+}
+.main-page-vacancy__filter-check{
+  padding: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 4px;
+  display: none;
+  position: relative;
+  &.active{
+    &:before{
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+  }
+  &:before{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+    background-image: url('../img/drop.png');
+    width: 12px;
+    height: 7px;
+    right: 16px;
+    transition: 0.2s;
+  }
+}
+.main-page-vacancy__filter.dropdown {
+  position: relative;
+  @media (min-width: 50px) and (max-width: 400px) {
+    width: 100%;
+  }
+  @include respond-to(mobile) {
+    right: 0;
+    width: 170px;
+  }
+  @include respond-to(tablet) {
+    right: 136px;
+  }
+  @include respond-to(desktop) {
+    right: 286px;
+  }
+  .main-page-vacancy__filter-check{
+    display: block;
+    cursor: pointer;
+    width: 170px;
+    @media (min-width: 50px) and (max-width: 400px) {
+      width: 100%;
+    }
+  }
+  .main-page-vacancy__filter-items {
+    display: none;
+    flex-direction: column;
+    background: white;
+    min-width: min-content;
+    border-radius: 4px;
+    position: absolute;
+    width: 170px;
+    top: 65px;
+    z-index: 2;
+    @media (min-width: 50px) and (max-width: 400px) {
+      width: 100%;
+      top: 115px;
+    }
+    &.active{
+      display: flex;
+    }
+    .main-page-vacancy__filter-item {
+      border: none;
+      border-radius: 0;
+      padding: 4px 0;
+      margin-right: 0;
+      cursor: pointer;
+      &:hover{
+        background: rgba(214, 64, 69, 0.1);
+      }
+      &.active {
+        button{
+          border: none;
+          color: #D64045;
+        }
+      }
+      button{
+        font-size: 16px;
+        padding: 0;
+        padding-left: 16px;
+      }
+    }
+  }
+}
+.vacancy-info-block__next-vacancy{
+  .nav-links{
+    div{
+      padding: 0;
+    }
+    a{
+      padding: 0 20px;
+      display: flex;
+      height: 100%;
+      align-items: center;
+      span{
+        &:first-child{
+          margin-right: 5px;
+        }
+      }
+      .nav-title{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 235px;
+      }
+    }
   }
 }

@@ -99,20 +99,16 @@
     .main-page-about__count>div {
         padding: 16px 0;
         border-bottom: 0;
-        border-left: 3px solid #f7efe9;
-        border-right: 3px solid #f7efe9;
         width: inherit;
         margin: auto;
     }
 
     .main-page-about__count>div:first-child {
         padding: 16px 0;
-        border: 0;
     }
 
     .main-page-about__count>div:last-child {
         padding: 16px 0;
-        border: 0;
     }
 
     .main-page-about__box-num {
@@ -288,7 +284,7 @@
     }
 
     .main-page-what-they-say__slider {
-        margin-bottom: 72px;
+        /*margin-bottom: 72px;*/
     }
 
     .what-they-say__slide-img img {

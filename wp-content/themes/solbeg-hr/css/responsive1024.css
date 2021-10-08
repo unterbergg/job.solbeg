@@ -116,20 +116,16 @@
   .main-page-about__count>div {
     padding: 16px 0;
     border-bottom: 0;
-    border-left: 3px solid #f7efe9;
-    border-right: 3px solid #f7efe9;
     width: inherit;
     margin: auto;
   }
 
   .main-page-about__count>div:first-child {
     padding: 16px 0;
-    border: 0;
   }
 
   .main-page-about__count>div:last-child {
     padding: 16px 0;
-    border: 0;
   }
 
   /* ///////////////// */
@@ -359,9 +355,9 @@ line-height: 48px;
   } */
 
   /* ///////////////// */
-  .main-page-what-they-say {
-    padding: 44px 0 66px;
-  }
+  /*.main-page-what-they-say {*/
+  /*  padding: 44px 0 66px;*/
+  /*}*/
 
   .main-page-what-they-say__title {
     height: 176px;
