@@ -1,112 +1,157 @@
+@import "../utils/module";
 .index{
-  padding: 44px 0;
-  border-bottom: 3px solid rgba(201, 66, 73, 0.1);
-  @include respond-to(tablet) {
-    padding: 44px 0;
+  border-bottom: vw(3px) solid rgba(201, 66, 73, 0.1);
+  padding: vw(140px) 0;
+  @include desktop{
+    padding: 140px 0;
+    border-bottom: 3px solid rgba(201, 66, 73, 0.1);
   }
-  @include respond-to(desktop) {
+  @include notebook{
     padding: 100px 0;
   }
-  @include respond-to(largedesktop) {
-    padding: 140px 0;
+  @include tablet{
+    padding: 44px 0;
   }
   h2{
-    text-align: center;
-    @include respond-to(tablet) {
-      text-align: left;
+    text-align: left;
+    @include mobile{
+      text-align: center;
     }
   }
   .total_all{
     display: none;
   }
+  .container{
+    @include notebook{
+      max-width: calc(100% - 48px);
+      width: 100%;
+      margin: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
 }
 .index__text{
-  margin: 14px 0 40px 0;
-  line-height: 24px;
-  font-size: 12px;
+  max-width: vw(670px);
+  font-size: vw(16px);
+  line-height: vw(24px);
+  margin: vw(18px) 0 vw(44px) 0;
   text-align: center;
-  @include respond-to(tablet) {
+  @include desktop{
+    max-width: 670px;
+    font-size: 16px;
+    line-height: 24px;
     margin: 18px 0 44px 0;
+  }
+  @include tablet {
     max-width: 417px;
     font-size: 14px;
     text-align: left;
   }
-  @include respond-to(desktop) {
-    max-width: 670px;
-    font-size: 16px;
+  @include mobile{
+    margin: 14px 0 40px 0;
+    line-height: 24px;
+    font-size: 12px;
+    text-align: center;
   }
+
 }
 .index__container{
   display: flex;
-  flex-wrap: wrap;
-  @include respond-to(tablet) {
-    flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  @include mobile {
+    flex-wrap: wrap;
   }
 }
 .index__rating{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
+  width: auto;
   align-items: center;
-  margin-bottom: 50px;
-  @include respond-to(tablet) {
-    width: auto;
-    margin-right: 50px;
-    align-items: inherit;
-    margin-bottom: 0;
+  margin-right: vw(260px);
+  @include desktop {
+    margin-right: 260px;
   }
-  @include respond-to(desktop) {
+  @include notebook{
     margin-right: 95px;
   }
-  @include respond-to(largedesktop) {
-    margin-right: 260px;
+  @include tablet{
+    margin-right: 50px;
+  }
+  @include mobile {
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 50px;
   }
   &-col{
     font-family: Montserrat;
     font-weight: bold;
-    font-size: 80px;
-    line-height: 49px;
+    font-size: vw(80px);
+    line-height: vw(49px);
     text-align: center;
     margin-top: 0;
-    @include respond-to(tablet) {
+    @include desktop{
+      font-size: 80px;
+      line-height: 49px;
+    }
+    @include tablet {
       margin-top: 60px;
+    }
+    @include mobile{
+      margin-top: 0;
     }
   }
   &-text{
     font-weight: 600;
-    line-height: 24px;
+    font-size: vw(26px);
+    line-height: vw(24px);
     text-align: center;
-    margin-top: 26px;
-    margin-bottom: 40px;
-    @include respond-to(tablet) {
+    margin-top: vw(26px);
+    margin-bottom: vw(40px);
+    @include desktop{
+      font-size: 26px;
+      line-height: 24px;
+      margin-top: 26px;
+      margin-bottom: 40px;
+    }
+    @include notebook{
+      font-size: 22px;
+    }
+    @include tablet {
       margin-bottom: 52px;
       font-size: 18px;
     }
-    @include respond-to(desktop) {
-      font-size: 22px;
-    }
-    @include respond-to(largedesktop) {
-      font-size: 26px;
-    }
   }
   &-link{
-    width: 277px;
-    height: 60px;
+    width: vw(277px);
+    height: vw(60px);
     background: #D64045;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
-    line-height: 32px;
+    font-size: vw(20px);
+    line-height: vw(32px);
     text-align: center;
-    letter-spacing: -0.2px;
+    letter-spacing: vw(-0.2px);
     color: #FFFFFF;
-    border-radius: 50px;
+    border-radius: vw(50px);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    @include desktop{
+      width: 277px;
+      height: 60px;
+      font-size: 20px;
+      line-height: 32px;
+      letter-spacing: -0.2px;
+      border-radius: 50px;
+    }
   }
 }
 .index__info{
@@ -115,35 +160,43 @@
   flex-wrap: wrap;
   width: 100%;
   &__item{
-    width: 100%;
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
-    margin-bottom: 40px;
+    width: 50%;
+    margin-bottom: 0;
+    &:nth-child(-n+2){
+      margin-bottom: 14px;
+    }
+    @include desktop{
+      margin-bottom: 40px;
+    }
     &:last-child{
       margin-bottom: 0;
     }
-    @include respond-to(tablet) {
-      width: 50%;
+    @include tablet{
       margin-bottom: 0;
-      &:nth-child(-n+2){
-        margin-bottom: 14px;
-      }
+    }
+    @include mobile {
+      width: 100%;
+      margin-bottom: 40px;
     }
     &-rating{
       position: relative;
-      width: 84px;
-      height: 60px;
+      width: vw(84px);
+      height: vw(60px);
       display: flex;
       align-items: center;
       justify-content: center;
       transition: 0.5s;
-      @include respond-to(desktop) {
-        opacity: 1;
+      opacity: 0;
+      @include desktop{
+        width: 84px;
+        height: 60px;
       }
-      @include respond-to(largedesktop) {
-        opacity: 0;
+      @include notebook{
+        opacity: 1;
       }
       &.active{
         opacity: 1;
@@ -156,31 +209,45 @@
       }
       p{
         font-weight: 600;
-        font-size: 12px;
-        line-height: 10px;
+        font-size: vw(12px);
+        line-height: vw(10px);
         position: relative;
         z-index: 2;
         margin-bottom: 0;
+        @include desktop{
+          font-size: 12px;
+          line-height: 10px;
+        }
       }
     }
     &__marker{
-      margin: 1px 0 8px 0;
+      margin: vw(1px) 0 vw(8px) 0;
       cursor: pointer;
-      &-item{
-
+      @include desktop{
+        margin: 1px 0 8px 0;
+      }
+      svg{
+        width: vw(15.23px);
+        height: vw(16.05px);
+        @include desktop{
+          width: 15.23px;
+          height: 16.05px;
+        }
       }
     }
     &-text{
       font-weight: 500;
-      line-height: 40px;
-      @include respond-to(tablet) {
-        font-size: 18px;
+      line-height: vw(40px);
+      font-size: vw(26px);
+      @include desktop{
+        font-size: 26px;
+        line-height: 40px;
       }
-      @include respond-to(desktop) {
+      @include notebook{
         font-size: 22px;
       }
-      @include respond-to(largedesktop) {
-        font-size: 26px;
+      @include tablet {
+        font-size: 18px;
       }
     }
   }

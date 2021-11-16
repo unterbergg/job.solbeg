@@ -1,3 +1,10 @@
+@import "../utils/module";
+
+.main-page-vacancy + .main-page-comtact-form {
+  background-image: none !important;
+  padding-bottom: 0;
+}
+
 .vacancy_location {
   display: none;
 
@@ -5,114 +12,1106 @@
     display: block;
   }
 }
-.main-page-vacancy__filter-check{
-  padding: 16px;
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-  border-radius: 4px;
-  display: none;
-  position: relative;
-  &.active{
-    &:before{
-      transform: translate(-50%, -50%) rotate(180deg);
+
+.main-page-vacancy {
+  background: #f7efe9;
+  padding: vw(120px) 0;
+  @include desktop {
+    padding: 120px 0;
+  }
+  @include notebook {
+    padding: 140px 0 92px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: vw(78px);
+    @include desktop {
+      margin-bottom: 78px;
     }
-  }
-  &:before{
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    content: '';
-    background-image: url('../img/drop.png');
-    width: 12px;
-    height: 7px;
-    right: 16px;
-    transition: 0.2s;
-  }
-}
-.main-page-vacancy__filter.dropdown {
-  position: relative;
-  @media (min-width: 50px) and (max-width: 400px) {
-    width: 100%;
-  }
-  @include respond-to(mobile) {
-    right: 0;
-    width: 170px;
-  }
-  @include respond-to(tablet) {
-    right: 136px;
-  }
-  @include respond-to(desktop) {
-    right: 286px;
-  }
-  .main-page-vacancy__filter-check{
-    display: block;
-    cursor: pointer;
-    width: 170px;
+    @include notebook {
+      margin-bottom: 103px;
+    }
+    @include tablet {
+      margin-bottom: 18px;
+    }
+    @include mobile {
+      margin-bottom: 96px;
+    }
     @media (min-width: 50px) and (max-width: 400px) {
-      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 10px;
     }
   }
-  .main-page-vacancy__filter-items {
-    display: none;
-    flex-direction: column;
-    background: white;
-    min-width: min-content;
-    border-radius: 4px;
-    position: absolute;
-    width: 170px;
-    top: 65px;
-    z-index: 2;
-    @media (min-width: 50px) and (max-width: 400px) {
-      width: 100%;
-      top: 115px;
-    }
-    &.active{
-      display: flex;
-    }
-    .main-page-vacancy__filter-item {
-      border: none;
-      border-radius: 0;
-      padding: 4px 0;
-      margin-right: 0;
-      cursor: pointer;
-      &:hover{
-        background: rgba(214, 64, 69, 0.1);
+
+  &__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: vw(226px);
+      position: absolute;
+      @include desktop {
+        width: 226px;
       }
-      &.active {
-        button{
+    }
+
+    .h2 {
+      z-index: 1;
+    }
+  }
+
+  &__filter {
+    padding-top: 4px;
+
+    ul {
+      display: flex;
+      min-width: vw(464px);
+      justify-content: flex-end;
+      @include desktop {
+        min-width: 464px;
+      }
+      @include mobile {
+        min-width: fit-content;
+      }
+    }
+
+    ul:not(.main-page-vacancy__filter-items), .accordion-button-second__wrapper {
+      @include tablet {
+        width: 300px;
+        min-width: 300px;
+      }
+    }
+
+    &.dropdown {
+      position: relative;
+      right: vw(286px);
+      @include desktop {
+        right: 286px;
+      }
+      @include tablet {
+        right: 136px;
+      }
+      @include mobile {
+        right: 0;
+        width: 170px;
+      }
+      @media (min-width: 50px) and (max-width: 400px) {
+        width: 100%;
+        padding-top: 50px;
+      }
+
+      .main-page-vacancy__filter-items {
+        display: none;
+        flex-direction: column;
+        background: white;
+        min-width: min-content;
+        border-radius: vw(4px);
+        position: absolute;
+        width: vw(170px);
+        top: vw(65px);
+        z-index: 2;
+        @include desktop {
+          border-radius: 4px;
+          width: 170px;
+          top: 65px;
+        }
+        @media (min-width: 50px) and (max-width: 400px) {
+          width: 100%;
+          top: 115px;
+        }
+
+        &.active {
+          display: flex;
+        }
+
+        .main-page-vacancy__filter-item {
           border: none;
-          color: #D64045;
+          border-radius: 0;
+          padding: vw(4px) 0;
+          margin-right: 0;
+          cursor: pointer;
+          @include desktop {
+            padding: 4px 0;
+          }
+
+          &:hover {
+            background: rgba(214, 64, 69, 0.1);
+          }
+
+          &.active {
+            button {
+              border: none;
+              color: #D64045;
+            }
+          }
+
+          button {
+            font-size: vw(16px);
+            padding: 0 0 0 vw(16px);
+            @include desktop {
+              font-size: 16px;
+              padding: 0 0 0 16px;
+            }
+          }
         }
       }
-      button{
+    }
+
+    .main-page-vacancy__filter-check {
+      display: none;
+    }
+
+    &.dropdown {
+      .main-page-vacancy__filter-check {
+        padding: vw(16px);
+        border: vw(2px) solid rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        border-radius: vw(4px);
+        position: relative;
+        display: block;
+        cursor: pointer;
+        width: vw(170px);
+        @include desktop {
+          padding: 16px;
+          border: 2px solid rgba(0, 0, 0, 0.1);
+          border-radius: 4px;
+          width: 170px;
+        }
+        @media (min-width: 50px) and (max-width: 400px) {
+          width: 100%;
+        }
+
+        &.active {
+          &:before {
+            transform: translate(-50%, -50%) rotate(180deg);
+          }
+        }
+
+        &:before {
+          position: absolute;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          content: '';
+          background-image: url('../img/drop.png');
+          width: vw(12px);
+          height: vw(7px);
+          right: vw(16px);
+          transition: 0.2s;
+          @include desktop {
+            width: 12px;
+            height: 7px;
+            right: 16px;
+          }
+        }
+      }
+
+      .main-page-vacancy__filter-items {
+        display: none;
+      }
+    }
+  }
+
+  &__filter-item {
+    border: vw(2px) solid transparent;
+    margin-right: vw(2px);
+    @include desktop {
+      border: 2px solid transparent;
+      margin-right: 2px;
+    }
+    @include notebook {
+      margin-right: 6px;
+    }
+
+    &.active {
+      border: vw(2px) solid rgba(0, 0, 0, 0.1);
+      border-radius: vw(50px);
+      @include desktop {
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        border-radius: 50px;
+      }
+    }
+
+    button {
+      padding: vw(16px) vw(25px);
+      background: none;
+      font-weight: 500;
+      font-size: vw(20px);
+      line-height: vw(24px);
+      letter-spacing: vw(-0.2px);
+      cursor: pointer;
+      @include desktop {
+        padding: 16px 25px;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+      }
+      @include notebook {
+        font-size: 22px;
+        padding: 11px 20px;
+      }
+      @include tablet {
         font-size: 16px;
+        line-height: 24px;
+        padding: 11px 18px;
+      }
+    }
+  }
+
+  .accordion-button {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: vw(30px) 0;
+    border-bottom: vw(3px) solid rgba(201, 66, 73, 0.1);
+    cursor: pointer;
+    @include desktop {
+      padding: 30px 0;
+      border-bottom: 3px solid rgba(201, 66, 73, 0.1);
+    }
+    @include mobile {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-first, &-second {
+      font-weight: 500;
+      font-size: vw(20px);
+      line-height: vw(32px);
+      letter-spacing: vw(-0.2px);
+      @include desktop {
+        font-size: 20px;
+        line-height: 32px;
+        letter-spacing: -0.2px;
+      }
+      @include notebook {
+        font-size: 18px;
+        line-height: 24px;
+      }
+      @include tablet {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    &-second {
+      padding: 0 0 0 vw(10px);
+      @include desktop {
+        padding: 0 0 0 10px;
+      }
+      @include mobile {
+        width: fit-content;
+        position: relative;
+        display: block;
+      }
+
+      &:not(:first-child)::before {
+        content: '/ ';
+        padding-right: vw(4px);
+        @include desktop {
+          padding-right: 4px;
+        }
+        @include mobile {
+          display: none;
+        }
+      }
+
+      &__wrapper {
+        position: absolute;
+        right: 0;
+        top: vw(30px);
+        width: vw(450px);
+        display: flex;
+        @include desktop {
+          top: 30px;
+          width: 450px;
+        }
+        @include tablet {
+          width: 300px;
+          min-width: 300px;
+        }
+        @include mobile {
+          width: fit-content;
+          min-width: inherit;
+          position: initial;
+          top: 24px;
+          flex-direction: column;
+        }
+      }
+    }
+
+    &:before {
+      position: absolute;
+      right: vw(16px);
+      margin-left: vw(27px);
+      transform: rotate(0deg);
+      transition: all 0.2s ease-in-out;
+      display: block;
+      content: " ";
+      background-image: url('../img/icon/accordion-down.png');
+      background-size: vw(22px) vw(13px);
+      background-position: center;
+      background-repeat: no-repeat;
+      height: vw(30px);
+      width: vw(34px);
+      @include desktop {
+        right: 16px;
+        margin-left: 27px;
+        background-size: 22px 13px;
+        height: 30px;
+        width: 34px;
+      }
+      @include notebook {
+        height: 13px;
+        width: 22px;
+        top: 36px;
+      }
+      @include tablet {
+        height: 10px;
+        width: 18px;
+        top: 38px;
+      }
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &.active:before {
+      transform: rotate(180deg);
+    }
+
+    &.active h2, &:focus h2 {
+      position: relative;
+    }
+  }
+
+  .accordion-panel {
+    display: none;
+    background: white;
+    overflow: hidden;
+
+    &__show-more {
+      font-weight: 600;
+      font-size: vw(20px);
+      line-height: vw(24px);
+      letter-spacing: vw(-0.2px);
+      color: #d64045;
+      background: #f7efe9;
+      padding-top: vw(24px);
+      @include desktop {
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        padding-top: 24px;
+      }
+    }
+
+    .vacancy-info-block__manager {
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  &__accordions .vacancy-info-block__grid {
+    background: #f7efe9;
+    height: fit-content;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: vw(60px) 0 vw(52px);
+    @include desktop {
+      padding: 60px 0 52px;
+    }
+    @include mobile {
+      padding: 44px 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 20px;
+      background: linear-gradient(180deg, transparent, #F7EFE9 65%);
+      @include mobile {
+        display: none;
+      }
+    }
+
+    b, strong {
+      font-weight: 500;
+      font-size: vw(26px);
+      line-height: vw(36px);
+      letter-spacing: vw(-0.2px);
+      padding-bottom: vw(20px);
+      @include desktop {
+        font-size: 26px;
+        line-height: 36px;
+        letter-spacing: -0.2px;
+        padding-bottom: 20px;
+      }
+    }
+
+    .vacancy-info-block__info {
+      max-width: vw(880px);
+      padding-right: vw(36px);
+      height: fit-content;
+      @include desktop {
+        max-width: 880px;
+        padding-right: 36px;
+      }
+      @include mobile {
         padding: 0;
-        padding-left: 16px;
+      }
+
+      ul {
+        list-style: disc;
+        padding-left: vw(18px);
+        padding-bottom: vw(42px);
+        @include desktop {
+          list-style: disc;
+          padding-left: 18px;
+          padding-bottom: 42px;
+        }
+
+        li {
+          line-height: vw(24px);
+          letter-spacing: vw(-0.1px);
+          padding-bottom: vw(14px);
+          font-size: vw(16px);
+          @include desktop {
+            line-height: 24px;
+            font-size: 16px;
+            letter-spacing: -0.1px;
+            padding-bottom: 14px;
+          }
+        }
+      }
+    }
+
+    .vacancy-info-block__manager {
+      padding: 0 vw(25px);
+      max-width: vw(350px);
+      @include desktop {
+        padding: 0 25px;
+        max-width: 350px;
+      }
+      @include mobile {
+        display: none;
+      }
+
+      &-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: vw(25px);
+        @include desktop {
+          margin-bottom: 25px;
+        }
+      }
+
+      &-img {
+        width: vw(210px);
+        height: vw(210px);
+        margin-bottom: vw(20px);
+        @include desktop {
+          width: 210px;
+          height: 210px;
+          margin-bottom: 20px;
+        }
+        @include mobile {
+          width: 150px;
+          height: 150px;
+          margin-bottom: 10px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+
+      &-name {
+        font-weight: 600;
+        font-size: vw(22px);
+        line-height: vw(32px);
+        letter-spacing: vw(-0.2px);
+        margin-bottom: vw(4px);
+        @include desktop {
+          font-size: 22px;
+          line-height: 32px;
+          letter-spacing: -0.2px;
+          margin-bottom: 4px;
+        }
+      }
+
+      &-position {
+        font-size: vw(20px);
+        line-height: vw(32px);
+        letter-spacing: vw(-0.2px);
+        color: rgba(0, 0, 0, 0.6);
+        @include desktop {
+          font-size: 20px;
+          line-height: 32px;
+          letter-spacing: -0.2px;
+        }
+      }
+
+      &-contact {
+        a {
+          display: flex;
+          align-items: center;
+        }
+
+        ul {
+          list-style: none;
+
+          li {
+            margin-bottom: 8px;
+
+            img {
+              width: vw(20px);
+              height: vw(20px);
+              object-fit: contain;
+              box-sizing: border-box;
+              @include desktop {
+                width: 20px;
+                height: 20px;
+              }
+            }
+
+            span {
+              font-weight: 500;
+              font-size: vw(16px);
+              line-height: vw(24px);
+              letter-spacing: vw(-0.2px);
+              color: rgba(0, 0, 0, 0.6);
+              @include desktop {
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: -0.2px;
+              }
+            }
+          }
+        }
+
+        .manager-mail {
+          .vacancy-info-block__manager-icon {
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='16' viewBox='0 0 20 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 4L10 9L2 4V2L10 7L18 2V4ZM18 0H2C0.89 0 0 0.89 0 2V14C0 14.5304 0.210714 15.0391 0.585786 15.4142C0.960859 15.7893 1.46957 16 2 16H18C18.5304 16 19.0391 15.7893 19.4142 15.4142C19.7893 15.0391 20 14.5304 20 14V2C20 0.89 19.1 0 18 0Z' fill='black' fill-opacity='0.6'/%3E%3C/svg%3E%0A");
+          }
+        }
+
+        .manager-phone {
+          .vacancy-info-block__manager-icon {
+            background-image: url("data:image/svg+xml,%3Csvg width='14' height='22' viewBox='0 0 14 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.6155 17.463H2.38473V4.53996H11.6155V17.463ZM11.6155 0.847656H2.38473C1.36011 0.847656 0.538574 1.66919 0.538574 2.69381V19.3092C0.538574 19.7988 0.733079 20.2684 1.0793 20.6146C1.42552 20.9608 1.8951 21.1553 2.38473 21.1553H11.6155C12.1051 21.1553 12.5747 20.9608 12.9209 20.6146C13.2671 20.2684 13.4617 19.7988 13.4617 19.3092V2.69381C13.4617 1.66919 12.6309 0.847656 11.6155 0.847656Z' fill='black' fill-opacity='0.6'/%3E%3C/svg%3E%0A");
+          }
+        }
+
+        .manager-skype {
+          .vacancy-info-block__manager-icon {
+            background-image: url("data:image/svg+xml,%3Csvg width='22' height='21' viewBox='0 0 22 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.2675 11.7239C20.5543 12.1415 20.7727 12.5946 20.9253 13.0911C21.0771 13.5858 21.1539 14.098 21.1539 14.6283C21.1539 15.3879 21.0046 16.1014 20.7094 16.7697C20.4134 17.4364 20.0061 18.024 19.4866 18.5344C18.9671 19.0396 18.3624 19.4363 17.6675 19.7245C16.9726 20.0127 16.2414 20.1541 15.4639 20.1541C14.3565 20.1541 13.3631 19.8851 12.4818 19.3478C12.2372 19.3825 11.991 19.4076 11.7422 19.4267C11.4925 19.4441 11.2455 19.451 10.9984 19.451C9.70466 19.451 8.49025 19.2123 7.35427 18.7367C6.22081 18.2584 5.2282 17.6091 4.37305 16.7819C3.52043 15.9581 2.84829 14.9868 2.36421 13.8749C1.87591 12.763 1.63219 11.5746 1.63219 10.3117C1.63219 10.0669 1.64399 9.83426 1.66929 9.61899C1.69206 9.40372 1.72327 9.18411 1.75531 8.96451C1.14811 8.09735 0.846191 7.16597 0.846191 6.16688C0.846191 5.42385 0.995463 4.72162 1.29148 4.06106C1.58665 3.40137 1.99145 2.82761 2.51095 2.34065C3.03045 1.85282 3.6385 1.46916 4.3292 1.18792C5.02158 0.906678 5.75613 0.769531 6.53369 0.769531C7.09367 0.769531 7.61908 0.837237 8.11834 0.975252C8.61759 1.115 9.08481 1.30944 9.51575 1.56377C9.75948 1.52818 10.0091 1.50301 10.2554 1.48304C10.505 1.46742 10.7546 1.45787 10.9984 1.45787C12.2963 1.45787 13.5149 1.6905 14.6542 2.15315C15.7911 2.61234 16.7862 3.2486 17.6414 4.05585C18.4965 4.86658 19.1703 5.80491 19.6595 6.87258C20.1469 7.94198 20.3907 9.0895 20.3907 10.3117C20.3915 10.7622 20.351 11.2335 20.2675 11.7239ZM15.4639 14.5033C15.8636 13.9617 16.0609 13.3254 16.0609 12.5946C16.0609 12.0191 15.9496 11.5356 15.7303 11.1432C15.5018 10.7526 15.1796 10.4254 14.7639 10.1641C14.3818 9.91065 13.8851 9.68583 13.2771 9.48445C12.6656 9.32647 12.0171 9.17196 11.3315 9.01398L10.5801 8.83777C10.3785 8.79351 10.2183 8.75618 10.0977 8.72233C9.96357 8.68848 9.8396 8.65115 9.72153 8.60688C9.61021 8.56608 9.49214 8.51834 9.37407 8.46626C9.14468 8.36731 8.9524 8.23276 8.79976 8.07479C8.68169 7.93851 8.62265 7.75535 8.62265 7.52793C8.62265 7.19548 8.81494 6.89862 9.19697 6.63561C9.62961 6.38996 10.1584 6.27191 10.7867 6.27972C11.5128 6.27972 12.023 6.38996 12.3106 6.6113C12.658 6.87345 12.9304 7.19635 13.1253 7.57741C13.2948 7.85691 13.4668 8.06524 13.6448 8.20238C13.8143 8.33606 14.0496 8.40811 14.3456 8.41765C14.6787 8.41765 14.9545 8.30394 15.1864 8.07479C15.4132 7.86125 15.522 7.62081 15.5161 7.34999C15.5161 7.03663 15.4301 6.72849 15.2614 6.43162C15.0945 6.15299 14.8136 5.85613 14.4265 5.54104C14.2309 5.40562 14.0158 5.2815 13.7839 5.16779C13.5511 5.05321 13.2897 4.95252 13.0055 4.86745C12.7078 4.78412 12.3949 4.71989 12.0652 4.67649C11.7346 4.63396 11.3736 4.61399 10.9739 4.61399C9.96694 4.61399 9.1177 4.74072 8.42616 4.99418C7.68317 5.25806 7.12066 5.62089 6.73947 6.09136C6.35828 6.53926 6.16768 7.07743 6.16768 7.70588C6.16768 8.36731 6.35238 8.90548 6.7167 9.32039C7.08355 9.76916 7.58028 10.1086 8.20857 10.3386C8.80566 10.5842 9.56888 10.7995 10.505 10.9853C10.855 11.0703 11.1611 11.1424 11.4318 11.1971C11.6983 11.2509 11.9404 11.3125 12.152 11.3793C12.5509 11.4913 12.8748 11.6788 13.1219 11.9453C13.3859 12.1762 13.5183 12.473 13.5183 12.8393C13.5183 13.3454 13.2771 13.7551 12.8006 14.0676C12.3502 14.3879 11.7413 14.5459 10.9747 14.5346C10.3608 14.5346 9.91634 14.4617 9.63466 14.3141C9.28468 14.1501 9.02662 13.9417 8.8571 13.6935C8.64205 13.4105 8.47001 13.0963 8.3317 12.7569C8.2111 12.4348 8.04834 12.1918 7.83582 12.0277C7.63763 11.862 7.40571 11.7795 7.13331 11.7795C6.78585 11.7795 6.49912 11.8793 6.27226 12.0755C6.0454 12.2986 5.93661 12.5598 5.94167 12.8532C5.94167 13.3645 6.12552 13.8758 6.48984 14.3879C6.85163 14.9148 7.31632 15.3262 7.8822 15.6222C8.71121 16.0632 9.75273 16.2863 11.0043 16.2949C12.0255 16.2949 12.9355 16.1387 13.7274 15.8271C14.505 15.472 15.0852 15.032 15.4639 14.5033Z' fill='black' fill-opacity='0.6'/%3E%3C/svg%3E%0A");
+          }
+        }
+
+        .manager-linked-in {
+          .vacancy-info-block__manager-icon {
+            background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 0C16.5304 0 17.0391 0.210714 17.4142 0.585786C17.7893 0.960859 18 1.46957 18 2V16C18 16.5304 17.7893 17.0391 17.4142 17.4142C17.0391 17.7893 16.5304 18 16 18H2C1.46957 18 0.960859 17.7893 0.585786 17.4142C0.210714 17.0391 0 16.5304 0 16V2C0 1.46957 0.210714 0.960859 0.585786 0.585786C0.960859 0.210714 1.46957 0 2 0H16ZM15.5 15.5V10.2C15.5 9.33539 15.1565 8.5062 14.5452 7.89483C13.9338 7.28346 13.1046 6.94 12.24 6.94C11.39 6.94 10.4 7.46 9.92 8.24V7.13H7.13V15.5H9.92V10.57C9.92 9.8 10.54 9.17 11.31 9.17C11.6813 9.17 12.0374 9.3175 12.2999 9.58005C12.5625 9.8426 12.71 10.1987 12.71 10.57V15.5H15.5ZM3.88 5.56C4.32556 5.56 4.75288 5.383 5.06794 5.06794C5.383 4.75288 5.56 4.32556 5.56 3.88C5.56 2.95 4.81 2.19 3.88 2.19C3.43178 2.19 3.00193 2.36805 2.68499 2.68499C2.36805 3.00193 2.19 3.43178 2.19 3.88C2.19 4.81 2.95 5.56 3.88 5.56ZM5.27 15.5V7.13H2.5V15.5H5.27Z' fill='black' fill-opacity='0.6'/%3E%3C/svg%3E%0A");
+          }
+        }
+      }
+
+      &-button {
+        margin: vw(24px) 0;
+        @include desktop {
+          margin: 24px 0;
+        }
+
+        button {
+          background: #d64045;
+          border-radius: vw(50px);
+          color: #ffffff;
+          font-weight: 600;
+          font-size: vw(20px);
+          line-height: vw(24px);
+          letter-spacing: vw(-0.2px);
+          height: vw(50px);
+          width: 100%;
+          @include desktop {
+            border-radius: 50px;
+            font-size: 20px;
+            line-height: 24px;
+            letter-spacing: -0.2px;
+            height: 50px;
+            width: 100%;
+          }
+
+          &:hover {
+            background: #EA3B41;
+          }
+        }
+      }
+
+      &-icon {
+        border: vw(1px) solid #f3dfd9;
+        border-radius: 50%;
+        margin-right: vw(12px);
+        width: vw(35px);
+        height: vw(35px);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: vw(22px) vw(28px);
+        @include desktop {
+          border: 1px solid #f3dfd9;
+          margin-right: 12px;
+          width: 35px;
+          height: 35px;
+          background-size: 22px 28px;
+        }
+      }
+    }
+
+    .vacancy-info-block__share {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &-text {
+        margin-bottom: vw(12px);
+        @include desktop {
+          margin-bottom: 12px;
+        }
+      }
+
+      &-icons {
+        ul {
+          display: flex;
+          align-items: center;
+          list-style: none;
+
+          li {
+            width: vw(40px);
+            height: vw(40px);
+            border: vw(1px) solid #f3dfd9;
+            border-radius: 50%;
+            margin: 0 vw(6px);
+            @include desktop {
+              width: 40px;
+              height: 40px;
+              border: 1px solid #f3dfd9;
+              margin: 0 6px;
+            }
+
+            a {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
       }
     }
   }
 }
-.vacancy-info-block__next-vacancy{
-  .nav-links{
-    div{
+
+.vacancy-info-block {
+  padding-bottom: vw(120px);
+  @include desktop {
+    padding-bottom: 120px;
+  }
+
+  &__grid {
+    display: flex;
+    justify-content: space-between;
+    padding: vw(60px) 0 vw(52px);
+    @include desktop {
+      padding: 60px 0 52px;
+    }
+    @include mobile {
+      padding: 44px 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    b, strong {
+      font-weight: 500;
+      font-size: vw(26px);
+      line-height: vw(36px);
+      letter-spacing: vw(-0.2px);
+      padding-bottom: vw(20px);
+      @include desktop {
+        font-size: 26px;
+        line-height: 36px;
+        letter-spacing: -0.2px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+
+  &__info {
+    max-width: vw(880px);
+    padding-right: vw(36px);
+    height: fit-content;
+    @include desktop {
+      max-width: 880px;
+      padding-right: 36px;
+    }
+    @include mobile {
       padding: 0;
     }
-    a{
-      padding: 0 20px;
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: vw(18px);
+    padding-bottom: vw(42px);
+    @include desktop {
+      padding-left: 18px;
+      padding-bottom: 42px;
+    }
+
+    li {
+      line-height: vw(24px);
+      letter-spacing: vw(-0.1px);
+      padding-bottom: vw(14px);
+      font-size: vw(16px);
+      @include desktop {
+        line-height: 24px;
+        font-size: 16px;
+        letter-spacing: -0.1px;
+        padding-bottom: 14px;
+      }
+    }
+  }
+
+  &__next-vacancy {
+    display: flex;
+    justify-content: center;
+  }
+
+  a {
+    box-sizing: border-box;
+    font-weight: 500;
+    font-size: vw(20px);
+    line-height: vw(22px);
+    max-width: vw(400px);
+    width: 100%;
+    text-align: center;
+    letter-spacing: vw(-0.2px);
+    @include desktop {
+      font-size: 20px;
+      line-height: 22px;
+      max-width: 400px;
+      letter-spacing: -0.2px;
+    }
+
+  }
+
+  &__manager {
+    padding: 0 vw(25px);
+    max-width: vw(350px);
+    @include desktop {
+      padding: 0 25px;
+      max-width: 350px;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: vw(25px);
+      @include desktop {
+        margin-bottom: 25px;
+      }
+    }
+
+    &-img {
+      width: vw(210px);
+      height: vw(210px);
+      margin-bottom: vw(20px);
+      @include desktop {
+        width: 210px;
+        height: 210px;
+        margin-bottom: 20px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+
+    &-name {
+      font-weight: 600;
+      font-size: vw(22px);
+      line-height: vw(32px);
+      letter-spacing: vw(-0.2px);
+      margin-bottom: vw(4px);
+      @include desktop {
+        font-size: 22px;
+        line-height: 32px;
+        letter-spacing: -0.2px;
+        margin-bottom: 4px;
+      }
+    }
+
+    &-position {
+      font-size: vw(20px);
+      line-height: vw(32px);
+      letter-spacing: vw(-0.2px);
+      color: rgba(0, 0, 0, 0.6);
+      @include desktop {
+        font-size: 20px;
+        line-height: 32px;
+        letter-spacing: -0.2px;
+      }
+    }
+
+    &-contact {
+      a {
+        display: flex;
+        align-items: center;
+      }
+
+      ul {
+        list-style: none;
+
+        li {
+          margin-bottom: vw(8px);
+          @include desktop {
+            margin-bottom: 8px;
+          }
+
+          img {
+            width: vw(20px);
+            height: vw(20px);
+            object-fit: contain;
+            box-sizing: border-box;
+            @include desktop {
+              width: 20px;
+              height: 20px;
+            }
+          }
+
+          span {
+            font-weight: 500;
+            font-size: vw(16px);
+            line-height: vw(24px);
+            letter-spacing: vw(-0.2px);
+            color: rgba(0, 0, 0, 0.6);
+            @include desktop {
+              font-size: 16px;
+              line-height: 24px;
+              letter-spacing: -0.2px;
+            }
+          }
+        }
+      }
+    }
+
+    &-icon {
+      border: 1px solid #f3dfd9;
+      border-radius: 50%;
+      margin-right: 12px;
+      width: 35px;
+      height: 35px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      background-size: 22px 28px;
+      @include desktop {
+        border: vw(1px) solid #f3dfd9;
+        border-radius: 50%;
+        margin-right: vw(12px);
+        width: vw(35px);
+        height: vw(35px);
+        background-size: vw(22px) vw(28px);
+      }
+    }
+
+    &-button {
+      margin: vw(24px) 0;
+      @include desktop {
+        margin: 24px 0;
+      }
+
+      button {
+        background: #d64045;
+        border-radius: vw(50px);
+        color: #ffffff;
+        font-weight: 600;
+        font-size: vw(20px);
+        line-height: vw(24px);
+        letter-spacing: vw(-0.2px);
+        height: vw(50px);
+        width: 100%;
+        @include desktop {
+          border-radius: 50px;
+          font-size: 20px;
+          line-height: 24px;
+          letter-spacing: -0.2px;
+          height: 50px;
+          width: 100%;
+        }
+
+        &:hover {
+          background: #EA3B41;
+        }
+      }
+    }
+  }
+
+  &__share {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-text {
+      font-size: vw(16px);
+      margin-bottom: vw(12px);
+      @include desktop {
+        font-size: 16px;
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  &__share-icons ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+    li {
+      width: vw(40px);
+      height: vw(40px);
+      border: vw(1px) solid #f3dfd9;
+      border-radius: 50%;
+      margin: 0 vw(6px);
+      font-size: vw(14px);
+      @include desktop {
+        font-size: 14px;
+        width: 40px;
+        height: 40px;
+        margin: 0 6px;
+      }
+
+      a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.manager-mail .vacancy-info-block__manager-icon {
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='16' viewBox='0 0 20 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 4L10 9L2 4V2L10 7L18 2V4ZM18 0H2C0.89 0 0 0.89 0 2V14C0 14.5304 0.210714 15.0391 0.585786 15.4142C0.960859 15.7893 1.46957 16 2 16H18C18.5304 16 19.0391 15.7893 19.4142 15.4142C19.7893 15.0391 20 14.5304 20 14V2C20 0.89 19.1 0 18 0Z' fill='black' fill-opacity='0.6'/%3E%3C/svg%3E%0A");
+}
+
+.manager-phone .vacancy-info-block__manager-icon {
+  background-image: url("data:image/svg+xml,%3Csvg width='14' height='22' viewBox='0 0 14 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.6155 17.463H2.38473V4.53996H11.6155V17.463ZM11.6155 0.847656H2.38473C1.36011 0.847656 0.538574 1.66919 0.538574 2.69381V19.3092C0.538574 19.7988 0.733079 20.2684 1.0793 20.6146C1.42552 20.9608 1.8951 21.1553 2.38473 21.1553H11.6155C12.1051 21.1553 12.5747 20.9608 12.9209 20.6146C13.2671 20.2684 13.4617 19.7988 13.4617 19.3092V2.69381C13.4617 1.66919 12.6309 0.847656 11.6155 0.847656Z' fill='black' fill-opacity='0.6'/%3E%3C/svg%3E%0A");
+}
+
+.manager-skype .vacancy-info-block__manager-icon {
+  background-image: url("data:image/svg+xml,%3Csvg width='22' height='21' viewBox='0 0 22 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.2675 11.7239C20.5543 12.1415 20.7727 12.5946 20.9253 13.0911C21.0771 13.5858 21.1539 14.098 21.1539 14.6283C21.1539 15.3879 21.0046 16.1014 20.7094 16.7697C20.4134 17.4364 20.0061 18.024 19.4866 18.5344C18.9671 19.0396 18.3624 19.4363 17.6675 19.7245C16.9726 20.0127 16.2414 20.1541 15.4639 20.1541C14.3565 20.1541 13.3631 19.8851 12.4818 19.3478C12.2372 19.3825 11.991 19.4076 11.7422 19.4267C11.4925 19.4441 11.2455 19.451 10.9984 19.451C9.70466 19.451 8.49025 19.2123 7.35427 18.7367C6.22081 18.2584 5.2282 17.6091 4.37305 16.7819C3.52043 15.9581 2.84829 14.9868 2.36421 13.8749C1.87591 12.763 1.63219 11.5746 1.63219 10.3117C1.63219 10.0669 1.64399 9.83426 1.66929 9.61899C1.69206 9.40372 1.72327 9.18411 1.75531 8.96451C1.14811 8.09735 0.846191 7.16597 0.846191 6.16688C0.846191 5.42385 0.995463 4.72162 1.29148 4.06106C1.58665 3.40137 1.99145 2.82761 2.51095 2.34065C3.03045 1.85282 3.6385 1.46916 4.3292 1.18792C5.02158 0.906678 5.75613 0.769531 6.53369 0.769531C7.09367 0.769531 7.61908 0.837237 8.11834 0.975252C8.61759 1.115 9.08481 1.30944 9.51575 1.56377C9.75948 1.52818 10.0091 1.50301 10.2554 1.48304C10.505 1.46742 10.7546 1.45787 10.9984 1.45787C12.2963 1.45787 13.5149 1.6905 14.6542 2.15315C15.7911 2.61234 16.7862 3.2486 17.6414 4.05585C18.4965 4.86658 19.1703 5.80491 19.6595 6.87258C20.1469 7.94198 20.3907 9.0895 20.3907 10.3117C20.3915 10.7622 20.351 11.2335 20.2675 11.7239ZM15.4639 14.5033C15.8636 13.9617 16.0609 13.3254 16.0609 12.5946C16.0609 12.0191 15.9496 11.5356 15.7303 11.1432C15.5018 10.7526 15.1796 10.4254 14.7639 10.1641C14.3818 9.91065 13.8851 9.68583 13.2771 9.48445C12.6656 9.32647 12.0171 9.17196 11.3315 9.01398L10.5801 8.83777C10.3785 8.79351 10.2183 8.75618 10.0977 8.72233C9.96357 8.68848 9.8396 8.65115 9.72153 8.60688C9.61021 8.56608 9.49214 8.51834 9.37407 8.46626C9.14468 8.36731 8.9524 8.23276 8.79976 8.07479C8.68169 7.93851 8.62265 7.75535 8.62265 7.52793C8.62265 7.19548 8.81494 6.89862 9.19697 6.63561C9.62961 6.38996 10.1584 6.27191 10.7867 6.27972C11.5128 6.27972 12.023 6.38996 12.3106 6.6113C12.658 6.87345 12.9304 7.19635 13.1253 7.57741C13.2948 7.85691 13.4668 8.06524 13.6448 8.20238C13.8143 8.33606 14.0496 8.40811 14.3456 8.41765C14.6787 8.41765 14.9545 8.30394 15.1864 8.07479C15.4132 7.86125 15.522 7.62081 15.5161 7.34999C15.5161 7.03663 15.4301 6.72849 15.2614 6.43162C15.0945 6.15299 14.8136 5.85613 14.4265 5.54104C14.2309 5.40562 14.0158 5.2815 13.7839 5.16779C13.5511 5.05321 13.2897 4.95252 13.0055 4.86745C12.7078 4.78412 12.3949 4.71989 12.0652 4.67649C11.7346 4.63396 11.3736 4.61399 10.9739 4.61399C9.96694 4.61399 9.1177 4.74072 8.42616 4.99418C7.68317 5.25806 7.12066 5.62089 6.73947 6.09136C6.35828 6.53926 6.16768 7.07743 6.16768 7.70588C6.16768 8.36731 6.35238 8.90548 6.7167 9.32039C7.08355 9.76916 7.58028 10.1086 8.20857 10.3386C8.80566 10.5842 9.56888 10.7995 10.505 10.9853C10.855 11.0703 11.1611 11.1424 11.4318 11.1971C11.6983 11.2509 11.9404 11.3125 12.152 11.3793C12.5509 11.4913 12.8748 11.6788 13.1219 11.9453C13.3859 12.1762 13.5183 12.473 13.5183 12.8393C13.5183 13.3454 13.2771 13.7551 12.8006 14.0676C12.3502 14.3879 11.7413 14.5459 10.9747 14.5346C10.3608 14.5346 9.91634 14.4617 9.63466 14.3141C9.28468 14.1501 9.02662 13.9417 8.8571 13.6935C8.64205 13.4105 8.47001 13.0963 8.3317 12.7569C8.2111 12.4348 8.04834 12.1918 7.83582 12.0277C7.63763 11.862 7.40571 11.7795 7.13331 11.7795C6.78585 11.7795 6.49912 11.8793 6.27226 12.0755C6.0454 12.2986 5.93661 12.5598 5.94167 12.8532C5.94167 13.3645 6.12552 13.8758 6.48984 14.3879C6.85163 14.9148 7.31632 15.3262 7.8822 15.6222C8.71121 16.0632 9.75273 16.2863 11.0043 16.2949C12.0255 16.2949 12.9355 16.1387 13.7274 15.8271C14.505 15.472 15.0852 15.032 15.4639 14.5033Z' fill='black' fill-opacity='0.6'/%3E%3C/svg%3E%0A");
+}
+
+.manager-linked-in .vacancy-info-block__manager-icon {
+  background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 0C16.5304 0 17.0391 0.210714 17.4142 0.585786C17.7893 0.960859 18 1.46957 18 2V16C18 16.5304 17.7893 17.0391 17.4142 17.4142C17.0391 17.7893 16.5304 18 16 18H2C1.46957 18 0.960859 17.7893 0.585786 17.4142C0.210714 17.0391 0 16.5304 0 16V2C0 1.46957 0.210714 0.960859 0.585786 0.585786C0.960859 0.210714 1.46957 0 2 0H16ZM15.5 15.5V10.2C15.5 9.33539 15.1565 8.5062 14.5452 7.89483C13.9338 7.28346 13.1046 6.94 12.24 6.94C11.39 6.94 10.4 7.46 9.92 8.24V7.13H7.13V15.5H9.92V10.57C9.92 9.8 10.54 9.17 11.31 9.17C11.6813 9.17 12.0374 9.3175 12.2999 9.58005C12.5625 9.8426 12.71 10.1987 12.71 10.57V15.5H15.5ZM3.88 5.56C4.32556 5.56 4.75288 5.383 5.06794 5.06794C5.383 4.75288 5.56 4.32556 5.56 3.88C5.56 2.95 4.81 2.19 3.88 2.19C3.43178 2.19 3.00193 2.36805 2.68499 2.68499C2.36805 3.00193 2.19 3.43178 2.19 3.88C2.19 4.81 2.95 5.56 3.88 5.56ZM5.27 15.5V7.13H2.5V15.5H5.27Z' fill='black' fill-opacity='0.6'/%3E%3C/svg%3E%0A");
+}
+
+.heateor_sss_sharing_ul {
+  i {
+    width: vw(62px) !important;
+    height: vw(62px) !important;
+    @include desktop {
+      width: 62px !important;
+      height: 62px !important;
+    }
+
+  }
+}
+
+.vacancy-info-block__next-vacancy {
+  .nav-links {
+    div {
+      padding: 0;
+      height: vw(56px);
+      border: vw(2px) solid rgba(0, 0, 0, .1);
+      border-radius: vw(60px);
+      display: flex;
+      align-items: center;
+      margin-top: vw(16px);
+      @include desktop {
+        height: 56px;
+        border: 2px solid rgba(0, 0, 0, .1);
+        border-radius: 60px;
+        margin-top: 16px;
+      }
+      @include mobile{
+        width: 90%;
+        margin: 16px auto 0 auto;
+      }
+    }
+
+    a {
+      padding: 0 vw(20px);
       display: flex;
       height: 100%;
       align-items: center;
-      span{
-        &:first-child{
-          margin-right: 5px;
+      @include desktop {
+        padding: 0 20px;
+      }
+
+      span {
+        &:first-child {
+          margin-right: vw(5px);
+          @include desktop {
+            margin-right: 5px;
+          }
         }
       }
-      .nav-title{
+
+      .nav-title {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width: 235px;
+        max-width: vw(235px);
+        @include desktop {
+          max-width: 235px;
+        }
       }
     }
+  }
+}
+
+.vacancy-info-block__manager-icon {
+  width: vw(62px);
+  height: vw(62px);
+  background-size: vw(31px) vw(28px);
+  @include desktop {
+    width: 62px;
+    height: 62px;
+    background-size: 31px 28px;
   }
 }

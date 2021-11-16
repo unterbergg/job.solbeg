@@ -3,11 +3,17 @@
   overflow-y: auto;
   &-close {
     img {
-      width: 20px;
-      height: 20px;
-      top: 30px;
-      right: 30px;
-      @include respond-to(mobile) {
+      width: vw(20px);
+      height: vw(20px);
+      top: vw(30px);
+      right: vw(30px);
+      @include desktop{
+        width: 20px;
+        height: 20px;
+        top: 30px;
+        right: 30px;
+      }
+      @include mobile {
         width: 30px;
         height: 30px;
         top: 40px;

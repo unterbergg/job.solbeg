@@ -1,0 +1,93 @@
+@import "../utils/module";
+.main-page-covid{
+  padding: vw(150px) 0;
+  background: #EDF9EE;
+  @include desktop{
+    padding: 150px 0;
+  }
+  @include notebook{
+    padding: 135px 0;
+  }
+  @include tablet{
+    padding: 90px 0;
+  }
+  @include mobile{
+    padding: 64px 0;
+  }
+  .container{
+    display: flex;
+    justify-content: center;
+    @include mobile{
+      flex-direction: column;
+      padding-left: 24px;
+      padding-right: 24px;
+      max-width: calc(100% - 48px);
+    }
+  }
+  .covid__image{
+    width: vw(140px);
+    height: vw(142px);
+    object-fit: contain;
+    margin-right: vw(42px);
+    @include desktop{
+      width: 140px;
+      height: 142px;
+      margin-right: 42px;
+    }
+    @include mobile{
+      margin: 0 auto 42px;
+    }
+  }
+  .covid__content{
+    &-title{
+      font-style: normal;
+      font-weight: 500;
+      font-size: vw(30px);
+      line-height: vw(32px);
+      display: flex;
+      align-items: center;
+      margin-bottom: vw(24px);
+      @include desktop{
+        font-size: 30px;
+        line-height: 32px;
+        margin-bottom: 24px;
+      }
+      @include tablet{
+        font-size: 20px;
+        line-height: 32px;
+      }
+      @include mobile{
+        width: 100%;
+        margin: 0 auto 24px;
+        display: block;
+        text-align: center;
+      }
+    }
+    &-text{
+      font-style: normal;
+      font-weight: 500;
+      font-size: vw(20px);
+      line-height: vw(32px);
+      letter-spacing: vw(-0.2px);
+      color: #000000;
+      opacity: 0.6;
+      max-width: vw(796px);
+      @include desktop{
+        font-size: 20px;
+        line-height: 32px;
+        letter-spacing: -0.2px;
+        max-width: 796px;
+      }
+      @include notebook{
+        max-width: 670px;
+      }
+      @include tablet{
+        font-size: 16px;
+        line-height: 26px;
+      }
+      @include mobile{
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,105 +1,464 @@
+@import "../utils/module";
 
-.what-they-say__slide-quote{
-  @include respond-to(tablet) {
-    flex-direction: column-reverse;
-  }
-  &.normal{
-    .quote-open{
-      display: none;
+.main-page-what-they-say {
+  display: flex;
+  flex-direction: column;
+  &.container{
+    margin-bottom: vw(120px);
+    padding-top: vw(60px);
+    @include desktop {
+      margin-bottom: 120px;
+      padding-top: 60px;
+    }
+    @include mobile {
+      padding: 30px 0 66px;
     }
   }
-  .quote-open{
-    margin: 0 auto;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.2px;
-    color: #D64045;
-    display: block;
-    @include respond-to(largedesktop) {
-      display: none;
-    }
-  }
-  p{
-    margin-bottom: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -moz-box;
-    -moz-box-orient: vertical;
-    display: -webkit-box;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical;
-    max-height: 197px;
-    &.open{
-
-    }
-    @include respond-to(mobile) {
-      -webkit-line-clamp: 6;
-      max-height: 141px;
-    }
-    @include respond-to(tablet) {
-      -webkit-line-clamp: 8;
-      max-height: 197px;
-    }
-    @include respond-to(largedesktop) {
-      -webkit-line-clamp: inherit;
-      max-height: none;
-    }
-    @media screen and (max-width: 599px){
-      -webkit-line-clamp: 8;
-      max-height: 197px;
-    }
-  }
-  @media screen and (max-width: 1440px){
+  &__title {
+    height: vw(200px);
     display: flex;
-    flex-direction: column-reverse;
-    .quote-open{
-      display: block;
-      &.active + p.open{
-        max-height: none;
-        -webkit-line-clamp: inherit!important;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: vw(80px);
+    order: 1;
+    @include desktop {
+      height: 200px;
+      margin-bottom: 80px;
+    }
+    @include tablet {
+      height: 176px;
+      margin-bottom: 36px;
+      order: 0;
+    }
+
+    img {
+      width: vw(370px);
+      position: absolute;
+      z-index: -1;
+      @include desktop{
+        width: 370px;
+      }
+      @include tablet {
+        width: 300px;
       }
     }
   }
-  @include respond-to(largedesktop) {
-    .quote-open {
-      display: none;
-    }
-  }
-  .quote-open{
-    @include respond-to(tablet) {
-      margin: 0;
-    }
-  }
-}
-.main-page-what-they-say{
-  margin-bottom: 40px;
-  padding-top:40px;
-  @include respond-to(mobile) {
-    margin-bottom: 40px;
-    padding-top:40px;
-  }
-  @include respond-to(tablet) {
-    margin-bottom: 120px;
-    padding-top: 60px;
-  }
-}
-.main-page-what-they-say__our-partners{
 
-}
-.main-page {
-  &__partners {
+  &__slider {
+    margin-bottom: vw(56px);
+    order: 2;
+    @include desktop {
+      margin-bottom: 56px;
+      order: 2;
+    }
+    @include mobile {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__slide-inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    align-items: flex-start;
+    @include notebook {
+      grid-column-gap: 40px;
+    }
+    @include tablet {
+      grid-template-rows: auto;
+    }
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: auto;
+    }
+    .what-they-say__slide-left {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, auto);
+      grid-column-gap: 0;
+      grid-row-gap: 0;
+      align-items: stretch;
+      height: 100%;
+      max-width: vw(572px);
+      @include desktop {
+        max-width: 572px;
+      }
+      @include notebook {
+        max-width: 90%;
+      }
+      @include tablet {
+        padding-right: 26px;
+      }
+      @include mobile {
+        grid-area: 2 / 1 / 3 / 2;
+        grid-template-rows: repeat(3, auto);
+        padding-right: 0;
+        margin: auto;
+      }
+      .what-they-say__slide-quote {
+        grid-area: 1 / 1 / 2 / 3;
+        margin-bottom: vw(36px);
+        display: flex;
+        @include desktop {
+          margin-bottom: 36px;
+        }
+        @include tablet{
+          flex-direction: column-reverse;
+        }
+        @include mobile {
+          grid-area: 2 / 1 / 3 / 3;
+          text-align: center;
+          padding-bottom: 28px;
+          margin: auto;
+        }
+        &.normal{
+          .quote-open{
+            display: none;
+          }
+        }
+        .quote-open{
+          margin: 0 auto;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: -0.2px;
+          color: #D64045;
+          display: block;
+          @media only screen and (min-width : 1440px) {
+            display: none;
+          }
+        }
+        p{
+          margin-bottom: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -moz-box;
+          -moz-box-orient: vertical;
+          display: -webkit-box;
+          -webkit-line-clamp: 6;
+          -webkit-box-orient: vertical;
+          max-height: 197px;
+          @include mobile {
+            -webkit-line-clamp: 6;
+            max-height: 141px;
+          }
+          @include tablet {
+            -webkit-line-clamp: 8;
+            max-height: 197px;
+          }
+          @media only screen and (min-width : 1440px) {
+            -webkit-line-clamp: inherit;
+            max-height: none;
+          }
+          @media screen and (max-width: 599px){
+            -webkit-line-clamp: 8;
+            max-height: 197px;
+          }
+        }
+        @media screen and (max-width: 1440px){
+          display: flex;
+          flex-direction: column-reverse;
+          .quote-open{
+            display: block;
+            &.active + p.open{
+              max-height: none;
+              -webkit-line-clamp: inherit!important;
+            }
+          }
+        }
+        @media only screen and (min-width : 1440px){
+          .quote-open {
+            display: none;
+          }
+        }
+        .quote-open{
+          @include tablet {
+            margin: 0;
+          }
+        }
+      }
+      .what-they-say__slide-name-prof {
+        grid-area: 2 / 1 / 3 / 2;
+        position: relative;
+        max-width: vw(572px);
+        @include desktop {
+          max-width: 572px;
+        }
+        @include mobile {
+          grid-area: 1 / 1 / 2 / 3;
+          text-align: center;
+          margin: auto;
+          margin-bottom: 24px;
+          max-width: 170px;
+        }
+        .what-they-say__slide-name {
+          font-weight: 500;
+          font-size: vw(26px);
+          line-height: vw(36px);
+          letter-spacing: vw(-0.5px);
+          padding-bottom: vw(8px);
+          @include desktop {
+            font-size: 26px;
+            line-height: 36px;
+            letter-spacing: -0.5px;
+            padding-bottom: 8px;
+          }
+          @include notebook {
+            font-size: 22px;
+          }
+          @include tablet {
+            font-size: 18px;
+            line-height: 24px;
+          }
+          @include mobile {
+            font-weight: 600;
+          }
+        }
+        .what-they-say__slide-prof {
+          font-weight: 600;
+          font-size: vw(18px);
+          line-height: vw(24px);
+          letter-spacing: vw(-0.3px);
+          color: #666666;
+          @include desktop {
+            font-size: 18px;
+            line-height: 24px;
+            letter-spacing: -0.3px;
+          }
+          @include notebook {
+            font-size: 16px;
+          }
+        }
+      }
+      .quote-img {
+        grid-area: 2 / 2 / 3 / 3;
+        display: grid;
+        justify-content: end;
+        padding-top: vw(14px);
+        @include desktop {
+          padding-top: 14px;
+        }
+        @include mobile {
+          grid-area: 3 / 1 / 4 / 3;
+          margin: auto;
+        }
+
+        img {
+          width: vw(76px);
+          height: vw(50px);
+          @include desktop{
+            width: 76px;
+            height: 50px;
+          }
+          @include notebook {
+            padding-top: 8px;
+          }
+          @include tablet {
+            max-height: 62px;
+            padding-top: 6px
+          }
+        }
+      }
+    }
+    .what-they-say__slide-img{
+      @include mobile{
+        grid-area: 1 / 1 / 2 / 2;
+        margin-bottom: 42px;
+      }
+      img{
+        height: vw(444px);
+        width: 100%;
+        margin-left: auto;
+        object-fit: cover;
+        @include desktop{
+          height: 444px;
+        }
+        @include notebook{
+          height: 332px;
+        }
+        @include mobile{
+          height: 284px;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+
+  .main-page-what-they-say__slide-arrows {
+    order: 3;
+    position: relative;
+    @include mobile {
+      order: 1;
+    }
     ul {
-      grid-column-gap: 90px;
-      li {
+      display: flex;
+      justify-content: center;
+      margin-bottom: vw(80px);
+      position: relative;
+      @include desktop {
+        margin-bottom: 80px;
+      }
+      @include notebook {
+        margin-bottom: 40px;
+      }
+      @include mobile {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  .what-they-say-slide-arrow {
+    border: vw(2px) solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    width: vw(81px);
+    height: vw(81px);
+    z-index: 1;
+    display: flex;
+    cursor: pointer;
+    @include desktop {
+      border: 2px solid rgba(0, 0, 0, 0.2);
+      width: 81px;
+      height: 81px;
+    }
+    @include notebook {
+      margin: 0 6px;
+    }
+    @include tablet {
+      width: 46px;
+      height: 46px;
+    }
+    @include mobile {
+      border: 2px solid rgba(0, 0, 0, 0.1);
+      width: 48px;
+      height: 48px;
+      position: absolute;
+      top: 330px;
+    }
+
+    &:hover {
+      border: vw(2px) solid rgba(0, 0, 0, 0.4);
+      @include desktop {
+        border: 2px solid rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    &::before {
+      background-repeat: no-repeat;
+      height: vw(27px);
+      width: vw(27px);
+      background-position: center;
+      margin: auto;
+      content: " ";
+      @include desktop {
+        height: 27px;
+        width: 27px;
+      }
+      @include tablet {
+        background-size: 16px 16px;
+      }
+    }
+  }
+  .what-they-say__slide-arrows-left::before {
+    background: url("../img/icon/right3.svg");
+    background-size: contain;
+    content: "";
+    display: block;
+    color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: auto;
+  }
+  .what-they-say__slide-arrows-left {
+    @include mobile{
+      left: 0;
+    }
+  }
+  .what-they-say__slide-arrows-right {
+    @include mobile{
+      right: 0;
+    }
+  }
+  .what-they-say__slide-arrows-right::before {
+    background: url("../img/icon/left3.svg");
+    background-size: contain;
+    content: "";
+    display: block;
+    color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: auto;
+  }
+
+  &__our-partners {
+    order: 4;
+    @include notebook{
+      margin-top: 30px;
+    }
+    .h3{
+      margin-bottom: vw(40px);
+      @include desktop{
+        margin-bottom: 40px;
+      }
+      @include tablet{
+        margin-bottom: 22px;
+      }
+    }
+    ul {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: auto;
+      grid-row-gap: vw(22px);
+      justify-items: center;
+      align-items: center;
+      grid-column-gap: vw(90px);
+      @include desktop{
+        grid-column-gap: 90px;
+        grid-row-gap: 22px;
+      }
+      @include tablet{
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @include mobile{
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 40px;
+        grid-column-gap: 30px;
+      }
+      li{
         margin: 0;
-        &:last-child {
+        &:first-child{
           margin-left: unset;
         }
-        &:first-child {
-          margin-right: unset;
+        &:last-child{
+          margin-left: unset;
+        }
+      }
+      img{
+        width: auto;
+        height: vw(90px);
+        object-fit: contain;
+        @include desktop{
+          height: inherit;
+          max-width: 170px;
+          max-height: 90px;
+        }
+        @include notebook{
+          max-width: 100%;
+        }
+        @include mobile{
+          max-width: 90%;
+          max-height: 90px;
         }
       }
     }
   }
 }
+//.what-they-say__slide-quote{
+
+
+//}
+
+

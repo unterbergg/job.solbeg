@@ -4,10 +4,13 @@ const watch = require('gulp-watch');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 const minify = require('gulp-minify');
+const sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('sass', function() {
     return gulp.src('src/style.scss')
+        //.pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
+        //.pipe(sourcemaps.write('./'))
         .pipe(autoprefixer({
             cascade: false
         }))

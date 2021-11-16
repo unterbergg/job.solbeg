@@ -19,44 +19,6 @@
             "endpoint": 0
         },
         {
-            "key": "field_60473311b9f31",
-            "label": "Address 1",
-            "name": "footer_address_1",
-            "type": "wysiwyg",
-            "instructions": "ul list",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
-            "key": "field_60473328b9f32",
-            "label": "Address 2",
-            "name": "footer_address_2",
-            "type": "wysiwyg",
-            "instructions": "ul list",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
             "key": "field_614d85609bf36",
             "label": "Adress",
             "name": "footer_adress",
@@ -357,5 +319,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1632470552
+    "modified": 1635848534
 }

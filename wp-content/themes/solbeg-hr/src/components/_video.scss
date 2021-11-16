@@ -1,5 +1,20 @@
+@import "../utils/module";
+
 .main-page {
   &-video {
+    padding: vw(140px) 0;
+    @include desktop{
+      padding: 140px 0;
+    }
+    @include notebook{
+      padding: 100px 0;
+    }
+    @include tablet{
+      padding: 64px 0 38px;
+    }
+    @include mobile{
+      padding: 60px 0 30px;
+    }
     .video_wrapper {
       position: relative;
       padding-bottom: 56.25%;
@@ -19,10 +34,13 @@
 }
 .video_wrapper {
   width: 100%;
-  height: 754px;
+  height: vw(754px);
   margin: 0 auto;
   position: relative;
   background-color: #000;
+  @include desktop{
+    height: 754px;
+  }
 }
 
 .videoIframe {
@@ -38,8 +56,8 @@
 
 .videoPoster {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -63,22 +81,24 @@
     background-position: center;
     content: "";
     position: absolute;
-    @include respond-to(tablet) {
-      background-size: 60px 60px;
-      width: 60px;
-      height: 60px;
-    }
-    @include respond-to(tablet) {
-      background-size: 108px 108px;
-      width: 108px;
-      height: 108px;
-    }
-    @include respond-to(desktop) {
+    background-size: vw(185px) vw(185px);
+    width: vw(185px);
+    height: vw(185px);
+    @include desktop{
       background-size: 185px 185px;
       width: 185px;
       height: 185px;
     }
-
+    @include tablet{
+      background-size: 108px 108px;
+      width: 108px;
+      height: 108px;
+    }
+    @include mobile{
+      background-size: 60px 60px;
+      width: 60px;
+      height: 60px;
+    }
   }
 }
 .videoPoster:hover:after,

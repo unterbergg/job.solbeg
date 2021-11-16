@@ -7,6 +7,8 @@
         <?php get_template_part( 'template-parts/working'); ?>
         <?php get_template_part( 'template-parts/social'); ?>
         <?php get_template_part( 'template-parts/important'); ?>
+        <?php get_template_part( 'template-parts/recruitment'); ?>
+        <?php get_template_part( 'template-parts/covid'); ?>
         <?php get_template_part( 'template-parts/index-dobra'); ?>
         <?php get_template_part( 'template-parts/people-say'); ?>
         <?php get_template_part( 'template-parts/vacancy'); ?>

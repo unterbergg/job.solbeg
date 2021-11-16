@@ -1,51 +1,242 @@
-.main-page-soc-pack__tabs {
-  overflow-x: hidden;
-  padding-bottom: 10px;
-  margin-bottom: 30px;
-  @media screen and (max-width: 1220px){
+@import "../utils/module";
+
+.main-page-soc-pack{
+  padding: 0 0 vw(140px);
+  @include desktop{
+    padding: 0 0 140px;
+  }
+  @include notebook{
+    padding: 10px 0 100px;
+  }
+  @include tablet{
+    padding: 0 0 22px;
+  }
+  &__title {
+    height: vw(180px);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+    @include desktop{
+      height: 180px;
+    }
+    @include notebook{
+      padding-bottom: 16px;
+    }
+    @include tablet{
+      height: 90px;
+      padding-bottom: 26px;
+    }
+    div {
+      background: #ffffff;
+      filter: blur(vw(48px));
+      width: 100%;
+      height: vw(100px);
+      position: absolute;
+      @include desktop{
+        filter: blur(48px);
+        height: 100px;
+      }
+      @include notebook{
+        filter: blur(200px);
+      }
+    }
+    h2 {
+      z-index: 2;
+      text-shadow: vw(0px) vw(0px) vw(30px) rgb(255,255,255);
+      padding-bottom: vw(16px);
+      @include desktop{
+        text-shadow: 0px 0px 30px rgb(255,255,255);
+        padding-bottom: 16px;
+      }
+    }
+
+    img {
+      position: absolute;
+      width: 110%;
+    }
+  }
+  &__tabs {
+    display: flex;
+    padding-bottom: vw(10px);
     overflow-x: hidden;
-    &:hover {
+    position: relative;
+    justify-content: space-between;
+    margin-bottom: vw(30px);
+    @include desktop{
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+    @media screen and (max-width: 1220px) {
+      overflow-x: hidden;
+      &:hover {
+        overflow-x: scroll;
+      }
+    }
+    @include tablet{
+      padding-bottom: 28px;
       overflow-x: scroll;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+    }
+    @include mobile{
+      margin-bottom: 18px;
+      padding-bottom: 10px;
     }
   }
-  @media screen and (max-width: 1024px){
-    overflow-x: scroll;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;
-    &::-webkit-scrollbar {
-      width: 0;
-      height: 0;
+  &__tab {
+    white-space: nowrap;
+    padding: vw(16px) vw(24px);
+    margin-right: vw(20px);
+    border-radius: vw(50px);
+    font-weight: 500;
+    font-size: vw(20px);
+    line-height: vw(24px);
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.7);
+    border: vw(2px) solid transparent;
+    @include desktop{
+      padding: 16px 24px;
+      margin-right: 20px;
+      border-radius: 50px;
+      font-size: 20px;
+      line-height: 24px;
+      border: 2px solid transparent;
     }
-  }
-}
-.tab_content{
-  .main-page-soc-pack__tab-ul__wrapper{
-    ul{
-      margin-top: 50px;
-      margin-bottom: 50px;
-      //@include respond-to(desktop) {
-      //  margin-top: 108px;
-      //  margin-bottom: 108px;
-      //}
-      li{
-        padding: 12px 20px;
-        @include respond-to(desktop) {
-          padding: 16px 20px;
+    @include notebook{
+      padding: 11px 28px;
+      font-size: 18px;
+      margin-right: 0;
+    }
+    @include tablet{
+      border-radius: 50px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    @include mobile{
+      white-space: nowrap;
+      padding: 6px 14px;
+      text-align: center;
+    }
+    &.active{
+      border: vw(2px) solid rgba(0, 0, 0, 0.1);
+      color: #000000;
+      @include desktop{
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        color: #000000;
+      }
+    }
+    &-item{
+      display: none;
+      height: auto;
+      position: relative;
+      border-radius: vw(24px);
+      overflow: hidden;
+      @include desktop{
+        border-radius: 24px;
+      }
+      @include tablet{
+        height: 486px;
+      }
+      &:first-child {
+        display: block;
+      }
+      &-image {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-x: right;
+        @include tablet{
+          background-size: cover;
+          background-position-x: 140px;
+        }
+        @include mobile{
+          background-position-x: inherit;
+        }
+      }
+    }
+    &-ul__wrapper{
+      height: 100%;
+      display: flex;
+      align-items: center;
+      z-index: 3;
+      width: 100%;
+      ul{
+        height: fit-content;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: vw(300px);
+        margin-left: vw(62px);
+        border: vw(2px) solid rgba(255, 255, 255, 0.2);
+        border-radius: vw(7px);
+        overflow: hidden;
+        margin-top: vw(50px);
+        margin-bottom: vw(50px);
+        @include desktop{
+          max-width: 300px;
+          margin-left: 62px;
+          border: 2px solid rgba(255, 255, 255, 0.2);
+          border-radius: 7px;
+          margin-top: 50px;
+          margin-bottom: 50px;
+        }
+        @include notebook{
+          max-width: 284px;
+        }
+        @include tablet{
+          margin-left: 40px;
+          width: 100%;
+          max-width: 334px;
+        }
+        @include mobile{
+          margin: auto;
+        }
+        li {
+          border-bottom: vw(2px) solid rgba(255, 255, 255, 0.2);
+          padding: vw(16px) vw(20px);
+          color: #fff;
+          font-weight: 500;
+          font-size: vw(20px);
+          line-height: vw(24px);
+          letter-spacing: vw(-0.2px);
+          @include desktop{
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 16px 20px;
+            font-size: 20px;
+            line-height: 24px;
+            letter-spacing: -0.2px;
+          }
+          @include notebook{
+            font-size: 18px;
+            line-height: 24px;
+            padding: 12px 20px;
+          }
+          @include mobile{
+            font-size: 16px;
+          }
         }
       }
     }
   }
-  .main-page-soc-pack__tab-item{
-    height: auto;
-  }
-  .main-page-soc-pack__tab-item-image{
-    @include respond-to(tablet) {
-      background-size: cover;
-      background-position-x: 140px;
-    }
-    @include respond-to(largedesktop) {
-      background-size: contain;
-      background-position-x: right;
+  &+ .index{
+    padding-top: 0;
+    @media screen and (max-width: 1024px){
+      padding-top: 24px;
     }
   }
 }
+
+
+

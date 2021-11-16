@@ -1,90 +1,320 @@
-.main-page-important-to-us__inner{
-  @media screen and (min-width: 600px) and (max-width: 1023px){
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+@import "../utils/module";
+
+.main-page-important-to-us {
+  padding: vw(120px) 0 vw(134px);
+  background: #f7efe9;
+  @include desktop {
+    padding: 120px 0 134px;
   }
-  .slick-dots{
-    bottom: -33px;
-    li{
-      width: 8px;
-      height: 8px;
-      margin: 0 6px;
-      &.slick-active{
-        width: 16px;
-        height: 16px;
-        button{
+  @include notebook {
+    padding: 66px 0 134px;
+  }
+  @include tablet {
+    padding: 42px 0 30px;
+    background: #fff;
+  }
+  @include mobile {
+    padding: 22px 0 30px;
+  }
+
+  &__title {
+    padding-bottom: vw(80px);
+    text-align: center;
+    @include desktop {
+      padding-bottom: 80px;
+    }
+    @include notebook {
+      padding-bottom: 40px;
+    }
+    @include tablet {
+      padding-bottom: 44px;
+      text-align: left;
+    }
+    @include mobile {
+      padding-bottom: 20px;
+      text-align: left;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    @media screen and (min-width: 600px) and (max-width: 1023px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    @include mobile {
+      flex-wrap: nowrap;
+      flex-direction: column;
+    }
+
+    .slick-dots {
+      bottom: -33px;
+
+      li {
+        width: 8px;
+        height: 8px;
+        margin: 0 6px;
+
+        &.slick-active {
           width: 16px;
           height: 16px;
-          &:before{
+
+          button {
             width: 16px;
             height: 16px;
-            background: #D64045;
+
+            &:before {
+              width: 16px;
+              height: 16px;
+              background: #D64045;
+            }
+          }
+        }
+
+        button {
+          width: 8px;
+          height: 8px;
+          padding: 0;
+
+          &:before {
+            width: 8px;
+            height: 8px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            content: "";
+            opacity: 1;
           }
         }
       }
-      button{
-        width: 8px;
-        height: 8px;
-        padding: 0;
-        &:before{
-          width: 8px;
-          height: 8px;
-          background: rgba(0, 0, 0, 0.1);
-          border-radius: 50%;
-          content: "";
-          opacity: 1;
+    }
+  }
+
+  &__item {
+    width: 25%;
+    height: vw(550px);
+    position: relative;
+    border-radius: vw(6px);
+    margin: 0 vw(3px) vw(3px) 0;
+
+    @include desktop {
+      height: 550px;
+      border-radius: 6px;
+      margin: 0 3px 3px 0;
+    }
+    @include notebook {
+      height: 504px;
+    }
+    @include tablet {
+      width: calc(50% - 3px);
+      position: relative;
+      margin: 1.5px;
+      height: 0;
+      padding-top: 75%;
+    }
+    @media screen and (max-width: 599px) {
+      width: 100%;
+      padding-top: 15%;
+    }
+    &:last-child {
+      margin-right: 0px;
+    }
+    @include mobile {
+      width: 100%;
+      height: 0;
+      position: relative;
+    }
+
+    &-front {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      @include tablet{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+      &:before{
+        position: absolute;
+        width: 100%;
+        height: 33%;
+        content: '';
+        background: linear-gradient(179.96deg, rgba(0, 0, 0, 0) 20.94%, rgba(0, 0, 0, 0.6) 99.97%);
+        z-index: 1;
+        bottom: 0;
+        border-radius: 6px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        border-radius: 6px;
+      }
+
+      .front-num {
+        font-weight: 600;
+        font-size: vw(20px);
+        line-height: vw(24px);
+        letter-spacing: vw(-0.3px);
+        color: #ffffff;
+        position: absolute;
+        top: vw(32px);
+        left: vw(32px);
+        width: vw(76px);
+        height: vw(76px);
+        border: vw(1px) solid #fff;
+        border-radius: vw(50px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Montserrat", sans-serif;
+        @include desktop {
+          font-size: 20px;
+          line-height: 24px;
+          letter-spacing: -0.3px;
+          top: 32px;
+          left: 32px;
+          width: 76px;
+          height: 76px;
+          border: 1px solid #fff;
+          border-radius: 50px;
+        }
+        @include notebook {
+          top: 44px;
+          left: 12px;
+          width: 52px;
+          height: 52px;
+        }
+        @include tablet {
+          width: 52px;
+          height: 52px;
+        }
+      }
+
+      .front-text-title {
+        font-weight: 600;
+        font-size: vw(20px);
+        line-height: vw(24px);
+        letter-spacing: vw(-0.3px);
+        color: #ffffff;
+        position: absolute;
+        bottom: vw(32px);
+        left: vw(32px);
+        max-width: (calc(100% - vw(64px)));
+        width: 100%;
+        z-index: 3;
+        @include desktop {
+          font-size: 20px;
+          line-height: 24px;
+          letter-spacing: -0.3px;
+          bottom: 32px;
+          left: 32px;
+          max-width: calc(100% - 64px);
+        }
+        @include notebook{
+          left: 12px;
         }
       }
     }
-  }
-}
-.main-page-important-to-us__item{
-  border-radius: 6px;
-  margin: 0 3px 3px 0;
-  @media screen and (min-width: 320px) and (max-width: 1023px){
-    margin: 1.5px;
-    position: relative;
-    height: 0;
-    padding-top: 75%;
-    width: calc(50% - 3px);
-  }
-  @media screen and (max-width: 599px){
-    width: 100%;
-    padding-top: 15%;
-  }
-  &:last-child{
-    margin-right: 0px;
-  }
-  .main-page-important-to-us__item-front{
-    position: relative;
-    @media screen and (min-width: 320px) and (max-width: 1023px){
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+
+    .back-num {
+      width: vw(78px);
+      height: vw(78px);
+      background: #fff;
+      border-radius: vw(50px);
+      margin-bottom: vw(36px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      font-size: vw(20px);
+      line-height: vw(24px);
+      letter-spacing: vw(-1.2px);
+      color: #5448c8;
+      font-family: "Montserrat", sans-serif;
+      @include desktop {
+        width: 78px;
+        height: 78px;
+        border-radius: 50px;
+        margin-bottom: 36px;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: -1.2px;
+      }
+      @include notebook {
+        width: 54px;
+        height: 54px;
+      }
     }
-    img{
-      border-radius: 6px;
-    }
-    &:before{
-      position: absolute;
+
+    .back-text-title {
+      font-weight: 600;
+      font-size: vw(20px);
+      line-height: vw(24px);
+      letter-spacing: vw(-0.3px);
+      color: #ffffff;
       width: 100%;
-      height: 33%;
-      content: '';
-      background: linear-gradient(179.96deg, rgba(0, 0, 0, 0) 20.94%, rgba(0, 0, 0, 0.6) 99.97%);
-      z-index: 1;
-      bottom: 0;
+      margin-bottom: vw(20px);
+      @include desktop {
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: -0.3px;
+        margin-bottom: 20px;
+      }
+      @include notebook {
+        font-size: 18px;
+      }
+    }
+
+    .back-text-text {
+      font-weight: 500;
+      font-size: vw(16px);
+      line-height: vw(24px);
+      letter-spacing: vw(-0.1px);
+      color: #ffffff;
+      width: 100%;
+      @include desktop {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.1px;
+      }
+      @include notebook {
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  &__item-back {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.55s opacity, 0.55s visibility;
+    position: absolute;
+    top: 0;
+    background: #5448c8;
+    height: calc(100% - 3.33333vw);
+    width: calc(100% - 3.33333vw);
+    padding: vw(32px);
+    overflow: auto;
+    border-radius: vw(6px);
+    @include desktop {
+      height: calc(100% - 64px);
+      width: calc(100% - 64px);
+      padding: 32px;
       border-radius: 6px;
     }
-  .front-text-title{
-    z-index: 3;
-  }
-  }
-  .main-page-important-to-us__item-back{
-    border-radius: 6px;
-    @media screen and (min-width: 320px) and (max-width: 1023px){
+    @include notebook {
+      height: calc(100% - 56px);
+      width: calc(100% - 24px);
+      padding: 44px 12px 12px 12px;
+    }
+    @include tablet {
       position: absolute;
       top: 0;
       right: 0;
@@ -93,6 +323,9 @@
     }
   }
 }
+
+
+
 #mainDiv {
   height: 100px;
   width: 80px;
@@ -107,3 +340,4 @@
   top: 50%;
   bottom: 0;
 }
+

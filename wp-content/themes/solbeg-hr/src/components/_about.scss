@@ -1,22 +1,203 @@
+@import "../utils/module";
+
 .main-page-about{
+  padding: vw(140px) 0 vw(70px) 0;
+  @include desktop{
+    padding: 140px 0 70px 0;
+  }
+  @include notebook{
+    padding: 100px 0 40px;
+  }
+  @include tablet{
+    padding: 64px 0 24px;
+  }
+  @include mobile{
+    padding: 44px 0 30px 0;
+  }
   &__grid{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-column-gap: 0;
+    grid-row-gap: vw(72px);
+    @include desktop{
+      grid-row-gap: 72px;
+    }
+    @include tablet{
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, auto);
+      //grid-template-columns: repeat(2, 1fr);
+      //grid-template-rows: repeat(2, auto);
+      grid-column-gap: 0;
+      grid-row-gap: 0;
+    }
+    @include mobile{
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, auto);
+    }
+  }
+  &__title{
+    grid-area: 1 / 1 / 2 / 4;
+    @include tablet{
+      grid-area: 1/1/2/2;
+    }
+    &-img{
+      width: vw(354px);
+      height: vw(230px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      margin: vw(44px) auto 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='354' height='231' viewBox='0 0 354 231' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M274.862 5.35063C312.105 13.4747 340.934 32.7331 350.516 62.1934C360.099 91.6551 348.105 124.166 322.753 152.608C297.317 181.144 257.863 206.341 210.488 221.718C200.019 225.115 189.588 227.896 179.286 230.08C176.855 230.596 174.466 229.043 173.951 226.611C173.435 224.18 174.989 221.791 177.42 221.276C187.411 219.158 197.539 216.458 207.71 213.157C253.839 198.185 291.837 173.766 316.035 146.619C340.317 119.377 350.141 90.1365 341.957 64.9771C333.774 39.8163 308.619 21.926 272.944 14.1439C237.392 6.38877 192.283 8.94463 146.153 23.917C100.024 38.8894 62.0261 63.3077 37.8279 90.4551C13.5458 117.697 3.72231 146.938 11.9054 172.097C19.8011 196.373 43.4826 213.876 77.2064 222.074C79.6213 222.662 81.1031 225.095 80.516 227.51C79.9289 229.925 77.4952 231.407 75.0803 230.82C39.7612 222.233 12.5908 203.302 3.34673 174.881C-6.23571 145.419 5.75743 112.908 31.1095 84.4665C56.5455 55.9305 95.9997 30.7333 143.375 15.3566C190.75 -0.0200415 237.494 -2.80051 274.862 5.35063Z' fill='%23F9C22E'/%3E%3C/svg%3E%0A");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      @include desktop{
+        width: 354px;
+        height: 230px;
+        margin: 44px auto 0;
+      }
+      @include notebook{
+        width: 270px;
+        height: 190px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin: 24px auto 0;
+      }
+      @include tablet{
+        width: 100%;
+        height: 196px;
+        margin: 32px auto;
+      }
+
+      @include mobile{
+        width: 100%;
+        height: 196px;
+        margin: 32px auto;
+      }
+      &-img{
+        width: vw(224px);
+        height: 100%;
+        object-fit: contain;
+        z-index: -1;
+        @include desktop{
+          width: 224px;
+        }
+        @include notebook{
+          width: 170px;
+        }
+        @include mobile{
+          width: 200px;
+          height: 100%;
+        }
+      }
+    }
+  }
+  &__text{
+    grid-area: 1 / 4 / 2 / 7;
+    max-width: vw(670px);
+    @include desktop{
+      grid-area: 1 / 4 / 2 / 7;
+      max-width: 670px;
+    }
+    @include tablet{
+      grid-area: 2 / 1 / 3 / 2;
+    }
+    p{
+      margin-bottom: vw(32px);
+      @include desktop{
+        margin-bottom: 32px;
+      }
+    }
+  }
+  &__count{
+    grid-area: 2 / 1 / 3 / 7;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    @include tablet{
+      grid-area: 3 / 1 / 4 / 2;
+      flex-direction: column;
+    }
+    div{
+      width: inherit;
+      margin: auto;
+      padding: vw(36px) 0;
+      @include desktop{
+        padding: 36px 0;
+      }
+      @include notebook{
+        padding: 16px 0;
+        border-bottom: 0;
+        width: inherit;
+        margin: auto;
+      }
+      @include mobile{
+        width: fit-content;
+        margin: auto;
+      }
+      &:first-child,&:last-child {
+        @include notebook{
+          padding: 16px 0;
+        }
+      }
+    }
     .main-page-about__project{
-      border-right: none;
       border-top: none;
-      border-bottom: 3px solid #f7efe9;
-      @include respond-to(tablet) {
+      border-right: vw(3px) solid #f7efe9;
+      @include desktop{
         border-right: 3px solid #f7efe9;
-        border-bottom:none;
+      }
+      @include tablet{
+        border-right: none;
+        border-bottom: 3px solid #f7efe9;
+        width: fit-content;
+      }
+      @include mobile{
+        border-right: none;
+        border-bottom: 3px solid #f7efe9;
       }
       &:last-child{
         border: none;
-        @include respond-to(tablet) {
-          border: none;
-        }
       }
       .main-page-about__box-text{
         padding: 0 10px;
       }
+    }
+  }
+  &__box-num{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: vw(40px);
+    line-height: vw(49px);
+    text-align: center;
+    margin-bottom: vw(22px);
+    @include desktop{
+      font-size: 40px;
+      line-height: 49px;
+      margin-bottom: 22px;
+    }
+    @include notebook{
+      font-size: 36px;
+      line-height: 49px;
+      margin-bottom: 12px;
+    }
+  }
+  &__box-text{
+    font-weight: 500;
+    font-size: vw(20px);
+    line-height: vw(24px);
+    text-align: center;
+    @include desktop{
+      font-size: 20px;
+      line-height: 24px;
+    }
+    @include tablet{
+      font-size: 16px;
+      line-height: 24px;
     }
   }
 }

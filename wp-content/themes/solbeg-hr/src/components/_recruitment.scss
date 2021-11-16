@@ -1,0 +1,189 @@
+@import "../utils/module";
+.main-page-recruitment{
+  padding: vw(120px) 0;
+  @include desktop{
+    padding: 120px 0;
+  }
+  @include notebook{
+    padding: 100px 0;
+  }
+  @include tablet{
+    padding: 64px 0;
+  }
+  .recruitment-title{
+    font-style: normal;
+    font-weight: 500;
+    font-size: vw(60px);
+    line-height: vw(70px);
+    max-width: vw(562px);
+    text-align: center;
+    letter-spacing: vw(-1.2px);
+    margin: 0 auto vw(100px);
+    @include desktop{
+      font-size: 60px;
+      line-height: 70px;
+      max-width: 562px;
+      letter-spacing: -1.2px;
+      margin: 0 auto 100px;
+    }
+    @include tablet{
+      font-size: 32px;
+      line-height: 40px;
+      max-width: 290px;
+    }
+  }
+  .recruitment-list{
+    display: flex;
+    justify-content: space-between;
+    @include notebook{
+      overflow-x: scroll;
+    }
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    &.container{
+      @include tablet{
+        padding-left: 24px;
+        padding-right: 24px;
+        max-width: calc(100% - 48px);
+      }
+    }
+    .recruitment-item{
+      display: flex;
+      flex-direction: column;
+      @include notebook{
+        min-width: 238px;
+        margin-right: 60px;
+      }
+      @include tablet{
+        min-width: 290px;
+        margin-right: 30px;
+      }
+      @include mobile{
+        min-width: 235px;
+        margin-right: 20px;
+      }
+      &__step{
+        width: vw(80px);
+        height: vw(80px);
+        border-radius: 50%;
+        background: #A28FF7;
+        margin-bottom: vw(20px);
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include desktop{
+          width: 80px;
+          height: 80px;
+          margin-bottom: 20px;
+        }
+        @include mobile{
+          width: 60px;
+          height: 60px;
+        }
+        &:after{
+          position: absolute;
+          content: '';
+          height: vw(2px);
+          width: vw(230px);
+          background: #F9F4F0;
+          top: vw(38px);
+          left: vw(80px);
+          @include desktop{
+            height: 2px;
+            width: 230px;
+            background: #F9F4F0;
+            top: 38px;
+            left: 80px;
+          }
+          @include tablet{
+            width: 270px;
+          }
+          @include mobile{
+            top: 29px;
+            left: 60px;
+            width: 210px;
+          }
+        }
+        &-icon{
+          width: vw(44px);
+          height: vw(44px);
+          @include desktop{
+            width: 44px;
+            height: 44px;
+          }
+          @include mobile{
+            width: 28px;
+            height: 28px;
+          }
+        }
+        &-number{
+          position: absolute;
+          top: vw(-5px);
+          right: vw(-13px);
+          font-style: normal;
+          font-weight: 600;
+          font-size: vw(20px);
+          @include desktop{
+            top: -5px;
+            right: -13px;
+            font-size: 20px;
+          }
+          @include mobile{
+            font-size: 16px;
+            right: -10px;
+          }
+        }
+      }
+      &__title{
+        font-style: normal;
+        font-weight: 500;
+        font-size: vw(20px);
+        line-height: vw(32px);
+        letter-spacing: vw(-0.2px);
+        margin-bottom: vw(8px);
+        @include desktop{
+          font-size: 20px;
+          line-height: 32px;
+          letter-spacing: -0.2px;
+          margin-bottom: 8px;
+        }
+        @include mobile{
+          font-size: 16px;
+        }
+      }
+      &__text{
+        font-style: normal;
+        font-weight: 500;
+        font-size: vw(16px);
+        line-height: vw(24px);
+        letter-spacing: vw(-0.2px);
+        color: #000000;
+        opacity: 0.6;
+        max-width: vw(238px);
+        @include desktop{
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: -0.2px;
+          max-width: 238px;
+        }
+        @include tablet{
+          max-width: 290px;
+        }
+        @include mobile {
+          max-width: 235px;
+        }
+      }
+    }
+    .recruitment-item:last-child{
+      .recruitment-item{
+        &__step{
+          &:after{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

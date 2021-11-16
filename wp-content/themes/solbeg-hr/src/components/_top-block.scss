@@ -1,47 +1,136 @@
+@import "../utils/module";
+
 .page-top-block{
-  padding: 20px 0;
-  @include respond-to(mobile) {
-    top: 25px;
-    min-height: 180px;
-    height: auto;
-  }
-  @include respond-to(tablet) {
-    top: 38px;
-    min-height: 300px;
-    padding: 0;
-  }
-  @include respond-to(desktop) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  top: vw(60px);
+  min-height: vw(300px);
+  height: auto;
+  @include desktop{
+    padding:0;
     top: 60px;
     min-height: 300px;
+  }
+  @include notebook{
     padding: 0;
   }
-  .page-top-block__name{
-    h1{
+  @include tablet{
+    top: 38px;
+    min-height: 300px;
+  }
+  @include mobile{
+    top: 25px;
+    min-height: 180px;
+  }
+  &>.container{
+    z-index: 1;
+  }
+}
+.page-top-block__name{
+  margin-top: vw(-50px);
+  @include desktop{
+    margin-top: -50px;
+  }
+  h1{
+    font-size: vw(60px);
+    line-height: vw(70px);
+    padding: 0 vw(150px);
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: -1.2px;
+    @include desktop{
+      font-size: 60px;
+      line-height: 70px;
+      padding: 0 150px;
+    }
+    @include tablet{
+      font-size: 40px;
+      line-height: 46px;
+      padding: 0 150px;
+    }
+    @include mobile{
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 44px;
+      letter-spacing: -1.2px;
       padding: 0 20px;
-      @include respond-to(tablet) {
-        font-size: 40px;
-        line-height: 46px;
-        padding: 0 150px;
-      }
-      @include respond-to(desktop){
-        font-size: 60px;
-        line-height: 70px;
+    }
+  }
+}
+.page-top-block__back-img{
+  position: absolute;
+  width: 50%;
+  @include mobile{
+    max-width: 100%;
+    width: 90%;
+  }
+}
+.page-top-block__prev{
+  position: absolute;
+  left: vw(76px);
+  border-radius: 50%;
+  border: vw(2px) solid rgba(201,66,73,.1);
+  width: vw(81px);
+  height: vw(81px);
+  @include desktop{
+    left: 76px;
+    border-radius: 50%;
+    border: 2px solid rgba(201,66,73,.1);
+    width: 81px;
+    height: 81px;
+  }
+  @include mobile{
+    display: none;
+  }
+  a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+      width: vw(27px);
+      @include desktop{
+        width: 27px;
       }
     }
   }
-  .page-top-block__loc{
-    margin-bottom: 0;
+}
+.page-top-block__loc{
+  font-weight: 500;
+  font-size: vw(26px);
+  line-height: vw(32px);
+  letter-spacing: vw(-0.2px);
+  color: rgba(0, 0, 0, 0.4);
+  margin-bottom: vw(-50px);
+  padding-top: vw(25px);
+  text-align: center;
+  @include desktop{
+    font-size: 26px;
+    line-height: 32px;
+    letter-spacing: -0.2px;
+    margin-bottom: -50px;
+    padding-top: 25px;
+  }
+  @include mobile{
+    padding-top: 0;
   }
 }
 .vacancy-info-block .vacancy-info-block__grid{
-  margin-top: 0;
-  @include respond-to(mobile) {
-    margin-top: 25px;
-  }
-  @include respond-to(tablet) {
-    margin-top: 38px;
-  }
-  @include respond-to(desktop) {
+  margin-top: vw(60px);
+  @include desktop{
     margin-top: 60px;
   }
+  @include tablet{
+    margin-top: 38px;
+  }
+  @include mobile{
+    margin-top: 25px;
+  }
+
 }

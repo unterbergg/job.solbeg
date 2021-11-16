@@ -1,0 +1,129 @@
+@import "../utils/module";
+.main-page-our-offices{
+  padding: vw(70px) 0 vw(140px) 0;
+  @include desktop{
+    padding: 70px 0 140px 0;
+  }
+  @include notebook{
+    padding: 40px 0 100px 0;
+  }
+  @include tablet{
+    padding: 20px 0 64px 0;
+  }
+  @include mobile{
+    padding: 30px 0 44px 0;
+  }
+  h3{
+    margin-bottom: vw(32px);
+    @include desktop{
+      margin-bottom: 32px;
+    }
+  }
+  &__grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: vw(445px);
+    grid-column-gap: vw(3px);
+    grid-row-gap: vw(3px);
+    @include desktop{
+      grid-template-rows: 445px;
+      grid-column-gap: 3px;
+      grid-row-gap: 3px;
+    }
+    @include notebook{
+      grid-template-rows: auto;
+    }
+    @include tablet{
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include mobile{
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &__item{
+    position: relative;
+    height: 100%;
+    span{
+      position: absolute;
+      bottom: vw(28px);
+      left: vw(24px);
+      font-weight: 500;
+      font-size: vw(26px);
+      line-height: vw(36px);
+      letter-spacing: vw(-0.5px);
+      color: #ffffff;
+      @include desktop{
+        bottom: 28px;
+        left: 24px;
+        font-size: 26px;
+        line-height: 36px;
+        letter-spacing: -0.5px;
+      }
+      @include notebook{
+        font-size: 20px;
+        line-height: 28px;
+      }
+      @include tablet{
+        bottom: 18px;
+        left: 18px;
+        font-size: 16px;
+        line-height: 24px;
+      }
+      @include mobile{
+        bottom: 16px;
+        left: 16px;
+      }
+    }
+  }
+  &__item-new{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("data:image/svg+xml,%3Csvg width='265' height='265' viewBox='0 0 265 265' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M228.443 228.259C278.697 178.024 275.835 94.3993 222.875 41.4923C169.916 -11.4133 86.2376 -14.2451 35.9859 35.9879C-14.268 86.2231 -11.4066 169.848 41.5539 222.755C47.4043 228.599 53.6274 233.832 60.1378 238.45C62.1649 239.888 64.9738 239.411 66.4117 237.384C67.8496 235.356 67.372 232.548 65.3449 231.11C59.2445 226.782 53.4074 221.875 47.9146 216.387C-1.90182 166.621 -4.02532 88.7098 42.3486 42.3531C88.7247 -4.00576 166.696 -1.90788 216.514 47.8595C266.33 97.6256 268.454 175.537 222.08 221.894C199.684 244.282 169.992 255.355 139.617 255.245C137.132 255.236 135.11 257.243 135.101 259.728C135.092 262.214 137.099 264.236 139.585 264.245C172.176 264.363 204.227 252.466 228.443 228.259Z' fill='%235448C8'/%3E%3C/svg%3E%0A");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    span{
+      font-weight: 500;
+      font-size: vw(26px);
+      line-height: vw(36px);
+      text-align: center;
+      letter-spacing: vw(-0.2px);
+      color: rgba(0, 0, 0, 0.6);
+      @include desktop{
+        font-size: 26px;
+        line-height: 36px;
+        letter-spacing: -0.2px;
+      }
+      @include notebook{
+        font-size: 20px;
+        line-height: 28px;
+      }
+      @include tablet{
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+  }
+  &__img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: vw(6px);
+    @include desktop{
+      border-radius: 6px;
+    }
+  }
+  &__img-back{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: vw(6px);
+    @include desktop{
+      border-radius: 6px;
+    }
+  }
+}
