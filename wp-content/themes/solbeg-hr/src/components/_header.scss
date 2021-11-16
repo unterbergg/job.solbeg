@@ -1,6 +1,91 @@
+@import "../utils/module";
+
 header {
+  position: fixed;
+  background: white;
+  width: 100%;
+  z-index: 9999996;
+  top: 0;
   .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: vw(23px) auto;
+    padding: 0 vw(50px);
     max-width: none;
+    @include desktop{
+      margin: 23px auto;
+      padding: 0 50px;
+    }
+    @include notebook{
+      display: flex;
+      margin: 12px auto;
+    }
+    @include tablet{
+      display: none;
+    }
+    .header__logo {
+      display: flex;
+      img{
+        width: vw(167px);
+        height: vw(37px);
+        @include desktop{
+          width: 167px;
+          height: 37px;
+        }
+      }
+    }
+    .header__menu{
+      ul{
+        display: flex;
+        align-items: center;
+        li{
+          margin-left: vw(44px);
+          @include desktop{
+            margin-left: 44px;
+          }
+          @include notebook{
+            margin-left: 40px;
+          }
+          a{
+            font-size: vw(16px);
+            line-height: vw(20px);
+            font-weight: 600;
+            @include desktop{
+              font-size: 16px;
+              line-height: 20px;
+            }
+            @include notebook{
+              font-size: 14px;
+            }
+          }
+        }
+        .header-button{
+          padding: vw(12px) vw(24px);
+          font-size: vw(16px);
+          line-height: vw(20px);
+          border-radius: vw(60px);
+          cursor: pointer;
+          color: #ffffff;
+          background: #d64045;
+          &:hover{
+            background: #f0474d;
+          }
+          &:focus {
+            outline: none!important;
+          }
+          @include desktop{
+            font-size: 16px;
+            line-height: 20px;
+            padding: 12px 24px;
+            border-radius: 60px;
+          }
+          @include notebook{
+            padding: 12px 14px;
+          }
+        }
+      }
+    }
     .popup {
       &-open {
         &__link {
@@ -9,14 +94,59 @@ header {
       }
     }
   }
+  .header-mobile {
+    display: none;
+    @include tablet{
+      display: block;
+      padding: 14px 24px;
+    }
+    .header-mobile__logo {
+      width: 126px;
+    }
+    .header-mobile__top-line {
+      display: flex;
+      justify-content: space-between;
+    }
+    .header-mobile__logo {
+      width: 176px;
+    }
+    .header-mobile__menu {
+      display: none;
+      overflow: scroll;
+    }
+    .header-mobile__menu-list {
+      padding: 76px 0;
+    }
+    .header-mobile__menu-list li {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: -0.3px;
+      margin-bottom: 44px;
+      text-align: center;
+    }
+    .header-mobile__menu-list li:last-child {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .header-button {
+      color: #ffffff;
+      background: #d64045;
+      border-radius: 60px;
+      padding: 12px 24px;
+    }
+  }
 }
 
-.page-anchor {
-  height: 69px;
-  @include respond-to(desktop) {
-    height: 44px;
-  }
-  @include respond-to(tablet) {
-    height: 69px;
-  }
+//.page-anchor {
+//  height: 69px;
+//  @include respond-to(desktop) {
+//    height: 44px;
+//  }
+//  @include respond-to(tablet) {
+//    height: 69px;
+//  }
+//}
+.popup-open__link a{
+  pointer-events: none;
 }

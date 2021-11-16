@@ -19,6 +19,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_617fd663d227a",
+            "label": "Display Section",
+            "name": "display_section_top_block",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_6040d0aea1a28",
             "label": "Top block title",
             "name": "main_page_top_block_title",
@@ -135,6 +154,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_617fd79cd227b",
+            "label": "Display Section",
+            "name": "display_section_about",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_6040e77141092",
             "label": "About title",
             "name": "main_page_about_title",
@@ -211,7 +249,7 @@
             },
             "collapsed": "",
             "min": 0,
-            "max": 0,
+            "max": 5,
             "layout": "table",
             "button_label": "",
             "sub_fields": [
@@ -270,6 +308,25 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_617fd7d7d227e",
+            "label": "Display Section",
+            "name": "display_section__our_offices",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_60414fb330ef2",
@@ -390,6 +447,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_617fd7cdd227d",
+            "label": "Display Section",
+            "name": "display_section_history_company",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_60415b0642d4c",
             "label": "History company title",
             "name": "main_page_history_company_title",
@@ -484,6 +560,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_617fd7d9d227f",
+            "label": "Display Section",
+            "name": "display_section__working_on",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_604164e31e6d2",
             "label": "Working on title",
             "name": "main_page_working_on_title",
@@ -546,164 +641,6 @@
             "mime_types": ""
         },
         {
-            "key": "field_604683411bb08",
-            "label": "Working on, slider",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_604683501bb09",
-            "label": "Working on slider title",
-            "name": "main_page_working_on_slider_title",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_6046837b1bb0a",
-            "label": "Working on slider item",
-            "name": "main_page_working_on_slider_item",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_605332d2c9ac5",
-                    "label": "Slider bg",
-                    "name": "working_on_slider_bg",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "url",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_6046839c1bb0b",
-                    "label": "Slider title",
-                    "name": "working_on_slider_title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_604683bc1bb0c",
-                    "label": "Slider text",
-                    "name": "working_on_slider_text",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "delay": 0
-                },
-                {
-                    "key": "field_604683d01bb0d",
-                    "label": "Slider tech",
-                    "name": "working_on_slider_tech",
-                    "type": "repeater",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "collapsed": "",
-                    "min": 0,
-                    "max": 0,
-                    "layout": "table",
-                    "button_label": "",
-                    "sub_fields": [
-                        {
-                            "key": "field_604685341bb0f",
-                            "label": "Slider tech inner",
-                            "name": "working_on_slider_tech_inner",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "key": "field_6046878688d98",
             "label": "Working on, partners",
             "name": "",
@@ -718,6 +655,25 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_617fd8a9d2287",
+            "label": "Display Section",
+            "name": "display_section___what_they_say_our_partners",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_6046879e88d99",
@@ -779,6 +735,25 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_617fd7e1d2282",
+            "label": "Display Section",
+            "name": "display_section__soc_pack",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_60468cae8d1a9",
@@ -912,6 +887,25 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_617fd7e3d2283",
+            "label": "Display Section",
+            "name": "display_section__important_to_us",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_6046aba67f5ad",
@@ -1049,6 +1043,25 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_617fd7e7d2284",
+            "label": "Display Section",
+            "name": "display_section__index_good",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_6155a19e7e0b2",
@@ -1293,6 +1306,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_617fd8a0d2286",
+            "label": "Display Section",
+            "name": "display_section__what_they_say",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_6046b81f6efcd",
             "label": "What they say title",
             "name": "main_page_what_they_say_title",
@@ -1430,6 +1462,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_617fd7dfd2281",
+            "label": "Display Section",
+            "name": "display_section__working_on_partners",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_6046bd6433096",
             "label": "Our partners title",
             "name": "main_page_what_they_say_our_partners_title",
@@ -1510,6 +1561,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_617fd8aad2288",
+            "label": "Display Section",
+            "name": "display_section___video",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_6046c2ae615a2",
             "label": "Video",
             "name": "main_page_video",
@@ -1567,6 +1637,25 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_617fd8acd2289",
+            "label": "Display Section",
+            "name": "display_section___trainee",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_614c8c5ff3113",
@@ -1808,8 +1897,8 @@
             "maxlength": ""
         },
         {
-            "key": "field_6046c61bb0c21",
-            "label": "Facts",
+            "key": "field_618293c2b3acd",
+            "label": "Recruitment",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -1824,9 +1913,28 @@
             "endpoint": 0
         },
         {
-            "key": "field_6046c62db0c22",
-            "label": "Facts title",
-            "name": "main_page_facts_title",
+            "key": "field_61829561b3ada",
+            "label": "Display Section",
+            "name": "display_section___recruitment",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_618293d2b3ace",
+            "label": "Recruitment title",
+            "name": "recruitment_title",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -1843,9 +1951,170 @@
             "maxlength": ""
         },
         {
-            "key": "field_6046c63eb0c23",
-            "label": "Facts text",
-            "name": "main_page_facts_text",
+            "key": "field_618293e5b3acf",
+            "label": "Recruitment item",
+            "name": "recruitment_item",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_618293f6b3ad0",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_6182940eb3ad1",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_61829417b3ad2",
+                    "label": "Text",
+                    "name": "text",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
+                }
+            ]
+        },
+        {
+            "key": "field_61829423b3ad3",
+            "label": "Covid",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6182958db3adb",
+            "label": "Display Section",
+            "name": "display_section___covid",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_6182951fb3ad7",
+            "label": "Covid image",
+            "name": "covid_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_61829538b3ad8",
+            "label": "Covid Title",
+            "name": "covid_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6182954cb3ad9",
+            "label": "Covid Text",
+            "name": "covid_text",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -1860,417 +2129,6 @@
             "maxlength": "",
             "rows": "",
             "new_lines": ""
-        },
-        {
-            "key": "field_6050efab86cd8",
-            "label": "Facts double item",
-            "name": "main_page_facts_double_item",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_6050efab86cd9",
-                    "label": "Percents",
-                    "name": "percents",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_6050efab86cdb",
-                    "label": "First text",
-                    "name": "first_text",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_6050efab86cdc",
-                    "label": "Second text",
-                    "name": "second_text",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_6050efab86cdd",
-                    "label": "First color bg",
-                    "name": "first_color_bg",
-                    "type": "color_picker",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": ""
-                },
-                {
-                    "key": "field_6050efab86cde",
-                    "label": "Second color bg",
-                    "name": "second_color_bg",
-                    "type": "color_picker",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": ""
-                },
-                {
-                    "key": "field_6050efab86cdf",
-                    "label": "First font size",
-                    "name": "first_font_size",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_6050efab86ce0",
-                    "label": "Second font size",
-                    "name": "second_font_size",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_6050efab86ce1",
-                    "label": "First font color",
-                    "name": "first_font_color",
-                    "type": "color_picker",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": ""
-                },
-                {
-                    "key": "field_6050efab86ce2",
-                    "label": "Second font color",
-                    "name": "second_font_color",
-                    "type": "color_picker",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": ""
-                }
-            ]
-        },
-        {
-            "key": "field_6046c6faaaa91",
-            "label": "Facts item",
-            "name": "main_page_facts_item",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_6046c7c5aaa92",
-                    "label": "Fact percent",
-                    "name": "fact_percent",
-                    "type": "text",
-                    "instructions": "%",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_6046c7d7aaa93",
-                    "label": "Fact text",
-                    "name": "fact_text",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_6046cab58d6b5",
-                    "label": "Fact color",
-                    "name": "fact_color",
-                    "type": "color_picker",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "#5448c8"
-                },
-                {
-                    "key": "field_6050defcc6d75",
-                    "label": "Fact font size",
-                    "name": "fact_font_size",
-                    "type": "text",
-                    "instructions": "px",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": 16,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_6050dfa65525a",
-                    "label": "Fact font color",
-                    "name": "fact_font_color",
-                    "type": "color_picker",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": ""
-                }
-            ]
-        },
-        {
-            "key": "field_60532a9a53523",
-            "label": "Facts item full line",
-            "name": "main_page_facts_item_full_line",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_60532a9a53524",
-                    "label": "Fact year",
-                    "name": "fact_year",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_60532eba53529",
-                    "label": "Fact year text",
-                    "name": "fact_year_text",
-                    "type": "text",
-                    "instructions": "лет или года",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_60532a9a53525",
-                    "label": "Fact text",
-                    "name": "fact_text",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_60532a9a53526",
-                    "label": "Fact color",
-                    "name": "fact_color",
-                    "type": "color_picker",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "#5448c8"
-                },
-                {
-                    "key": "field_60532a9a53527",
-                    "label": "Fact font size",
-                    "name": "fact_font_size",
-                    "type": "text",
-                    "instructions": "px",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": 16,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_60532a9a53528",
-                    "label": "Fact font color",
-                    "name": "fact_font_color",
-                    "type": "color_picker",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": ""
-                }
-            ]
         }
     ],
     "location": [
@@ -2303,5 +2161,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1633013478
+    "modified": 1635949165
 }

@@ -1,0 +1,288 @@
+@import "../utils/module";
+
+.main-page-history-company {
+  width: 100%;
+  height: vw(780px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: vw(62px) 0 0;
+  @include desktop {
+    height: 780px;
+    padding: 62px 0 0;
+  }
+  @include notebook {
+    height: 770px;
+    padding: 42px 0 0 0;
+  }
+  @include tablet {
+    height: 700px;
+    padding: 34px 0;
+  }
+  @media screen and (max-width: 797px) {
+    height: 640px;
+    padding: 44px 24px;
+    width: calc(100% - 50px);
+  }
+
+  .slick-arrow {
+    border: vw(1px) solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    width: vw(81px);
+    height: vw(81px);
+    z-index: 1;
+    @include desktop {
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      width: 81px;
+      height: 81px;
+    }
+    @include notebook {
+      width: 54px;
+      height: 54px;
+    }
+
+    &:hover {
+      border: vw(1px) solid rgba(255, 255, 255, 1);
+      @include desktop {
+        border: 1px solid rgba(255, 255, 255, 1);
+      }
+    }
+    &.slick-disabled:hover {
+      border: vw(1px) solid rgba(255, 255, 255, 0.4);
+      @include desktop {
+        border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+    }
+  }
+  .slick-prev {
+    left: 0;
+  }
+  .slick-next {
+    right: 0;
+  }
+  &__slider {
+    display: grid;
+    grid-template-columns: 1fr vw(590px) vw(160px) vw(590px) 1fr;
+    grid-template-rows: auto;
+    @include desktop{
+      grid-template-columns: 1fr 590px 160px 590px 1fr;
+    }
+    @include notebook{
+      grid-template-columns: 1fr 438px 88px 438px 1fr;
+      gap: 42px 1px;
+    }
+    @include tablet{
+      grid-template-columns: 1fr 329px 88px 329px 1fr;
+      gap: initial;
+    }
+    @media screen and (max-width: 797px){
+      grid-template-columns: 1fr;
+    }
+  }
+  &__title {
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media screen and (max-width: 797px){
+      grid-area: 1 / 1 / 2 / 6;
+      padding-bottom: 42px;
+    }
+    .h3 {
+      color: #fff;
+    }
+  }
+  &__container {
+    grid-area: 1 / 2 / 3 / 5;
+    @include mobile{
+      display: none;
+    }
+  }
+  &__year-wrapper {
+    grid-area: 1 / 3 / 2 / 6;
+    width: 100%;
+    @media screen and (max-width: 797px){
+      grid-area: 2 / 1 / 3 / 6;
+    }
+  }
+  &__year{
+    .slick-list.draggable {
+      padding: 0 0 0 25%;
+      margin-left: -25%;
+    }
+    .company-year-item {
+      color: #fff;
+      text-align: center;
+      font-weight: 500;
+      font-size: vw(30px);
+      line-height: vw(20px);
+      @include desktop{
+        font-size: 30px;
+        line-height: 20px;
+      }
+      @include notebook{
+        font-size: 20px;
+        line-height: 28px;
+      }
+      &__year {
+        height: vw(160px);
+        width: vw(160px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-family: "Montserrat", sans-serif;
+        @include desktop{
+          height: 160px;
+          width: 160px;
+        }
+        @include tablet{
+          margin: auto!important;
+        }
+        @include notebook{
+          height: 88px;
+          width: 88px;
+        }
+      }
+    }
+  }
+  &__text-wrapper{
+    grid-area: 2 / 2 / 3 / 5;
+    width: 100%;
+    @media screen and (max-width: 797px){
+      grid-area: 3 / 1 / 4 / 6;
+    }
+    .company-text-item {
+      height: vw(600px);
+      overflow: auto;
+      @include desktop{
+        height: 600px;
+      }
+      @include notebook{
+        height: 626px;
+      }
+      @include tablet{
+        height: 580px;
+      }
+      @media screen and (max-width: 797px){
+        height: 480px;
+      }
+      &__inner {
+        max-width: 50%;
+        margin: auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @media screen and (max-width: 797px){
+          max-width: 80%;
+        }
+        p{
+          font-family: "Montserrat", sans-serif;
+          font-weight: 500;
+          font-size: vw(16px);
+          line-height: vw(19px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          letter-spacing: vw(2px);
+          text-transform: uppercase;
+          color: rgba(255, 255, 255, 0.8);
+          padding: vw(8px) 0 vw(16px);
+          margin: 0;
+          @include desktop{
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 2px;
+            padding: 8px 0 16px;
+          }
+          @media screen and (max-width: 797px){
+            margin: 0;
+            padding: 10px 0 4px;
+          }
+        }
+        h2{
+          font-weight: 500;
+          font-size: vw(60px);
+          line-height: vw(80px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          letter-spacing: vw(-1.2px);
+          color: #ffffff;
+          @include desktop{
+            font-weight: 500;
+            font-size: 60px;
+            line-height: 80px;
+            letter-spacing: -1.2px;
+          }
+          @include notebook{
+            font-size: 38px;
+            line-height: 48px;
+          }
+        }
+        h3{
+          color: #ffffff;
+          font-size: vw(22px);
+          line-height: vw(32px);
+          text-align: center;
+          margin-bottom: vw(16px);
+          @include desktop{
+            font-size: 22px;
+            line-height: 32px;
+            margin-bottom: 16px;
+          }
+          @media screen and (max-width: 797px){
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 12px;
+          }
+        }
+      }
+    }
+  }
+  &__text .slick-prev, &__text .slick-next {
+    top: 50%;
+  }
+  .slick-next:before,.slick-prev:before {
+
+  }
+  .slick-next:before{
+    background: url("../img/icon/arrow-right.svg");
+    background-size: contain;
+    content: "";
+    display: block;
+    color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: auto;
+    width: vw(28px);
+    height: vw(23px);
+    @include desktop{
+      width: 28px;
+      height: 23px;
+    }
+  }
+  .slick-prev:before {
+    background: url("../img/icon/arrow-left.svg");
+    background-size: contain;
+    content: "";
+    display: block;
+    color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: auto;
+    width: vw(28px);
+    height: vw(23px);
+    @include desktop{
+      width: 28px;
+      height: 23px;
+    }
+  }
+  .slick-active-first.slick-current .company-year-item__year {
+    margin: 0;
+    background-color: #d64045;
+    border-radius: 50%;
+    transition: background-color 0.55s;
+  }
+}

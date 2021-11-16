@@ -1,21 +1,29 @@
+@import "../utils/module";
 .base {
   &__button {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
+    font-size: vw(16px);
     line-height: 200%;
     text-align: center;
-    letter-spacing: -0.2px;
+    letter-spacing: vw(-0.2px);
     color: #FFFFFF;
-    padding: 11px 22px;
+    padding: vw(11px) vw(22px);
     border: none;
     display: inline-block;
     background: #D64045;
-    border-radius: 50px;
+    border-radius: vw(50px);
     cursor: pointer;
-
-    @include respond-to(mobilefix) {
+    @include desktop{
+      font-size: 16px;
+      line-height: 200%;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+      padding: 11px 22px;
+      border-radius: 50px;
+    }
+    @include mobile {
       padding: 14px 62px;
       font-size: 20px;
       line-height: 160%;

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="main-page-vacancy__header">
             <div class="main-page-vacancy__title">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/svg/Path11.svg" alt="">
+                <img class="no-lazyload" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/svg/Path11.svg" alt="">
                 <h2 class="h2"><?php echo esc_html("Вакансии"); ?> </h2>
             </div>
             <div class="main-page-vacancy__filter">

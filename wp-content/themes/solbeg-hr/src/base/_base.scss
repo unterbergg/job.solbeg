@@ -1,0 +1,249 @@
+@import "../utils/module";
+.hover-show {
+  opacity: 1!important;
+  visibility: visible!important;
+}
+.hover-hide {
+  opacity: 0;
+  visibility: hidden;
+}
+*,
+body {
+  font-family: "Raleway", sans-serif;
+  outline: none!important;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.h2 {
+  font-weight: 500;
+  font-size: vw(60px);
+  line-height: vw(70px);
+  letter-spacing: vw(-1.2px);
+  z-index: 1;
+  @include desktop{
+    font-size: 60px;
+    line-height: 70px;
+    letter-spacing: -1.2px;
+  }
+  @include notebook{
+    font-size: 52px;
+    line-height: 66px;
+  }
+  @include tablet{
+    font-size: 32px;
+    line-height: 44px;
+    letter-spacing: -1.2px;
+  }
+}
+
+.h3 {
+  font-weight: 500;
+  font-size: vw(30px);
+  line-height: vw(32px);
+  z-index: 1;
+  @include desktop{
+    font-size: 30px;
+    line-height: 32px;
+  }
+  @include notebook{
+    font-size: 24px;
+    line-height: 32px;
+  }
+  @include tablet{
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.main-page-facts__title h2 {
+  font-size: vw(30px);
+  line-height: vw(32px);
+  @include desktop{
+    font-size: 30px;
+    line-height: 32px;
+  }
+  @include notebook{
+
+  }
+  @include tablet{
+
+  }
+  @include mobile{
+
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  margin-bottom: vw(16px);
+  @include desktop{
+    margin-bottom: 16px;
+  }
+  @include notebook{
+
+  }
+  @include tablet{
+
+  }
+  @include mobile{
+
+  }
+}
+
+.paragraph {
+  font-weight: 500;
+  font-size: vw(20px);
+  line-height: vw(32px);
+  letter-spacing: vw(-0.2px);
+  @include desktop{
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: -0.2px;
+  }
+  @include notebook{
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+
+.page-paragraph {
+  font-weight: 500;
+  font-size: vw(20px);
+  line-height: vw(32px);
+  letter-spacing: vw(-0.2px);
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 60px;
+  @include desktop{
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: -0.2px;
+  }
+  @include mobile{
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    margin-bottom: 35px;
+  }
+}
+
+.page-title {
+  font-weight: 500;
+  font-size: vw(26px);
+  line-height: vw(36px);
+  letter-spacing: vw(-0.2px);
+  margin-bottom: vw(24px);
+  color: #000000;
+  @include desktop{
+    font-size: 26px;
+    line-height: 36px;
+    letter-spacing: -0.2px;
+    margin-bottom: 24px;
+  }
+
+  @include mobile{
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 14px;
+  }
+}
+
+.page-list ul {
+  list-style: disc;
+  padding-left: vw(16px);
+  @include desktop{
+    padding-left: 16px;
+  }
+  @include notebook{
+
+  }
+  @include tablet{
+
+  }
+  @include mobile{
+
+  }
+}
+
+.page-list ul li {
+  margin-bottom: vw(20px);
+  font-weight: 500;
+  font-size: vw(20px);
+  line-height: vw(32px);
+  letter-spacing: vw(-0.2px);
+  color: #000000;
+  @include desktop{
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: -0.2px;
+  }
+  @include mobile{
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+button,
+button:active,
+button:focus {
+  outline: none;
+  border: none;
+}
+
+.background-0 {
+  background: none !important;
+}
+
+.container {
+  max-width: vw(1340px);
+  width: 100%;
+  margin: auto;
+  padding-left: vw(24px);
+  padding-right: vw(24px);
+  @include desktop{
+    max-width: 1340px;
+    width: 100%;
+    margin: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  @include notebook{
+    padding-left: 50px;
+    padding-right: 50px;
+    max-width: calc(100% - 100px);
+  }
+  @include tablet{
+    max-width: calc(100% - 48px);
+    width: 100%;
+    margin: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  @include mobile{
+
+  }
+}
