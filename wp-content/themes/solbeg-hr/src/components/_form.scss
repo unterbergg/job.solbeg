@@ -174,11 +174,11 @@
   &__grid {
     display: grid;
     //grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
-    grid-template-columns: (repeat(auto-fill,minmax(vw(377px),1fr)));
+    grid-template-columns: (repeat(auto-fill,minmax(vw(313px),1fr)));
     grid-gap: vw(20px);
     margin-bottom: vw(20px);
     @include desktop{
-      grid-template-columns: repeat(auto-fill,minmax(377px,1fr));
+      grid-template-columns: repeat(auto-fill,minmax(313px,1fr));
       grid-gap: 20px;
       margin-bottom: 20px;
     }
@@ -218,7 +218,7 @@
 
         &:after {
           display: block;
-          content: 'Пожалуйста, введите реальный адрес электронной почты';
+          content: 'Please enter a valid email address';
           position: absolute;
           top: vw(65px);
           left: 0;
@@ -292,12 +292,12 @@
     }
 
     span.comment {
-      grid-area: unset;
+      grid-area: 3 / 1 / auto / span 2;
       textarea {
         max-height: unset;
       }
       @include mobile {
-        grid-area: 3 / 1 / auto / span 2;
+        grid-area: 1 / 2 / 3 / 2;
       }
     }
   }
@@ -389,7 +389,7 @@
 
       &:after {
         display: block;
-        content: 'Максимальный размер файла: 10 МБ\0a Типы файлов: pdf, doc, docx, xls, xlsx, txt,\0a rtf, html, zip';
+        content: 'Maximum file size: 10 MB \0a File types: pdf, doc, docx, xls, xlsx, txt, \0a rtf, html, zip';
         position: absolute;
         top: vw(63px);
         left: 0;
@@ -551,10 +551,10 @@
   &__submit {
     input[type=submit] {
       width: 100%;
-      padding: vw(24px) 0;
+      padding: vw(14px) 0;
       font-size: vw(24px);
       @include desktop{
-        padding: 24px 0;
+        padding: 14px 0;
         font-size: 24px;
       }
       @include tablet{
@@ -773,6 +773,86 @@
       @include desktop{
         margin-bottom: 20px;
       }
+    }
+  }
+}
+.contact-form__wrapper{
+  .base__button.check{
+    opacity: 0.8;
+    pointer-events: none;
+    &.active{
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
+.privacy-checkbox{
+  margin-bottom: vw(32px);
+  @include desktop{
+    margin-bottom: 32px;
+  }
+  .custom-checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  label{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: vw(16px);
+    line-height: vw(24px);
+
+    @include desktop{
+      font-size: 16px;
+      line-height: 24px;
+    }
+    @include mobile{
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+  .custom-checkbox+label {
+    display: inline-flex;
+    align-items: flex-start;
+    user-select: none;
+  }
+  .custom-checkbox+label::before {
+    content: '';
+    display: inline-block;
+    width: vw(24px);
+    height: vw(24px);
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin-right: vw(10px);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    background: #FFFFFF;
+    border: vw(2px) solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-radius: vw(4px);
+    top: vw(2px);
+    position: relative;
+    cursor: pointer;
+    @include desktop{
+      width: 24px;
+      height: 24px;
+      border: 2px solid rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      margin-right: 10px;
+      top: 2px;
+    }
+  }
+  a{
+    display: contents;
+    color: #D64045;
+  }
+  &.active{
+    .custom-checkbox+label::before {
+      border-color: #000000;
+      background-color: #000000;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
     }
   }
 }

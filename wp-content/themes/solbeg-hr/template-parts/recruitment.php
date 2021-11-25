@@ -10,28 +10,30 @@
         <?php if ($recruitment_item) {
             $number = 1;
             ?>
-            <div class="recruitment-list container">
-                <?php foreach ($recruitment_item as $item) {
-                    $icon = $item['icon'];
-                    $title = $item['title'];
-                    $text = $item['text'];
-                    ?>
-                    <div class="recruitment-item">
-                        <div class="recruitment-item__step">
-                            <img class="recruitment-item__step-icon"
-                                 src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>">
-                            <div class="recruitment-item__step-number"><?php echo esc_html($number); ?></div>
-                        </div>
-                        <div class="recruitment-item__title">
-                            <?php echo esc_html($title); ?>
-                        </div>
-                        <div class="recruitment-item__text">
-                            <?php echo esc_html($text ); ?>
-                        </div>
+                <div class="recruitment-list__container">
+                    <div class="recruitment-list container">
+                        <?php foreach ($recruitment_item as $item) {
+                            $icon = $item['icon'];
+                            $title = $item['title'];
+                            $text = $item['text'];
+                            ?>
+                            <div class="recruitment-item">
+                                <div class="recruitment-item__step">
+                                    <img class="recruitment-item__step-icon"
+                                         src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>">
+                                    <div class="recruitment-item__step-number"><?php echo esc_html($number); ?></div>
+                                </div>
+                                <div class="recruitment-item__title">
+                                    <?php echo esc_html($title); ?>
+                                </div>
+                                <div class="recruitment-item__text">
+                                    <?php echo esc_html($text ); ?>
+                                </div>
+                            </div>
+                            <?php $number++;
+                        }?>
                     </div>
-                <?php $number++;
-                }?>
-            </div>
+                </div>
         <?php } ?>
     </div>
 <?php endif; ?>

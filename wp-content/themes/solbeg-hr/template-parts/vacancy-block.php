@@ -50,7 +50,7 @@
                         <ul>
                             <?php if ($manager_mail): ?>
                                 <li class="manager-mail">
-                                    <a href="mailto:<?php echo esc_url($manager_mail); ?>">
+                                    <a href="mailto:<?php echo esc_html($manager_mail); ?>">
                                         <div class="vacancy-info-block__manager-icon">
                                         </div>
                                         <span><?php echo esc_html($manager_mail) ?></span>
@@ -59,16 +59,27 @@
                             <?php endif; ?>
                             <?php if ($manager_phone): ?>
                                 <li class="manager-phone">
-                                    <a href="tel::<?php echo esc_url($manager_phone); ?>">
+                                    <a href="tel::<?php echo esc_html($manager_phone); ?>">
                                         <div class="vacancy-info-block__manager-icon">
                                         </div>
-                                        <span><?php echo esc_html($manager_phone); ?></span>
+                                        <span><?php
+                                            $from = $manager_phone;
+                                            $new_str = str_replace(" ", '', $from);
+                                            $to = sprintf("%s %s %s %s %s",
+                                                substr($new_str, 0, 4),
+                                                substr($new_str, 4, 2),
+                                                substr($new_str, 6,3),
+                                                substr($new_str, 9,2),
+                                                substr($new_str, 11,2));
+                                            echo esc_html($to);
+
+                                            ?></span>
                                     </a>
                                 </li>
                             <?php endif; ?>
                             <?php if ($manager_skype_link): ?>
                                 <li class="manager-skype">
-                                    <a href="skype:<?php echo esc_url($manager_skype_link); ?>?chat">
+                                    <a href="skype:<?php echo esc_html($manager_skype_link); ?>?chat">
                                         <div class="vacancy-info-block__manager-icon">
                                         </div>
                                         <span><?php echo esc_html($manager_skype_text); ?></span>
@@ -77,7 +88,7 @@
                             <?php endif; ?>
                             <?php if ($manager_linked_in_link): ?>
                                 <li class="manager-linked-in">
-                                    <a target="_blank" href="<?php echo esc_url($manager_linked_in_link); ?>">
+                                    <a target="_blank" href="<?php echo esc_html($manager_linked_in_link); ?>">
                                         <div class="vacancy-info-block__manager-icon">
                                         </div>
                                         <span><?php echo esc_html($manager_linked_in_text); ?></span>

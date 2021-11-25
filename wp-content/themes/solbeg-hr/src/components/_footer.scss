@@ -12,6 +12,7 @@ footer{
       padding: 64px 24px;
     }
     &__addresses{
+
       display: flex;
       margin-bottom: vw(40px);
       @include desktop{
@@ -255,6 +256,193 @@ footer{
         }
         @include mobile{
           margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
+.footer.poland{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000000;
+  padding: vw(75px) vw(50px);
+  @include desktop{
+    padding: 75px 50px;
+  }
+  @include tablet{
+    padding: 40px 24px;
+  }
+  @include mobile{
+    flex-direction: column;
+  }
+  .footer__contacts{
+    display: flex;
+    @media only screen and (max-width: 1200px) {
+      align-items: center;
+    }
+    @include mobile{
+      flex-direction: column;
+    }
+    &_info{
+      display: flex;
+      @media only screen and (max-width: 1200px) {
+        flex-direction: column;
+      }
+      @include mobile{
+        align-items: center;
+        margin-bottom: 28px;
+      }
+    }
+    &_addresses{
+      color: #fff;
+      font-size: vw(20px);
+      margin-bottom: 0;
+      line-height: 160%;
+      margin-right: vw(50px);
+      display: flex;
+      align-items: center;
+      @include desktop{
+        font-size: 20px;
+        margin-right: 50px;
+      }
+      @include notebook{
+        font-size: 16px;
+      }
+      @include mobile{
+        margin-right: 0;
+      }
+      p{
+        margin-bottom: 0;
+      }
+    }
+    &_email{
+      font-size: vw(20px);
+      margin-right: vw(50px);
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 200%;
+      letter-spacing: -.2px;
+      color: white;
+      display: flex;
+      align-items: center;
+      position: relative;
+      @include desktop{
+        font-size: 20px;
+        margin-right: 50px;
+      }
+      @include notebook{
+        font-size: 16px;
+      }
+      @media only screen and (max-width: 1200px) {
+        width: fit-content;
+      }
+      @include mobile{
+        margin-right: 0;
+      }
+      &:before{
+        position: absolute;
+        content: '';
+        background: white;
+        width: 100%;
+        bottom: vw(7px);
+        height: vw(1px);
+        @include desktop{
+          bottom: 7px;
+          height: 1px;
+        }
+
+      }
+    }
+    .footer__button{
+      button{
+        padding: vw(10px) vw(30px);
+        border-radius: vw(50px);
+        font-weight: 600;
+        font-size: vw(16px);
+        line-height: vw(20px);
+        text-align: center;
+        color: #000;
+        cursor: pointer;
+        margin: auto 0 0 0;
+        @include desktop{
+          padding: 10px 30px;
+          border-radius: 50px;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 20px;
+        }
+        @include mobile{
+          margin-bottom: 28px;
+        }
+      }
+    }
+  }
+  .footer__info{
+    display: flex;
+    @include tablet{
+      flex-direction: column;
+    }
+    &_socials{
+      display: flex;
+      align-items: center;
+      margin-right: vw(50px);
+      @include desktop{
+        margin-right: 50px;
+      }
+      @include tablet{
+        margin-right: 0px;
+        margin-bottom: 20px;
+        justify-content: end;
+      }
+      @include mobile{
+        margin-bottom: 28px;
+        justify-content: center;
+      }
+      li{
+        margin-right: vw(20px);
+        @include desktop{
+          margin-right: 20px;
+        }
+        &:last-child{
+          margin-right: 0;
+        }
+        a{
+          img{
+            max-height: vw(24px);
+            height: vw(24px);
+            width: vw(24px);
+            @include desktop{
+              max-height: 24px;
+              height: 24px;
+              width: 24px;
+            }
+
+          }
+        }
+      }
+    }
+    &_copyright {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 400;
+      font-size: vw(15px);
+      line-height: 143%;
+      text-align: right;
+      letter-spacing: -.2px;
+      color: rgba(255,255,255,.6);
+      display: flex;
+      flex-direction: column;
+      @include desktop{
+        font-size: 15px;
+      }
+      @include tablet{
+        margin-right: 0
+      }
+      a{
+        @include mobile{
+          text-align: center;
         }
       }
     }

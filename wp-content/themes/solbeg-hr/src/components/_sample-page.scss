@@ -1,0 +1,108 @@
+@import "../utils/module";
+.sample-page {
+    h2 {
+    font-size: vw(26px);
+    line-height: vw(36px);
+    letter-spacing: vw(-0.2px);
+    padding-bottom: vw(24px);
+      @include desktop{
+        font-size: 26px;
+        line-height: 36px;
+        letter-spacing: -0.2px;
+        padding-bottom: 24px;
+      }
+  }
+  p {
+    font-size: vw(20px);
+    line-height: vw(32px);
+    letter-spacing: vw(-0.2px);
+    color: rgba(0, 0, 0, 0.7);
+    padding-bottom: vw(60px);
+    @include desktop{
+      font-size: 20px;
+      line-height: 32px;
+      letter-spacing: -0.2px;
+      padding-bottom: 60px;
+    }
+    @include mobile{
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: -0.2px;
+      color: rgba(0, 0, 0, 0.7);
+      padding-bottom: 30px;
+    }
+  }
+  ul + p,ol + p  {
+    padding-bottom: 0;
+  }
+  p + ul,p + ol  {
+    margin-top: vw(32px);
+    @include desktop{
+      margin-top: 32px;
+    }
+  }
+  p + h2 {
+    margin-top: vw(60px);
+    @include desktop{
+      margin-top: 60px;
+    }
+  }
+  h2 + p {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  p + p {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: vw(16px);
+    @include desktop{
+      padding-left: 16px;
+    }
+  }
+
+  a {
+    color: #D64045;
+  }
+  ul li {
+    font-size: vw(20px);
+    line-height: vw(32px);
+    letter-spacing: vw(-0.2px);
+    padding-bottom: vw(20px);
+    @include desktop{
+      font-size: 20px;
+      line-height: 32px;
+      letter-spacing: -0.2px;
+      padding-bottom: 20px;
+    }
+    @include mobile{
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: -0.2px;
+      padding-bottom: 14px;
+    }
+  }}
+
+.sample-page-container {
+  max-width: vw(892px);
+  margin: auto;
+  padding: vw(120px) vw(26px);
+  @include desktop{
+    max-width: 892px;
+    padding: 120px 26px;
+  }
+}
+
+.privacy-policy-text {
+  max-width: vw(892px);
+  margin: auto;
+  padding: vw(120px) 0;
+  @include desktop{
+    max-width: 892px;
+    margin: auto;
+    padding: 120px 0;
+  }
+}

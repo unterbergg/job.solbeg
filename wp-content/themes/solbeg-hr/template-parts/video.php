@@ -12,9 +12,9 @@
             }
         </style>
         <div class="video_wrapper js-videoWrapper">
-            <iframe class="videoIframe js-videoIframe" src="" frameborder="0" allowTransparency="true"
+            <iframe id="video" class="videoIframe js-videoIframe" src="" frameborder="0" allowTransparency="true"
                     allowfullscreen
-                    data-src="<?php echo esc_html($main_page_video); ?>?autoplay=1&modestbranding=1&rel=0&hl=ru&showinfo=0&color=white"></iframe>
+                    data-src="<?php echo esc_html($main_page_video); ?>?autoplay=1&mute=1&modestbranding=1&rel=0&hl=ru&showinfo=0&color=white"></iframe>
             <button class="videoPoster js-videoPoster"></button>
         </div>
     </section>

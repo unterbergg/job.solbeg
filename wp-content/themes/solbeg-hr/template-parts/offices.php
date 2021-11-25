@@ -10,18 +10,17 @@
                 </h3>
             <?php endif; ?>
             <?php if ($main_page_our_offices_item) : ?>
-                <div class="main-page-our-offices__grid">
+                <div class="main-page-our-offices__slider last">
                     <?php foreach ($main_page_our_offices_item as $offices_item) :
                         $img = $offices_item['offices_item_img'];
                         $text = $offices_item['offices_item_text'];
                         ?>
+
                         <div class="main-page-our-offices__item">
                             <img class="main-page-our-offices__img"
                                  src="<?php echo esc_url($img['url']); ?>"
                                  alt="<?php echo esc_attr($img['alt']); ?>">
-                            <img class="main-page-our-offices__img-back"
-                                 src="<?php echo esc_url(get_template_directory_uri()); ?>/img/miniback.png" alt="">
-                            <span><?php echo esc_html($text); ?></span>
+                            <div class="main-page-our-offices__name"><?php echo esc_html($text); ?></div>
                         </div>
                     <?php endforeach; ?>
                 </div>
