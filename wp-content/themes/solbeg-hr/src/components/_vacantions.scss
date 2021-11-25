@@ -1008,7 +1008,7 @@
       font-size: vw(14px);
       @include desktop {
         font-size: 14px;
-        width: 40px;
+        width: auto!important;
         height: 40px;
         margin: 0 6px;
       }
@@ -1042,11 +1042,11 @@
 
 .heateor_sss_sharing_ul {
   i {
-    width: vw(62px) !important;
-    height: vw(62px) !important;
+    width: vw(35px) !important;
+    height: vw(35px) !important;
     @include desktop {
-      width: 62px !important;
-      height: 62px !important;
+      width: 35px !important;
+      height: 35px !important;
     }
 
   }

@@ -3,6 +3,25 @@
     "title": "Footer",
     "fields": [
         {
+            "key": "field_619cde7068528",
+            "label": "Poland",
+            "name": "footer_poland",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_604733d8bb654",
             "label": "Address",
             "name": "",
@@ -319,5 +338,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1635848534
+    "modified": 1637670580
 }

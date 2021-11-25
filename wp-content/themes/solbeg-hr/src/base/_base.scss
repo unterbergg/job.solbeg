@@ -13,6 +13,7 @@ body {
   outline: none!important;
   margin: 0;
   padding: 0;
+  font-feature-settings: "lnum";
 }
 
 h1,
@@ -88,7 +89,9 @@ img {
 
   }
 }
-
+main{
+  overflow: hidden;
+}
 ul {
   list-style: none;
 }

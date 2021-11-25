@@ -67,6 +67,38 @@ $(document).ready(function () {
         arrows: true,
         fade: true,
     });
+
+
+    $(".main-page-our-offices__slider").slick({
+        infinite: false,
+        centerMode: false,
+        slidesToShow: 5.5,
+        slidesToScroll: 1,
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 4.5,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 5.5,
+                },
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 2.5,
+                },
+            },
+        ],
+
+    });
+
+
     $(".main-page-what-they-say__slider").slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -126,7 +158,13 @@ $(document).ready(function () {
         wrapper.addClass("videoWrapperActive");
         iframe.attr("src", src);
     }
-
+    // $('.js-videoPoster').on('click', function(e) {
+    //     e.preventDefault();
+    //     $("#video")[0].src += "?autoplay=1";
+    //     $('.video_wrapper').addClass("videoWrapperActive");
+    //     // $('.js-videoPoster').hide();
+    //     // $('#play').hide();
+    // })
     //menu
     if ($(window).width() < 1024) {
         $("#burger-menu").on("click", function (e) {
@@ -282,6 +320,26 @@ $(document).ready(function () {
         $('body,html').animate({scrollTop: top}, 1000);
     });
 });
+$('.anchor-down').on('click', function() {
+    let href = $(this).attr('href');
+    $('html, body').animate({
+        scrollTop: $(href).offset().top - 40
+    }, {
+        duration: 370,
+        easing: "linear"
+    });
+
+    return false;
+});
+$(document).ready(function () {
+    $(".main-page-top-block__video .container").on("click", "a",function (event) {
+        event.preventDefault();
+        var id = $(this).attr('href'),
+            top = $(id).offset().top;
+        var header = $('.header').outerHeight(true);
+        $('body,html').animate({scrollTop: top - header + 1}, 1000);
+    });
+});
 $(document).ready(function () {
     $(".what-they-say__slide-quote .quote-open").on("click", function (event) {
         event.preventDefault();
@@ -357,3 +415,26 @@ jQuery(function ($) {
         }
     });
 });
+$(".privacy-checkbox label").click(function (){
+    $(this).parent().toggleClass("active");
+    $(".contact-form__wrapper .base__button").toggleClass("active");
+});
+
+if ($('form .privacy-checkbox').length > 0) {
+    $('.contact-form__wrapper .base__button').addClass("check");
+}
+
+$('body').on('click', '.main-page-our-offices__slider .slick-arrow', function () {
+    if( $(".main-page-our-offices__slider .slick-track .main-page-our-offices__item:first-child").hasClass('slick-active'))
+    {
+        $(".main-page-our-offices__slider").removeClass("first");
+    } else {
+        $(".main-page-our-offices__slider").addClass("first");
+    }
+    if( $(".main-page-our-offices__slider .slick-track .main-page-our-offices__item:last-child").hasClass('slick-active'))
+    {
+        $(".main-page-our-offices__slider").removeClass("last");
+    } else {
+        $(".main-page-our-offices__slider").addClass("last");
+    }
+})
