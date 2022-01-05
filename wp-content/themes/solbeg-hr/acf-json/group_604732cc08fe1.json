@@ -287,7 +287,7 @@
             "key": "field_60473c8acc0e8",
             "label": "Privacy policy link",
             "name": "footer_privacy_policy_link",
-            "type": "url",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -297,7 +297,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": ""
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_60473c13a535f",
@@ -338,5 +341,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1637670580
+    "modified": 1640003367
 }

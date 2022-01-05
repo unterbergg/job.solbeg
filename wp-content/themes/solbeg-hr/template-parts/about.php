@@ -3,7 +3,7 @@
 <?php $main_page_about_image = get_field('main_page_about_image'); ?>
 <?php $main_page_about_count_div = get_field('main_page_about_count_div'); ?>
 <?php if (get_field('display_section_about') != ''): ?>
-    <section class="main-page-about">
+    <section id="about" class="main-page-about">
         <div class="container">
             <div class="main-page-about__grid">
                 <div class="main-page-about__title">

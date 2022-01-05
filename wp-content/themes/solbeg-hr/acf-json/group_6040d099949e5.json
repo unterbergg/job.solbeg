@@ -3,6 +3,25 @@
     "title": "Home page fields",
     "fields": [
         {
+            "key": "field_61c030f8ccf18",
+            "label": "Poland theme",
+            "name": "poland_theme",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_6040d61b36e42",
             "label": "Top block",
             "name": "",
@@ -54,7 +73,7 @@
             "placeholder": "",
             "maxlength": "",
             "rows": "",
-            "new_lines": ""
+            "new_lines": "br"
         },
         {
             "key": "field_6040d63136e43",
@@ -1696,6 +1715,61 @@
             "maxlength": ""
         },
         {
+            "key": "field_619f4a26b294f",
+            "label": "Contact form invalid",
+            "name": "contact_form_invalid",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_619f4b85b2950",
+                    "label": "Text email",
+                    "name": "text_email",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_619f4b8fb2951",
+                    "label": "Text file",
+                    "name": "text_file",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
             "key": "field_614c8c32f3112",
             "label": "Trainee",
             "name": "",
@@ -2253,5 +2327,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1637756839
+    "modified": 1640860139
 }

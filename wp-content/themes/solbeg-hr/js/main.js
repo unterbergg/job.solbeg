@@ -105,7 +105,15 @@ $(document).ready(function () {
         arrows: true,
         prevArrow: $(".what-they-say__slide-arrows-left"),
         nextArrow: $(".what-they-say__slide-arrows-right"),
-        fade: true
+        fade: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    dots:true,
+                },
+            },
+        ],
     });
 
     function windowSize() {
@@ -128,6 +136,8 @@ $(document).ready(function () {
                 .eq($(this).index())
                 .addClass("active");
             $(".main-page-soc-pack__tab-item").hide().eq($(this).index()).fadeIn();
+            $(".main-page-soc-pack__tab-item").removeClass("active");
+            $(".main-page-soc-pack__tab-item").eq($(this).index()).addClass("active");
         })
         .eq(0)
         .addClass("active");
@@ -145,26 +155,24 @@ $(document).ready(function () {
         });
     });
     //video
-    $(document).on("click", ".js-videoPoster", function (e) {
-        e.preventDefault();
-        var poster = $(this);
-        var wrapper = poster.closest(".js-videoWrapper");
-        videoPlay(wrapper);
-    });
-
-    function videoPlay(wrapper) {
-        var iframe = wrapper.find(".js-videoIframe");
-        var src = iframe.data("src");
-        wrapper.addClass("videoWrapperActive");
-        iframe.attr("src", src);
-    }
-    // $('.js-videoPoster').on('click', function(e) {
+    // $(document).on("click", ".js-videoPoster", function (e) {
     //     e.preventDefault();
-    //     $("#video")[0].src += "?autoplay=1";
-    //     $('.video_wrapper').addClass("videoWrapperActive");
-    //     // $('.js-videoPoster').hide();
-    //     // $('#play').hide();
-    // })
+    //     var poster = $(this);
+    //     var wrapper = poster.closest(".js-videoWrapper");
+    //     videoPlay(wrapper);
+    // });
+    //
+    // function videoPlay(wrapper) {
+    //     var iframe = wrapper.find(".js-videoIframe");
+    //     var src = iframe.data("src");
+    //     wrapper.addClass("videoWrapperActive");
+    //     iframe.attr("src", src);
+    // }
+    $('.js-videoPoster').on('click', function(){
+        // $('.youtube-block').addClass('active');
+        $(".js-videoWrapper").addClass("videoWrapperActive");
+        $(".js-videoIframe")[0].src += "?autoplay=1";
+    });
     //menu
     if ($(window).width() < 1024) {
         $("#burger-menu").on("click", function (e) {
@@ -421,7 +429,7 @@ $(".privacy-checkbox label").click(function (){
 });
 
 if ($('form .privacy-checkbox').length > 0) {
-    $('.contact-form__wrapper .base__button').addClass("check");
+    $(".privacy-checkbox").addClass("check");
 }
 
 $('body').on('click', '.main-page-our-offices__slider .slick-arrow', function () {

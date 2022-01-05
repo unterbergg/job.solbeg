@@ -16,7 +16,7 @@
         <div class="container">
             <?php if ($main_page_top_block_title): ?>
                 <h1 class="main-page-top-block__title">
-                    <?php echo esc_html($main_page_top_block_title); ?>
+                    <?php echo wp_kses_post( $main_page_top_block_title ); ?>
                 </h1>
             <?php endif; ?>
             <?php if ($main_page_top_block_button): ?>

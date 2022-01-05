@@ -33,8 +33,7 @@ $trainee_form_button = get_field('trainee_form_button');
                                 </li>
                             <?php endforeach; ?>
                         </ul>
-                        <img class="trainee__underline"
-                             src="<?php echo esc_url(get_template_directory_uri()); ?>/img/svg/underline.svg">
+                        
                     </div>
                 <?php endif; ?>
                 <?php if ($trainee_list_right): ?>

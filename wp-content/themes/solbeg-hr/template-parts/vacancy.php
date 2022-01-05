@@ -14,15 +14,32 @@ $published_posts = $count_posts->publish;
         <div class="main-page-vacancy__header">
             <div class="main-page-vacancy__title">
                 <img class="no-lazyload" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/svg/Path11.svg" alt="">
-                <h2 class="h2"><?php echo esc_html("Vacancies"); ?> </h2>
+                <h2 class="h2"><?php if (get_field('poland_theme',2) != '') {
+                        echo esc_html("Vacancies");
+                    }else{
+                        echo esc_html("Вакансии");
+                    }
+                    ?>
+                </h2>
             </div>
             <div class="main-page-vacancy__filter">
                 <div class="main-page-vacancy__filter-check">
-                    <?php echo esc_html("All cities"); ?>
+                    <?php if (get_field('poland_theme',2) != '') {
+                        echo esc_html("All cities");
+                    }else{
+                        echo esc_html("Все города");
+                    }
+                    ?>
                 </div>
                 <ul class="main-page-vacancy__filter-items">
                     <li class="main-page-vacancy__filter-item main-page-vacancy__filter-item-show-all active">
-                        <button><?php echo esc_html("All cities"); ?></button>
+                        <button>
+                            <?php if (get_field('poland_theme',2) != '') {
+                                echo esc_html("All cities");
+                            }else{
+                                echo esc_html("Все города");
+                            }
+                            ?></button>
                     </li>
                     <?php
                     $tags = get_tags();

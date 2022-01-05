@@ -62,17 +62,21 @@
                                     <a href="tel::<?php echo esc_html($manager_phone); ?>">
                                         <div class="vacancy-info-block__manager-icon">
                                         </div>
-                                        <span><?php
-                                            $from = $manager_phone;
-                                            $new_str = str_replace(" ", '', $from);
-                                            $to = sprintf("%s %s %s %s %s",
-                                                substr($new_str, 0, 4),
-                                                substr($new_str, 4, 2),
-                                                substr($new_str, 6,3),
-                                                substr($new_str, 9,2),
-                                                substr($new_str, 11,2));
-                                            echo esc_html($to);
-
+                                        <span><?php if (get_field('poland_phone') != '') {
+                                                $from = $manager_phone;
+                                                $new_phone = str_replace(" ", '', $from);
+                                                echo $new_phone;
+                                            }else{
+                                                $from = $manager_phone;
+                                                $new_str = str_replace(" ", '', $from);
+                                                $to = sprintf("%s %s %s %s %s",
+                                                    substr($new_str, 0, 4),
+                                                    substr($new_str, 4, 2),
+                                                    substr($new_str, 6,3),
+                                                    substr($new_str, 9,2),
+                                                    substr($new_str, 11,2));
+                                                echo esc_html($to);
+                                            }
                                             ?></span>
                                     </a>
                                 </li>
@@ -97,13 +101,25 @@
                             <?php endif; ?>
                         </ul>
                         <div class="vacancy-info-block__manager-button">
-                            <button class="popup-open__link"><?php echo esc_html("Откликнуться"); ?></button>
+                            <button class="popup-open__link">
+                                <?php if (get_field('poland_theme',2) != '') {
+                                    echo esc_html("Respond");
+                                }else{
+                                    echo esc_html("Откликнуться");
+                                }
+                                ?>
+                            </button>
                         </div>
 
                     </div>
                     <div class="vacancy-info-block__share">
                         <div class="vacancy-info-block__share-text">
-                            <?php echo esc_html("Поделиться:"); ?>
+                            <?php if (get_field('poland_theme',2) != '') {
+                                echo esc_html("Share:");
+                            }else{
+                                echo esc_html("Поделиться:");
+                            }
+                            ?>
                         </div>
                         <div class="vacancy-info-block__share-icons main-share-icons">
                             <?php echo do_shortcode('[Sassy_Social_Share]'); ?>

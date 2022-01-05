@@ -1,18 +1,21 @@
 @import "../utils/module";
 
 .main-page-soc-pack{
-  padding: 0 0 vw(140px);
+  padding: vw(120px) 0 vw(140px);
   @include desktop{
-    padding: 0 0 140px;
+    padding: 120px 0 140px;
   }
   @include notebook{
-    padding: 10px 0 100px;
+    padding: 100px 0 100px;
   }
   @include tablet{
-    padding: 0 0 22px;
+    padding: 60px 0 22px;
+  }
+  @include mobile{
+    padding: 44px 0 22px;
   }
   &__title {
-    height: vw(180px);
+
     margin: auto;
     display: flex;
     justify-content: center;
@@ -20,7 +23,7 @@
     position: relative;
     width: fit-content;
     @include desktop{
-      height: 180px;
+
     }
     @include notebook{
       padding-bottom: 16px;
@@ -46,10 +49,16 @@
     h2 {
       z-index: 2;
       text-shadow: vw(0px) vw(0px) vw(30px) rgb(255,255,255);
-      padding-bottom: vw(16px);
+      padding-bottom: vw(100px);
       @include desktop{
         text-shadow: 0px 0px 30px rgb(255,255,255);
-        padding-bottom: 16px;
+        padding-bottom: 100px;
+      }
+      @include notebook{
+        padding-bottom: 60px;
+      }
+      @include tablet{
+        padding-bottom: 40px;
       }
     }
 
@@ -138,37 +147,76 @@
       position: relative;
       border-radius: vw(24px);
       overflow: hidden;
+      &.active{
+        display: flex!important;
+      }
       @include desktop{
         border-radius: 24px;
+
+
       }
       @include tablet{
         height: 486px;
+        align-items: center;
+      }
+      @include mobile{
+        height: auto;
+        flex-direction: column;
       }
       &:first-child {
-        display: block;
+        display: flex;
+
+        @include mobile{
+          flex-direction: column;
+        }
       }
       &-image {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        z-index: -1;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position-x: right;
         @include tablet{
-          background-size: cover;
-          background-position-x: 140px;
+          height: 100%;
         }
-        @include mobile{
-          background-position-x: inherit;
+        .image{
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          display: block;
+
         }
       }
     }
     &-ul__wrapper{
+      position: relative;
       height: 100%;
       display: flex;
       align-items: center;
       z-index: 3;
+      width: max-content;
+      padding: 50px 70px;
+      max-width: vw(305px);
+      .triangle{
+        position: absolute;
+        content: '';
+        right: -19px;
+        top: calc(50% - 20px);
+        box-sizing: border-box;
+        width: 20px;
+        height: 40px;
+        border-top: solid 20px rgb(200,30,50);
+        border-left: solid 20px rgb(200,30,50);
+        border-top-left-radius: 12px;
+        border-right: solid 20px transparent;
+        border-bottom: solid 20px transparent;
+        transform: rotate(135deg);
+        @include mobile{
+          display: none;
+        }
+      }
+      @include desktop{
+        max-width: 305px;
+      }
+      @include tablet{
+        padding: 25px 25px;
+        max-width: 274px;
+      }
       width: 100%;
       ul{
         height: fit-content;
@@ -177,26 +225,20 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        max-width: vw(300px);
-        margin-left: vw(62px);
+
         border: vw(2px) solid rgba(255, 255, 255, 0.2);
         border-radius: vw(7px);
         overflow: hidden;
-        margin-top: vw(50px);
-        margin-bottom: vw(50px);
         @include desktop{
-          max-width: 300px;
-          margin-left: 62px;
+
           border: 2px solid rgba(255, 255, 255, 0.2);
           border-radius: 7px;
-          margin-top: 50px;
-          margin-bottom: 50px;
+
         }
         @include notebook{
           max-width: 284px;
         }
         @include tablet{
-          margin-left: 40px;
           width: 100%;
           max-width: 334px;
         }
@@ -223,7 +265,7 @@
             line-height: 24px;
             padding: 12px 20px;
           }
-          @include mobile{
+          @include tablet{
             font-size: 16px;
           }
         }

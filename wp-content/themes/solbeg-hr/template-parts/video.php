@@ -12,9 +12,7 @@
             }
         </style>
         <div class="video_wrapper js-videoWrapper">
-            <iframe id="video" class="videoIframe js-videoIframe" src="" frameborder="0" allowTransparency="true"
-                    allowfullscreen
-                    data-src="<?php echo esc_html($main_page_video); ?>?autoplay=1&mute=1&modestbranding=1&rel=0&hl=ru&showinfo=0&color=white"></iframe>
+            <iframe class="videoIframe js-videoIframe" src="<?php echo esc_html($main_page_video); ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
             <button class="videoPoster js-videoPoster"></button>
         </div>
     </section>

@@ -1,7 +1,7 @@
 <?php $recruitment_title = get_field('recruitment_title'); ?>
 <?php $recruitment_item = get_field('recruitment_item'); ?>
 <?php if (get_field('display_section___recruitment') != ''): ?>
-    <div class="main-page-recruitment">
+    <div id="offer" class="main-page-recruitment">
         <?php if ($recruitment_title): ?>
             <div class="recruitment-title">
                 <?php echo esc_html($recruitment_title); ?>
