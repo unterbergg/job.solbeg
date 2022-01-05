@@ -68,7 +68,8 @@
       grid-column-gap: 40px;
     }
     @include tablet {
-      grid-template-rows: auto;
+      grid-column-gap: 0;
+      grid-template-columns: 1.5fr 1fr;
     }
     @include mobile {
       grid-template-columns: repeat(1, 1fr);
@@ -273,11 +274,17 @@
         width: 100%;
         margin-left: auto;
         object-fit: cover;
+        border-radius: 8px;
         @include desktop{
           height: 444px;
         }
         @include notebook{
-          height: 332px;
+          height: 360px;
+          width: 460px;
+        }
+        @include tablet{
+          height: 270px;
+          width: 270px;
         }
         @include mobile{
           height: 284px;
@@ -291,22 +298,28 @@
   .main-page-what-they-say__slide-arrows {
     order: 3;
     position: relative;
+    @include tablet{
+      display: none;
+    }
     @include mobile {
       order: 1;
     }
     ul {
       display: flex;
       justify-content: center;
-      margin-bottom: vw(80px);
+      margin-bottom: vw(120px);
       position: relative;
       @include desktop {
-        margin-bottom: 80px;
+        margin-bottom: 120px;
       }
       @include notebook {
-        margin-bottom: 40px;
+        margin-bottom: 100px;
+      }
+      @include tablet {
+        margin-bottom: 80px;
       }
       @include mobile {
-        margin-bottom: 0px;
+        margin-bottom: 40px;
       }
     }
   }
@@ -325,7 +338,7 @@
       height: 81px;
     }
     @include notebook {
-      margin: 0 6px;
+
     }
     @include tablet {
       width: 46px;
@@ -395,8 +408,19 @@
 
   &__our-partners {
     order: 4;
+    border-top: 2px solid #E5E0DA;
+    padding-top: vw(120px);
+    @include desktop{
+      padding-top: 120px;
+    }
     @include notebook{
-      margin-top: 30px;
+      padding-top: 90px;
+    }
+    @include tablet{
+      padding-top: 60px;
+    }
+    @include mobile{
+      padding-top: 40px;
     }
     .h3{
       margin-bottom: vw(40px);
@@ -409,18 +433,23 @@
     }
     ul {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(7, 1fr);
       grid-template-rows: auto;
       grid-row-gap: vw(22px);
       justify-items: center;
       align-items: center;
-      grid-column-gap: vw(90px);
+      grid-column-gap: vw(50px);
       @include desktop{
-        grid-column-gap: 90px;
+        grid-column-gap: 50px;
         grid-row-gap: 22px;
       }
+      @include notebook{
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 100px;
+      }
       @include tablet{
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 80px;
       }
       @include mobile{
         grid-template-columns: repeat(2, 1fr);
@@ -451,6 +480,34 @@
         @include mobile{
           max-width: 90%;
           max-height: 90px;
+        }
+      }
+    }
+  }
+  .slick-dots{
+    position: relative;
+    margin: 20px 0 60px 0;
+    @include mobile{
+      margin: -40px 0 40px 0;
+    }
+    li{
+      width: 8px;
+      height: 8px;
+      margin: 0 10px;
+      &.slick-active{
+        button{
+          background: #000000;
+          opacity: 1;
+        }
+      }
+      button{
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #000000;
+        opacity: 0.2;
+        &:before{
+          display: none;
         }
       }
     }

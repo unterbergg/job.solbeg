@@ -147,18 +147,18 @@
     }
     .main-page-about__project{
       border-top: none;
-      border-right: vw(3px) solid #f7efe9;
+      border-right: vw(2px) solid #E5E0DA;
       @include desktop{
-        border-right: 3px solid #f7efe9;
+        border-right: 2px solid #E5E0DA;
       }
       @include tablet{
         border-right: none;
-        border-bottom: 3px solid #f7efe9;
+        border-bottom: 2px solid #E5E0DA;
         width: fit-content;
       }
       @include mobile{
         border-right: none;
-        border-bottom: 3px solid #f7efe9;
+        border-bottom: 2px solid #E5E0DA;
       }
       &:last-child{
         border: none;
@@ -166,7 +166,7 @@
     }
   }
   &__box-num{
-    font-family: "Montserrat", sans-serif;
+    //font-family: "Montserrat", sans-serif;
     font-weight: 600;
     font-size: vw(40px);
     line-height: vw(49px);
@@ -188,6 +188,7 @@
     font-size: vw(20px);
     line-height: vw(24px);
     text-align: center;
+    padding-top: 0!important;
     @include desktop{
       font-size: 20px;
       line-height: 24px;

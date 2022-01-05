@@ -1,7 +1,7 @@
 @import "../utils/module";
 .base {
   &__button {
-    font-family: Montserrat;
+    //font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
     font-size: vw(16px);
@@ -32,5 +32,16 @@
     &:hover {
       background: #f0474d;
     }
+  }
+}
+#wt-cli-accept-all-btn{
+  border-radius: 20px;
+}
+#cookie_action_close_header_reject{
+  border-radius: 20px;
+  background-color: transparent!important;
+  margin-right: 10px;
+  &:hover{
+    color:#f0474d!important;
   }
 }

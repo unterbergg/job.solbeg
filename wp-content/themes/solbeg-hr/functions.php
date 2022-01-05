@@ -209,7 +209,6 @@ function my_navigation_markup_template() {
  */
 function create_posttype() { 
     register_post_type( 'manager',
-    // CPT Options
         array(
             'labels' => array(
                 'name' => __( 'Managers' ),
@@ -220,7 +219,6 @@ function create_posttype() {
             'public' => true,
 			'rewrite' => 'manager',
             'has_archive' => true,
- 
         )
     );
 }

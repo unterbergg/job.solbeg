@@ -86,14 +86,14 @@
         <div class="main-page-comtact-form__inner" id="contact-form">
             <div class="comtact-form">
                 <?php if ($contact_form_code): ?>
-                    <?php echo do_shortcode( "'". $contact_form_code ."'" );?>
+                    <?php echo do_shortcode( "". $contact_form_code ."" );?>
                 <?php endif; ?>
             </div>
         </div>
         <div class="main-page-comtact-form__inner" id="trainee">
             <div class="comtact-form">
                 <?php if ($train_form_code): ?>
-                    <?php echo do_shortcode( "'". $train_form_code ."'" );?>
+                    <?php echo do_shortcode( "". $train_form_code ."" );?>
                 <?php endif; ?>
             </div>
         </div>

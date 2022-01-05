@@ -36,7 +36,8 @@ get_header();
                         ?>
                     </div>
                 </div>
-                <img class="page-top-block__back-img" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/qaqaqa.png" alt="">
+                <img class="page-top-block__back-img"
+                     src="<?php echo esc_url(get_template_directory_uri()); ?>/img/qaqaqa.png" alt="">
             </section>
 
             <section class="vacancy-info-block">
@@ -55,33 +56,71 @@ get_header();
                         ?>
                         <nav class="navigation post-navigation" role="navigation">
                             <div class="nav-links">
-                                <div class="nav-previous">
-                                    <a href="<?= get_permalink(get_next_post()->ID) ?>" rel="prev">
-                                        <span class="nav-subtitle">Предыдущая:</span>
-                                        <span class="nav-title">
+                                <?php
+                                $prev_post = get_previous_post();
+                                if (!empty($prev_post)) {
+                                    ?>
+                                    <div class="nav-previous">
+                                        <a href="<?= get_permalink(get_next_post()->ID) ?>" rel="prev">
+                                        <span class="nav-subtitle">   <?php if (get_field('poland_theme', 2) != '') {
+                                                echo esc_html("Previous:");
+                                            } else {
+                                                echo esc_html("Предыдущая:");
+                                            }
+                                            ?>
+                                            </span>
+                                            <span class="nav-title">
                                     <?= get_the_title(get_next_post()->ID); ?>
                                 </span>
-                                    </a>
-                                </div>
-                                <div class="nav-next">
-                                    <a href="<?= get_permalink($next_post->ID) ?>" rel="next">
-                                        <span class="nav-subtitle">Следующая:</span>
-                                        <span class="nav-title">
+                                        </a>
+                                    </div>
+                                    <?php
+                                }
+                                ?>
+                                <?php
+                                $next_post = get_next_post();
+                                if (!empty($next_post)) {
+                                    ?>
+                                    <div class="nav-next">
+                                        <a href="<?= get_permalink($next_post->ID) ?>" rel="next">
+                                        <span class="nav-subtitle">
+                                            <?php if (get_field('poland_theme', 2) != '') {
+                                                echo esc_html("Next:");
+                                            } else {
+                                                echo esc_html("Следующая:");
+                                            }
+                                            ?>
+                                        </span>
+                                            <span class="nav-title">
                                     <?= get_the_title($next_post->ID); ?>
                                 </span>
-                                    </a>
-                                </div>
+                                        </a>
+                                    </div>
+                                    <?php
+                                }
+                                ?>
                             </div>
+                            <?php
+                            ?>
                         </nav>
                     <? else :
+                        if (get_field('poland_theme', 2) != '') {
+                            $next = "Next:";
+                            $prev = "Previous:";
+                        } else {
+                            $next = "Следующая:";
+                            $prev = "Предыдущая:";
+                        }
                         the_post_navigation(
+
                             array(
-                                'prev_text' => '<span class="nav-subtitle">' . esc_html__('Предыдущая:', 'solbeg-hr') . '</span> <span class="nav-title">%title</span>',
-                                'next_text' => '<span class="nav-subtitle">' . esc_html__('Следующая:', 'solbeg-hr') . '</span> <span class="nav-title">%title</span>',
+                                'prev_text' => '<span class="nav-subtitle">' . $next . '</span> <span class="nav-title">%title</span>',
+                                'next_text' => '<span class="nav-subtitle">' . $prev . '</span> <span class="nav-title">%title</span>',
                             )
                         );
                     endif; ?>
                 </div>
+
             </section>
         <?php endwhile; ?>
         <?php endif; ?>

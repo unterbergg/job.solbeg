@@ -130,7 +130,7 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        font-family: "Montserrat", sans-serif;
+        //font-family: "Montserrat", sans-serif;
         @include desktop{
           height: 160px;
           width: 160px;
@@ -177,7 +177,7 @@
           max-width: 80%;
         }
         p{
-          font-family: "Montserrat", sans-serif;
+          //font-family: "Montserrat", sans-serif;
           font-weight: 500;
           font-size: vw(16px);
           line-height: vw(19px);
