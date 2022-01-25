@@ -82,7 +82,7 @@
         </div>
         <div class="footer__copyright">
             <?php if ($footer_privacy_policy): ?>
-                <a href="<?php echo esc_url($footer_privacy_policy_link); ?>">
+                <a target="_blank" href="<?php echo esc_url($footer_privacy_policy_link); ?>">
                     <?php echo esc_html($footer_privacy_policy); ?>
                 </a>
             <?php endif; ?>

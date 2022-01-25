@@ -20,7 +20,7 @@
                 </h1>
             <?php endif; ?>
             <?php if ($main_page_top_block_button): ?>
-                <a class="anchor-down" href="<? echo esc_html($main_page_top_block_button_link); ?>">
+                <a class="anchor-down" href="<?php echo esc_html($main_page_top_block_button_link); ?>">
                     <?php echo esc_html($main_page_top_block_button); ?>
                 </a>
             <?php endif; ?>

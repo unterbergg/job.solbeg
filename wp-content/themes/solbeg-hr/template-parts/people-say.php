@@ -71,7 +71,7 @@
                         $img = $our_partners['our_partners'];
                         ?>
                         <li>
-                            <img src="<? echo esc_url($img['url']); ?>" alt="<? echo esc_attr($img['alt']); ?>">
+                            <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
                         </li>
                     <?php endforeach; ?>
                 </ul>
