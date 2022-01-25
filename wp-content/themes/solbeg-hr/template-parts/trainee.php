@@ -54,8 +54,8 @@ $trainee_form_button = get_field('trainee_form_button');
             <div class="trainee__container trainee__background">
                 <?php if ($trainee_form_image): ?>
                     <div class="trainee__image">
-                        <img src="<? echo esc_url($trainee_form_image['url']); ?>"
-                             alt="<? echo esc_attr($trainee_form_image['alt']); ?>">
+                        <img src="<?php echo esc_url($trainee_form_image['url']); ?>"
+                             alt="<?php echo esc_attr($trainee_form_image['alt']); ?>">
                     </div>
                 <?php endif; ?>
                 <div class="trainee__item">

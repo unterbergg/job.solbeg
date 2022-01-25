@@ -1,0 +1,362 @@
+@import "../utils/module";
+
+.main-page-benefit {
+  padding: vw(120px) 0;
+  position: relative;
+  @include desktop {
+    padding: 120px 0;
+  }
+  @include notebook {
+    padding: 100px 0;
+  }
+  @include tablet {
+    padding: 64px 0;
+  }
+
+  .benefit-title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: vw(60px);
+    line-height: vw(70px);
+
+    text-align: left;
+    letter-spacing: vw(-1.2px);
+    margin-bottom: vw(60px);
+    padding-left: vw(24px);
+
+    @include desktop {
+      padding-left: 24px;
+      font-size: 60px;
+      line-height: 70px;
+      letter-spacing: -1.2px;
+      margin-bottom: 60px;
+    }
+    @include notebook {
+      font-size: 52px;
+    }
+    @include tablet {
+      font-size: 32px;
+      line-height: 40px;
+      margin-bottom: 50px;
+    }
+    @include mobile {
+      margin-bottom: 40px;
+    }
+
+  }
+
+  .benefit-list {
+    //display: grid;
+    //grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    //grid-template-rows: 1fr 1fr;
+    //gap: 20px 20px;
+    //@include notebook {
+    //  grid-template-columns: 1fr 1fr 1fr 1fr;
+    //  grid-template-rows: auto;
+    //}
+    //@include tablet {
+    //  grid-template-columns: 1fr 1fr 1fr;
+    //
+    //}
+    //@include mobile {
+    //  overflow-x: scroll;
+    //}
+    &_first,&_second{
+      display: flex;
+
+    }
+    &__container {
+      position: relative;
+
+      .first{
+        &:after{
+          position: absolute;
+          content: '';
+          height: 100%;
+          width: vw(140px);
+          left: vw(-32px);
+          top: vw(-10px);
+          background: linear-gradient( 450.46deg,#fff 29.27%,rgba(255,255,255,0) 119.91%);
+          z-index: 1;
+          filter: blur(vw(6px));
+          @include desktop{
+            width: 140px;
+            top: -10px;
+            left: -32px;
+            filter: blur(6px);
+          }
+          @include tablet{
+            width: 100px;
+          }
+          @include mobile{
+            width: 40px;
+          }
+        }
+      }
+      .last{
+        &:before{
+          position: absolute;
+          content: '';
+          height: 100%;
+          width: vw(140px);
+          right: vw(-32px);
+          background: linear-gradient(271.46deg,#fff 24.27%,rgba(255,255,255,0) 119.91%);
+          z-index: 1;
+          filter: blur(vw(6px));
+          @include desktop{
+            width: 140px;
+            right: -32px;
+            filter: blur(6px);
+          }
+          @include tablet{
+            width: 100px;
+          }
+          @include mobile{
+            width: 40px;
+          }
+        }
+      }
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &.container {
+      padding: 0;
+      //@include tablet {
+      //  padding-left: 24px;
+      //  padding-right: 24px;
+      //  max-width: calc(100% - 48px);
+      //}
+    }
+    .benefit-items{
+      @include mobile {
+       display: flex;
+        width: 322px;
+      }
+    }
+    .benefit-item {
+      display: flex;
+
+      flex-direction: column;
+      margin-bottom: vw(10px);
+      margin-right: vw(10px);
+      align-items: center;
+      background: linear-gradient(0deg, #EAE8F5, #EAE8F5);
+      border-radius: 6px;
+      padding: 44px 0;
+
+
+      @include desktop {
+        margin-right: 10px;
+        margin-bottom: 10px;
+
+      }
+      @include notebook {
+        padding: 27px 0;
+
+      }
+      @include tablet {
+
+        padding: 20px 0;
+      }
+      @include mobile {
+        width: 100%;
+        max-width: 151px;
+      }
+
+      &__step {
+        width: vw(100px);
+        height: vw(100px);
+        border-radius: 50%;
+        background: #ffffff;
+        margin-bottom: vw(16px);
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include desktop {
+          width: 100px;
+          height: 100px;
+          margin-bottom: 16px;
+        }
+        @include mobile {
+          width: 60px;
+          height: 60px;
+        }
+        &-icon {
+          width: vw(60px);
+          height: vw(60px);
+          @include desktop {
+            width: 60px;
+            height: 60px;
+          }
+          @include mobile {
+            width: 28px;
+            height: 28px;
+          }
+        }
+
+      }
+
+      &__title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: vw(20px);
+        line-height: vw(28px);
+        letter-spacing: vw(-0.2px);
+        text-align: center;
+        @include desktop {
+          font-size: 20px;
+          line-height: 28px;
+          letter-spacing: -0.2px;
+
+        }
+        @include mobile {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+
+    .benefit-item:last-child {
+      .benefit-item {
+        &__step {
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .benefit__get{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: vw(160px);
+    &:before{
+      position: absolute;
+      content: '';
+      width: vw(450px);
+      height: vw(180px);
+      background: url("../img/benefits/path.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: -1;
+      @include desktop{
+        width: 450px;
+        height: 180px;
+      }
+    }
+    @include desktop {
+      margin-top:160px;
+    }
+    @include notebook {
+      //position: absolute;
+      //right: 50px;
+      //width: max-content;
+      //bottom: 200px;
+
+    }
+    @include mobile {
+      margin-top:115px;
+    }
+    &_text{
+      font-weight: 500;
+      font-size: vw(26px);
+      line-height: vw(36px);
+      letter-spacing: vw(-0.5px);
+      margin-right: vw(44px);
+      @include desktop {
+        font-size: 26px;
+        line-height: 36px;
+        letter-spacing: -0.5px;
+        margin-right: 44px;
+      }
+    }
+    &_button{
+      width: vw(210px);
+      height: vw(60px);
+      background: #D64045;
+      border-radius: vw(50px);
+      font-weight: 600;
+      font-size: vw(20px);
+      line-height: vw(32px);
+      color: #FFFFFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      @include desktop {
+        width: 210px;
+        height: 60px;
+        border-radius: 50px;
+        font-size: 20px;
+        line-height: 32px;
+      }
+    }
+  }
+  .slick-list{
+    margin-right: -10px;
+  }
+  .slick-arrow{
+    position: absolute;
+    width: vw(55px);
+    height: vw(55px);
+    border: vw(2px) solid rgba(0, 0, 0, 1);
+    border-radius: 50%;
+    top: vw(-100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:before{
+      position: absolute;
+      background-image: url("../img/svg/arrow-office.svg");
+      background-repeat: no-repeat;
+      content: '';
+      width: vw(19px);
+      height: vw(15px);
+      @include desktop{
+        width: 19px;
+        height: 15px;
+      }
+    }
+    @include desktop{
+      width: 55px;
+      height: 55px;
+      top: -100px;
+      border: vw(2px) solid rgba(0, 0, 0, 1);
+    }
+    @include tablet{
+      top: -75px;
+      width: 48px;
+      height: 48px;
+    }
+    @include mobile{
+      top:-60px;
+    }
+    &.slick-disabled{
+      border-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+  .slick-next{
+    right: 0;
+    @include desktop{
+    }
+    &:before{
+      transform: rotate(180deg);
+    }
+  }
+  .slick-prev{
+    left: auto;
+    right: vw(55px);
+    @include desktop{
+      right: 55px;
+    }
+    @include tablet{
+      right: 48px;
+    }
+  }
+}

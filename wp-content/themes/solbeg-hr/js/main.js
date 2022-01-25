@@ -110,11 +110,13 @@ $(document).ready(function () {
             {
                 breakpoint: 1024,
                 settings: {
-                    dots:true,
+                    dots: true,
                 },
             },
+
         ],
     });
+
 
     function windowSize() {
         if ($(window).width() <= '582') {
@@ -126,6 +128,38 @@ $(document).ready(function () {
             });
         }
     }
+
+
+    $(".benefit-list").slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        arrows: true,
+        infinite: false,
+        padding: 10,
+        responsive: [
+            {
+                breakpoint: 1439,
+                settings: {
+                    slidesToShow: 4,
+                },
+            },
+            {
+                breakpoint: 1023,
+                settings: {
+                    slidesToShow: 3.5,
+                },
+            },
+            {
+                breakpoint: 765,
+                settings: {
+                    slidesToShow: 1,
+                    // autoSlidesToShow: true,
+                    variableWidth: true,
+                },
+            },
+        ],
+    });
+
 
     $(window).on('load', windowSize);
     //tabs
@@ -168,7 +202,7 @@ $(document).ready(function () {
     //     wrapper.addClass("videoWrapperActive");
     //     iframe.attr("src", src);
     // }
-    $('.js-videoPoster').on('click', function(){
+    $('.js-videoPoster').on('click', function () {
         // $('.youtube-block').addClass('active');
         $(".js-videoWrapper").addClass("videoWrapperActive");
         $(".js-videoIframe")[0].src += "?autoplay=1";
@@ -198,6 +232,18 @@ $(document).ready(function () {
         $('.main-page-comtact-form__inner#contact-form').hide();
     });
     $(".popup-open__link").on("click", function (e) {
+        e.preventDefault();
+        $('body').css('overflow', 'hidden');
+        if ($(e.target).attr('data-form') === 'trainee') {
+            $('.main-page-comtact-form__inner#contact-form').hide();
+            $('.main-page-comtact-form__inner#trainee').show();
+        } else {
+            $('.main-page-comtact-form__inner#contact-form').show();
+        }
+        $(".popup").show();
+
+    });
+    $(".benefit__get_button").on("click", function (e) {
         e.preventDefault();
         $('body').css('overflow', 'hidden');
         if ($(e.target).attr('data-form') === 'trainee') {
@@ -310,25 +356,72 @@ $(".main-page-vacancy__filter-item").on("click", function () {
     $(".main-page-vacancy__filter-items").removeClass('active');
 });
 
+// $(document).ready(function () {
+//     $(".menu li").on("click", "a", function (event) {
+//         event.preventDefault();
+//         var id = $(this).attr('href'),
+//             top = $(id).offset().top;
+//         var header = $('.header').outerHeight(true);
+//         $('body,html').animate({scrollTop: top - header + 1}, 1000);
+//     });
+// });
+// $(document).ready(function () {
+//     $(".header-mobile__menu-list li").on("click", "a", function (event) {
+//         event.preventDefault();
+//         var id = $(this).attr('href'),
+//             top = $(id).offset().top;
+//         var header_mobile = $('.header-mobile').outerHeight(true);
+//         $('body,html').animate({scrollTop: top}, 1000);
+//     });
+// });
+
+
 $(document).ready(function () {
+    $('body,html').scrollTop(0);
     $(".menu li").on("click", "a", function (event) {
-        event.preventDefault();
         var id = $(this).attr('href'),
             top = $(id).offset().top;
         var header = $('.header').outerHeight(true);
-        $('body,html').animate({scrollTop: top - header + 1}, 1000);
+        $('body,html').animate({scrollTop: top - header + 1}, 1500);
     });
+    var hash = location.hash;
+    if ($(hash).length) {
+        var top = $(hash).offset().top;
+        var header = $('.header').outerHeight(true);
+        $('body,html').animate({scrollTop: top - header + 1}, 1500);
+    }
 });
 $(document).ready(function () {
+    $('body,html').scrollTop(0);
     $(".header-mobile__menu-list li").on("click", "a", function (event) {
-        event.preventDefault();
         var id = $(this).attr('href'),
             top = $(id).offset().top;
         var header_mobile = $('.header-mobile').outerHeight(true);
         $('body,html').animate({scrollTop: top}, 1000);
     });
+    var hash = location.hash;
+    if ($(hash).length) {
+        var top = $(hash).offset().top;
+        var header_mobile = $('.header-mobile').outerHeight(true);
+        $('body,html').animate({scrollTop: top}, 1000);
+    }
 });
-$('.anchor-down').on('click', function() {
+
+$(document).ready(function () {
+    if ($('body').hasClass('home')) {
+        $(".menu li a").each(function () {
+            var link =  $(this).attr('href');
+            var linkNew = link.replace('/','');
+            $(this).attr('href',linkNew);
+        });
+        $(".header-mobile__menu-list li a").each(function () {
+            var link =  $(this).attr('href');
+            var linkNew = link.replace('/','');
+            $(this).attr('href',linkNew);
+        });
+    }
+});
+$('.anchor-down').on('click', function () {
     let href = $(this).attr('href');
     $('html, body').animate({
         scrollTop: $(href).offset().top - 40
@@ -340,7 +433,7 @@ $('.anchor-down').on('click', function() {
     return false;
 });
 $(document).ready(function () {
-    $(".main-page-top-block__video .container").on("click", "a",function (event) {
+    $(".main-page-top-block__video .container").on("click", "a", function (event) {
         event.preventDefault();
         var id = $(this).attr('href'),
             top = $(id).offset().top;
@@ -423,7 +516,7 @@ jQuery(function ($) {
         }
     });
 });
-$(".privacy-checkbox label").click(function (){
+$(".privacy-checkbox label").click(function () {
     $(this).parent().toggleClass("active");
     $(".contact-form__wrapper .base__button").toggleClass("active");
 });
@@ -433,16 +526,26 @@ if ($('form .privacy-checkbox').length > 0) {
 }
 
 $('body').on('click', '.main-page-our-offices__slider .slick-arrow', function () {
-    if( $(".main-page-our-offices__slider .slick-track .main-page-our-offices__item:first-child").hasClass('slick-active'))
-    {
+    if ($(".main-page-our-offices__slider .slick-track .main-page-our-offices__item:first-child").hasClass('slick-active')) {
         $(".main-page-our-offices__slider").removeClass("first");
     } else {
         $(".main-page-our-offices__slider").addClass("first");
     }
-    if( $(".main-page-our-offices__slider .slick-track .main-page-our-offices__item:last-child").hasClass('slick-active'))
-    {
+    if ($(".main-page-our-offices__slider .slick-track .main-page-our-offices__item:last-child").hasClass('slick-active')) {
         $(".main-page-our-offices__slider").removeClass("last");
     } else {
         $(".main-page-our-offices__slider").addClass("last");
+    }
+})
+$('body').on('click', '.benefit-list  .slick-arrow', function () {
+    if ($(".benefit-list .slick-track .benefit-items:first-child").hasClass('slick-active')) {
+        $(".benefit-list").removeClass("first");
+    } else {
+        $(".benefit-list").addClass("first");
+    }
+    if ($(".benefit-list .slick-track .benefit-items:last-child").hasClass('slick-active')) {
+        $(".benefit-list").removeClass("last");
+    } else {
+        $(".benefit-list").addClass("last");
     }
 })

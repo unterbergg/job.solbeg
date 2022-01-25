@@ -45,8 +45,8 @@ get_header();
                     <?php get_template_part('template-parts/vacancy-block'); ?>
                 </div>
                 <div class="vacancy-info-block__next-vacancy">
-                    <? if (!get_previous_post_link()) : ?>
-                        <?
+                    <?php if (!get_previous_post_link()) : ?>
+                        <?php
                         global $post;
                         $args = array(
                             'numberposts' => 1, 'post_type' => $post->post_type, 'post_status' => 'publish'
@@ -61,7 +61,7 @@ get_header();
                                 if (!empty($prev_post)) {
                                     ?>
                                     <div class="nav-previous">
-                                        <a href="<?= get_permalink(get_next_post()->ID) ?>" rel="prev">
+                                        <a href="<?php get_permalink(get_next_post()->ID) ?>" rel="prev">
                                         <span class="nav-subtitle">   <?php if (get_field('poland_theme', 2) != '') {
                                                 echo esc_html("Previous:");
                                             } else {
@@ -70,7 +70,7 @@ get_header();
                                             ?>
                                             </span>
                                             <span class="nav-title">
-                                    <?= get_the_title(get_next_post()->ID); ?>
+                                    <?php get_the_title(get_next_post()->ID); ?>
                                 </span>
                                         </a>
                                     </div>
@@ -82,7 +82,7 @@ get_header();
                                 if (!empty($next_post)) {
                                     ?>
                                     <div class="nav-next">
-                                        <a href="<?= get_permalink($next_post->ID) ?>" rel="next">
+                                        <a href="<?php get_permalink($next_post->ID) ?>" rel="next">
                                         <span class="nav-subtitle">
                                             <?php if (get_field('poland_theme', 2) != '') {
                                                 echo esc_html("Next:");
@@ -92,7 +92,7 @@ get_header();
                                             ?>
                                         </span>
                                             <span class="nav-title">
-                                    <?= get_the_title($next_post->ID); ?>
+                                    <?php get_the_title($next_post->ID); ?>
                                 </span>
                                         </a>
                                     </div>
@@ -103,7 +103,7 @@ get_header();
                             <?php
                             ?>
                         </nav>
-                    <? else :
+                    <?php else :
                         if (get_field('poland_theme', 2) != '') {
                             $next = "Next:";
                             $prev = "Previous:";
