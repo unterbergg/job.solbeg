@@ -537,6 +537,11 @@ $('body').on('click', '.main-page-our-offices__slider .slick-arrow', function ()
         $(".main-page-our-offices__slider").addClass("last");
     }
 })
+$(document).ready(function () {
+    if ($(".benefit-list__container .slick-next").length){
+        $(".benefit-list").addClass("last");
+    }
+});
 $('body').on('click', '.benefit-list  .slick-arrow', function () {
     if ($(".benefit-list .slick-track .benefit-items:first-child").hasClass('slick-active')) {
         $(".benefit-list").removeClass("first");

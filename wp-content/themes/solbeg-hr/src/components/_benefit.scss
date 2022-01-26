@@ -260,7 +260,9 @@
 
     }
     @include mobile {
-      margin-top:115px;
+      margin-top:60px;
+      display: flex;
+      flex-direction: column;
     }
     &_text{
       font-weight: 500;
@@ -273,6 +275,10 @@
         line-height: 36px;
         letter-spacing: -0.5px;
         margin-right: 44px;
+      }
+      @include mobile {
+        margin-right: 0;
+        margin-bottom: 26px;
       }
     }
     &_button{
@@ -295,6 +301,11 @@
         border-radius: 50px;
         font-size: 20px;
         line-height: 32px;
+      }
+      @include mobile {
+        font-size: 16px;
+        line-height: 32px;
+        height: 44px;
       }
     }
   }
