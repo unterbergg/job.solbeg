@@ -50,12 +50,19 @@
                     </div>
                 <?php } ?>
             </div>
-            <div class="main-page-what-they-say__slide-arrows">
-                <ul>
-                    <li class="what-they-say-slide-arrow what-they-say__slide-arrows-left"></li>
-                    <li class="what-they-say-slide-arrow what-they-say__slide-arrows-right"></li>
-                </ul>
-            </div>
+            <?php
+            $counts = count(get_field('main_page_what_they_say_slide'));
+            if ($counts > 1) {
+                ?>
+                <div class="main-page-what-they-say__slide-arrows">
+                    <ul>
+                        <li class="what-they-say-slide-arrow what-they-say__slide-arrows-left"></li>
+                        <li class="what-they-say-slide-arrow what-they-say__slide-arrows-right"></li>
+                    </ul>
+                </div>
+            <?
+            }
+            ?>
         <?php endif; ?>
     <?php endif; ?>
     <?php if (get_field('display_section__working_on_partners') != ''): ?>

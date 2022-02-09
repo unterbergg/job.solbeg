@@ -111,7 +111,7 @@ footer{
       width: 66.66%;
       display: flex;
       @include notebook{
-        align-items: flex-start;
+        align-items: flex-end;
       }
       @include tablet{
         width: 50%;
@@ -285,10 +285,11 @@ footer{
   }
   @include mobile{
     margin-top: 40px;
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
   .footer__contacts{
     display: flex;
+    width: max-content;
     @media only screen and (max-width: 1200px) {
       align-items: center;
     }
@@ -322,6 +323,7 @@ footer{
       }
       @include mobile{
         margin-right: 0;
+        text-align: center;
       }
       p{
         margin-bottom: 0;
@@ -337,7 +339,7 @@ footer{
       letter-spacing: -.2px;
       color: white;
       display: flex;
-      align-items: center;
+      align-items: end;
       position: relative;
       @include desktop{
         font-size: 20px;
@@ -392,7 +394,7 @@ footer{
   }
   .footer__info{
     display: flex;
-    @include tablet{
+    @include notebook{
       flex-direction: column;
     }
     &_socials{
@@ -402,6 +404,11 @@ footer{
       @include desktop{
         margin-right: 50px;
       }
+      @include notebook{
+        margin-right: 0;
+        margin-left: auto;
+        margin-bottom: 20px;
+      }
       @include tablet{
         margin-right: 0px;
         margin-bottom: 20px;
@@ -409,6 +416,7 @@ footer{
       }
       @include mobile{
         margin-bottom: 28px;
+        margin-left: 0;
         justify-content: center;
       }
       li{
@@ -450,6 +458,9 @@ footer{
       }
       @include tablet{
         margin-right: 0
+      }
+      @include mobile{
+        text-align: center;
       }
       a{
         @include mobile{

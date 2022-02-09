@@ -537,6 +537,11 @@ $('body').on('click', '.main-page-our-offices__slider .slick-arrow', function ()
         $(".main-page-our-offices__slider").addClass("last");
     }
 })
+$(document).ready(function () {
+    if ($(".benefit-list__container .slick-next").length){
+        $(".benefit-list").addClass("last");
+    }
+});
 $('body').on('click', '.benefit-list  .slick-arrow', function () {
     if ($(".benefit-list .slick-track .benefit-items:first-child").hasClass('slick-active')) {
         $(".benefit-list").removeClass("first");
@@ -548,4 +553,60 @@ $('body').on('click', '.benefit-list  .slick-arrow', function () {
     } else {
         $(".benefit-list").addClass("last");
     }
-})
+});
+$('.history__items').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    adaptiveHeight: true,
+    fade: true,
+    swipe: false,
+    draggable:false,
+    allowTouchMove: false
+});
+$('.history__years').slick({
+
+    variableWidth: true,
+    asNavFor: '.history__items',
+    dots: false,
+    arrows: false,
+    infinite: false,
+    // focusOnSelect: false,
+    // draggable:false,
+    // TouchMove: false,
+    // allowTouchMove: false,
+    swipe: false,
+    responsive: [
+        {
+            breakpoint: 1439,
+            settings: {
+
+            },
+        },
+        {
+            breakpoint: 1023,
+            settings: {
+
+            },
+        },
+        {
+            breakpoint: 765,
+            settings: {
+
+                variableWidth: true,
+            },
+        },
+        {
+            breakpoint: 370,
+            settings: {
+
+                variableWidth: true,
+            },
+        }
+    ],
+});
+$('.history__years .history__years_item').on('click', function (event) {
+    $('.history__years .history__years_item').removeClass('slick-current');
+    $(this).addClass('slick-current');
+    $('.history__items').slick('slickGoTo', $(this).data('slickIndex'));
+});
