@@ -54,8 +54,8 @@
                     $icon = $social_icon['social_icon_img'];
                     ?>
                     <li>
-                        <a href="<?php echo esc_url($link["url"]); ?>"
-                           aria-label="<?php echo esc_attr($link["alt"]); ?>">
+                        <a href="<?php echo esc_url($link); ?>"
+                           aria-label="<?php echo esc_attr($link); ?>">
                             <img src="<?php echo esc_url($icon["url"]); ?>"
                                  alt="<?php echo esc_attr($icon["alt"]); ?>">
                         </a>

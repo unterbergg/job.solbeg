@@ -1,45 +1,43 @@
 <?php $main_page_history_company_title = get_field('main_page_history_company_title'); ?>
 <?php $main_page_history_company_slides = get_field('main_page_history_company_slides'); ?>
 <?php if (get_field('display_section_history_company') != ''): ?>
-    <section class="main-page-history-company" style='background-image:
-            url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back.png"),
-            url("<?php echo esc_url(get_template_directory_uri()); ?>/img/back2.png");'>
-        <div class="main-page-history-company__slider">
-            <?php if ($main_page_history_company_title): ?>
-                <div class="main-page-history-company__title">
-                    <h3 class="h3">
+    <div class="history">
+        <div class="container">
+            <div class="history__container">
+                <?php if ($main_page_history_company_title): ?>
+                    <div class="history__title">
                         <?php echo esc_html($main_page_history_company_title); ?>
-                    </h3>
-                </div>
-            <?php endif; ?>
-            <div class="main-page-history-company__container"></div>
-            <?php if ($main_page_history_company_slides) : ?>
-                <div class="main-page-history-company__year-wrapper">
-                    <div class="main-page-history-company__year">
-                        <?php foreach ($main_page_history_company_slides as $company_slide) {
-                            $year = $company_slide['company_slide_year'];
-                            ?>
-                            <div class="company-year-item">
-                                <div class="company-year-item__year">
-                                    <?php echo esc_html($year); ?>
-                                </div>
-                            </div>
-                        <?php } ?>
                     </div>
+                <?php endif; ?>
+                <div class="history__years">
+                    <?php foreach ($main_page_history_company_slides as $company_slide) {
+                        $year = $company_slide['company_slide_year'];
+                        ?>
+                        <div class="history__years_item">
+                            <?php echo esc_html($year); ?>
+                        </div>
+                    <?php } ?>
                 </div>
-                <div class="main-page-history-company__text-wrapper">
-                    <div class="main-page-history-company__text">
-                        <?php foreach ($main_page_history_company_slides as $company_slide) {
-                            $content = $company_slide['date_and_title']; ?>
-                            <div class="company-text-item">
-                                <div class="company-text-item__inner">
+                <div class="history__items">
+                    <?php foreach ($main_page_history_company_slides as $company_slide) {
+                        $content = $company_slide['date_and_title'];
+                        $title = $company_slide['title']; ?>
+                        <div class="history__item">
+                            <div class="history__item_info">
+                                <div class="history__item_info-title">
+                                    <?php echo wp_kses_post($title) ?>
+                                </div>
+                                <div class="history__item_info-text">
                                     <?php echo wp_kses_post($content) ?>
                                 </div>
                             </div>
-                        <?php } ?>
-                    </div>
+                            <img src="<?php echo get_template_directory_uri() ?>/img/history.jpg" alt=""
+                                 class="history__item_img">
+
+                        </div>
+                    <?php } ?>
                 </div>
-            <?php endif; ?>
+            </div>
         </div>
-    </section>
+    </div>
 <?php endif; ?>
