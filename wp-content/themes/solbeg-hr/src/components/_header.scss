@@ -6,6 +6,11 @@ header {
   width: 100%;
   z-index: 9999996;
   top: 0;
+  left: 0;
+  transition: all .3s ease;
+  &.out{
+    transform: translateY(-100%);
+  }
   .header {
     display: flex;
     justify-content: space-between;
@@ -18,8 +23,8 @@ header {
       padding: 0 50px;
     }
     @include notebook{
-      display: flex;
       margin: 12px auto;
+      display: none;
     }
     @include tablet{
       display: none;
@@ -36,6 +41,7 @@ header {
       }
     }
     .header__menu{
+      width: 100%;
       ul{
         display: flex;
         align-items: center;
@@ -45,12 +51,16 @@ header {
             margin-left: 44px;
           }
           @include notebook{
-            margin-left: 40px;
+            margin-left: 20px;
           }
           a{
             font-size: vw(16px);
             line-height: vw(20px);
             font-weight: 600;
+            cursor: pointer;
+            &:hover{
+              color:#d64045;
+            }
             @include desktop{
               font-size: 16px;
               line-height: 20px;
@@ -93,12 +103,180 @@ header {
         }
       }
     }
+    &__country{
+      position: relative;
+      margin-left: auto!important;
+      margin-right: vw(20px);
+      @include desktop{
+        margin-right: 20px;
+      }
+      @include notebook{
+        margin-top: 150px;
+        margin-bottom: 28px!important;
+      }
+      @include mobile{
+        margin-top: 50px;
+      }
+      &.visible{
+        a{
+          &:before{
+            transform: rotate(-180deg);
+            top: 15%;
+          }
+        }
+        .sub-menu{
+          display: flex!important;
+        }
+      }
+      &>a{
+        position: relative;
+        padding-bottom: vw(25px);
+        @include desktop{
+          padding-bottom: 25px;
+        }
+        @include notebook{
+          font-size: 16px;
+        }
+        @include tablet{
+          font-size: 16px;
+        }
+        &:before{
+          position: absolute;
+          content: '';
+          right: vw(-20px);
+          width: vw(11px);
+          height: vw(7px);
+          top: 20%;
+          transform: translateY(-50%);
+          transition: 0.3s;
+          background: url("../img/country-item.svg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          @include desktop{
+            right: -20px;
+            width: 11px;
+            height: 7px;
+          }
+        }
+      }
+      .sub-menu{
+        flex-direction: column;
+        position: absolute;
+        width: vw(190px);
+        left: vw(-12px);
+        top: vw(40px);
+        border-radius: vw(8px);
+        box-shadow: 0 vw(4px) vw(25px) rgba(0, 0, 0, 0.15);
+        align-items: flex-start!important;
+        overflow: hidden;
+        display: none!important;
+        @include desktop{
+          width: 190px;
+          left: -12px;
+          top: 40px;
+          border-radius: 8px;
+          box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+        }
+        @include notebook{
+          left: -15px;
+        }
+        @include tablet{
+          left: -15px;
+          right: 0;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        @include mobile{
+          display: none;
+          left: 54px;
+        }
+
+        li{
+          height: vw(44px);
+          background: #FFFFFF;
+          display: flex;
+          padding-left: vw(12px);
+          align-items: center;
+          margin-left: 0!important;
+          width: 100%;
+          @include desktop{
+            padding-left: 12px;
+            height: 44px;
+          }
+          @include tablet{
+            margin-bottom: 0!important;
+          }
+          a{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            &:hover{
+              color: #111111!important;
+            }
+            @include tablet{
+              font-size: 16px;
+            }
+          }
+          &:first-child{
+            color: #D64045;
+          }
+          &:hover{
+            background: #FBECEC;
+          }
+        }
+      }
+    }
   }
   .header-mobile {
     display: none;
-    @include tablet{
+    @include notebook{
       display: block;
       padding: 14px 24px;
+    }
+    @include tablet{
+      display: block;
+    }
+    .header__menu{
+      margin-left: auto;
+      .hide{
+        display: none;
+      }
+      ul{
+        display: flex;
+        align-items: center;
+      }
+      li{
+        display: none;
+      }
+      .header__country{
+        display: block;
+        margin: 0 48px 0 0!important;
+        @include mobile{
+          display: none;
+        }
+        &>a{
+          &:before{
+            //top: 50%;
+          }
+        }
+        li{
+          display: block!important;
+        }
+        a{
+          &:hover{
+            color: #111111!important;
+          }
+          //padding-bottom: 0;
+        }
+      }
+      .header-button{
+        display: block;
+        margin-right: 28px;
+        @include mobile{
+          display: none;
+        }
+      }
     }
     .header-mobile__logo {
       width: 126px;
@@ -106,6 +284,7 @@ header {
     .header-mobile__top-line {
       display: flex;
       justify-content: space-between;
+      align-items: center;
     }
     .header-mobile__logo {
       width: 176px;
@@ -113,17 +292,32 @@ header {
     .header-mobile__menu {
       display: none;
       overflow: scroll;
+      //.header__country{
+      //  display: none;
+      //  @include mobile{
+      //    display: block;
+      //  }
+      //}
+      //.header-button{
+      //  display: none;
+      //  @include mobile{
+      //    display: block;
+      //  }
+      //}
     }
     .header-mobile__menu-list {
       padding: 76px 0;
     }
     .header-mobile__menu-list li {
       font-weight: 600;
-      font-size: 18px;
+      font-size: 24px;
       line-height: 24px;
       letter-spacing: -0.3px;
-      margin-bottom: 44px;
+      margin-bottom: 40px;
       text-align: center;
+      @include mobile{
+        margin-bottom: 32px;
+      }
     }
     .header-mobile__menu-list li:last-child {
       max-width: 400px;
@@ -134,6 +328,10 @@ header {
       background: #d64045;
       border-radius: 60px;
       padding: 12px 24px;
+      @include notebook{
+        width: max-content!important;
+        font-size: 18px!important;
+      }
     }
   }
 }

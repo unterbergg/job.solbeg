@@ -23,20 +23,21 @@ $published_posts = $count_posts->publish;
                         ?>
                     </h2>
                 </div>
-                <div class="main-page-vacancy__filter">
-                    <div class="main-page-vacancy__filter-check">
-                        <?php if (get_field('poland_theme', 2) != '') {
-                            echo esc_html("All cities");
-                        } else {
-                            echo esc_html("Все города");
-                        }
-                        ?>
-                    </div>
-                    <ul class="main-page-vacancy__filter-items">
+                <?php
+                $col_city = wp_count_terms('post_tag');
+                if ($col_city > 1) { ?>
+                    <div class="main-page-vacancy__filter">
+                        <div class="main-page-vacancy__filter-check">
+                            <?php if (get_field('poland_theme', 2) != '') {
+                                echo esc_html("All cities");
+                            } else {
+                                echo esc_html("Все города");
+                            }
+                            ?>
+                        </div>
+                        <ul class="main-page-vacancy__filter-items">
 
-                        <?php
-                        $col_city = wp_count_terms('post_tag');
-                        if ($col_city > 1) { ?>
+
                             <li class="main-page-vacancy__filter-item main-page-vacancy__filter-item-show-all active">
                                 <?php if (get_field('poland_theme', 2) != '') { ?>
                                     <button> <?php echo esc_html("All cities"); ?></button>
@@ -45,24 +46,25 @@ $published_posts = $count_posts->publish;
                                     <button> <?php echo esc_html("Все города"); ?></button>
                                 <?php } ?>
                             </li>
-                        <?php }
-                        ?>
-                        <?php
-                        $tags = get_tags();
-                        foreach ($tags as $tag) {
-                            $tag_link = get_tag_link($tag->term_id);
-                            $col_city = wp_count_terms('post_tag');
-                            if ($col_city > 1) {
-                                echo "<li class='main-page-vacancy__filter-item {$tag->name}'><button class='{$tag->name}'>";
-                                echo "{$tag->name}</button></li>";
-                            } else{
-                                echo "<li class='main-page-vacancy__filter-item {$tag->name} active'><button class='{$tag->name}'>";
-                                echo "{$tag->name}</button></li>";
+
+                            <?php
+                            $tags = get_tags();
+                            foreach ($tags as $tag) {
+                                $tag_link = get_tag_link($tag->term_id);
+                                $col_city = wp_count_terms('post_tag');
+                                if ($col_city > 1) {
+                                    echo "<li class='main-page-vacancy__filter-item {$tag->name}'><button class='{$tag->name}'>";
+                                    echo "{$tag->name}</button></li>";
+                                } else {
+                                    echo "<li class='main-page-vacancy__filter-item {$tag->name} active'><button class='{$tag->name}'>";
+                                    echo "{$tag->name}</button></li>";
+                                }
                             }
-                        }
-                        ?>
-                    </ul>
-                </div>
+                            ?>
+                        </ul>
+                    </div>
+                <?php }
+                ?>
             </div>
             <div class="main-page-vacancy__accordions">
                 <?php if ($wp_query->have_posts()) { ?>
@@ -72,7 +74,9 @@ $published_posts = $count_posts->publish;
                             $post_id = get_the_ID();
                             ?>
                             <li id="post-<?php echo $post_id; ?>"
-                                class='vacancy_location <?php if ($col_city == 1) { echo "active";} ?> <?php $posttags = get_the_tags();
+                                class='vacancy_location <?php if ($col_city == 1) {
+                                    echo "active";
+                                } ?> <?php $posttags = get_the_tags();
                                 if ($posttags) {
                                     foreach ($posttags as $tag) {
                                         echo $tag->name . ' '; ?> <?php }

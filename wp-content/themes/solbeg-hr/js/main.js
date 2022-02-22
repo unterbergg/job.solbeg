@@ -106,6 +106,7 @@ $(document).ready(function () {
         prevArrow: $(".what-they-say__slide-arrows-left"),
         nextArrow: $(".what-they-say__slide-arrows-right"),
         fade: true,
+        // adaptiveHeight: true,
         responsive: [
             {
                 breakpoint: 1024,
@@ -208,10 +209,11 @@ $(document).ready(function () {
         $(".js-videoIframe")[0].src += "?autoplay=1";
     });
     //menu
-    if ($(window).width() < 1024) {
+
         $("#burger-menu").on("click", function (e) {
             $(".header-mobile__menu").css("height", "100vh");
             $(".header-mobile__menu").slideToggle(300);
+            $(".header__menu .menu").toggleClass('hide');
             // $("body").toggleClass("overflow-hidden");
         });
         // menu-item
@@ -221,7 +223,7 @@ $(document).ready(function () {
                 $("#burger-menu").removeClass("open");
             }
         });
-    }
+
 
     //popup-close
     $("#popup-close__link").on("click", function (e) {
@@ -575,7 +577,9 @@ $('.history__years').slick({
     // draggable:false,
     // TouchMove: false,
     // allowTouchMove: false,
-    swipe: false,
+    slidesToShow: 10,
+     slidesToScroll: 1,
+    //   swipe: false,
     responsive: [
         {
             breakpoint: 1439,
@@ -586,13 +590,13 @@ $('.history__years').slick({
         {
             breakpoint: 1023,
             settings: {
-
+                slidesToShow: 8,
             },
         },
         {
             breakpoint: 765,
             settings: {
-
+                slidesToShow: 4,
                 variableWidth: true,
             },
         },
@@ -609,4 +613,28 @@ $('.history__years .history__years_item').on('click', function (event) {
     $('.history__years .history__years_item').removeClass('slick-current');
     $(this).addClass('slick-current');
     $('.history__items').slick('slickGoTo', $(this).data('slickIndex'));
+});
+
+$('.header__country>a').on('click', function (e) {
+    e.preventDefault();
+    $('.header__country').toggleClass('visible');
+});
+$(document).click( function(e){
+    if ( $(e.target).closest('.header__country').length ) {
+        return;
+    }
+    $('.header__country').removeClass('visible');
+});
+
+var header = $('header'),
+    scrollPrev = 0;
+$(window).scroll(function() {
+    var scrolled = $(window).scrollTop();
+
+    if ( scrolled > 100 && scrolled > scrollPrev ) {
+        header.addClass('out');
+    } else {
+        header.removeClass('out');
+    }
+    scrollPrev = scrolled;
 });

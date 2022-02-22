@@ -14,9 +14,7 @@
   }
   h2{
     text-align: left;
-    @include mobile{
-      text-align: center;
-    }
+
   }
   .total_all{
     display: none;
@@ -32,35 +30,52 @@
   }
 }
 .index__text{
-  max-width: vw(670px);
-  font-size: vw(16px);
+  max-width: vw(580px);
+  font-size: vw(20px);
   line-height: vw(24px);
-  margin: vw(18px) 0 vw(44px) 0;
-  text-align: center;
+  margin: vw(18px) 0 vw(35px) 0;
+  text-align: left;
   @include desktop{
-    max-width: 670px;
-    font-size: 16px;
+    max-width: 580px;
+    font-size: 20px;
     line-height: 24px;
-    margin: 18px 0 44px 0;
+    margin: 18px 0 35px 0;
+  }
+  @include notebook{
+    font-size: 16px;
+    max-width: 415px;
   }
   @include tablet {
-    max-width: 417px;
-    font-size: 14px;
+    max-width: 430px;
     text-align: left;
   }
   @include mobile{
-    margin: 14px 0 40px 0;
-    line-height: 24px;
-    font-size: 12px;
-    text-align: center;
+    margin: 20px 0 24px 0;
+    max-width: none;
+    width: 100%;
   }
 
 }
 .index__container{
   display: flex;
   flex-wrap: nowrap;
+  align-items: flex-start;
+  @include tablet{
+    flex-wrap: wrap;
+  }
   @include mobile {
     flex-wrap: wrap;
+  }
+  &_wrap{
+   @include tablet{
+     display: flex;
+     justify-content: space-between;
+     width: 100%;
+     align-items: center;
+   }
+    @include mobile{
+      flex-wrap: wrap;
+    }
   }
 }
 .index__rating{
@@ -69,24 +84,51 @@
   justify-content: center;
   width: auto;
   align-items: center;
-  margin-right: vw(260px);
+  margin-right: 0;
+  flex: 1;
+  position: relative;
   @include desktop {
-    margin-right: 260px;
+
   }
   @include notebook{
-    margin-right: 95px;
+
   }
   @include tablet{
-    margin-right: 50px;
+    margin-bottom: 70px;
+    margin-top: 50px;
   }
   @include mobile {
-    margin-right: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
     align-items: center;
     margin-bottom: 50px;
+    width: 320px;
+    padding-top: 40px;
+  }
+  &:before{
+    position: absolute;
+    content: '';
+    background: url("../img/index.png");
+    width: vw(490px);
+    height: vw(320px);
+    background-size: cover;
+    @include desktop{
+      width: 490px;
+      height: 320px;
+    }
+    @include notebook{
+      width: 410px;
+      height: 267px;
+    }
+    @include mobile{
+      width: 316px;
+      height: 206px;
+      object-fit: cover;
+      background-size: cover;
+      background-position: bottom;
+      top:-10px;
+    }
   }
   &-col{
     //font-family: Montserrat;
@@ -95,6 +137,7 @@
     line-height: vw(49px);
     text-align: center;
     margin-top: 0;
+    position: relative;
     @include desktop{
       font-size: 80px;
       line-height: 49px;
@@ -104,6 +147,35 @@
     }
     @include mobile{
       margin-top: 0;
+      font-size: 60px;
+    }
+    &:after{
+      position: absolute;
+      content: '';
+      background: url("../img/index2.png");
+      width: vw(217px);
+      height: vw(135px);
+      background-size: cover;
+      left: vw(-265px);
+      top: vw(-50px);
+      @include desktop{
+        width: 217px;
+        height: 135px;
+        left: -265px;
+        top: -50px;
+      }
+      @include notebook{
+        width: 160px;
+        height: 103px;
+        left: -195px;
+        top: -20px;
+      }
+      @include mobile{
+        width: 136px;
+        height: 85px;
+        left: -152px;
+        top: -20px;
+      }
     }
   }
   &-text{
@@ -120,37 +192,43 @@
       margin-bottom: 40px;
     }
     @include notebook{
-      font-size: 22px;
+      font-size: 16px;
     }
     @include tablet {
       margin-bottom: 52px;
-      font-size: 18px;
     }
   }
   &-link{
-    width: vw(277px);
+    width: vw(210px);
     height: vw(60px);
-    background: #D64045;
-    //font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
     font-size: vw(20px);
     line-height: vw(32px);
     text-align: center;
     letter-spacing: vw(-0.2px);
-    color: #FFFFFF;
+    color: black;
+    border: 1px solid black;
     border-radius: vw(50px);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    margin-bottom: vw(100px);
     @include desktop{
-      width: 277px;
+      margin-bottom: 100px;
+      width: 210px;
       height: 60px;
       font-size: 20px;
       line-height: 32px;
       letter-spacing: -0.2px;
       border-radius: 50px;
+    }
+    @include tablet{
+      margin-bottom: 0;
+    }
+    @include mobile{
+      width: 100%;
     }
   }
 }
@@ -164,7 +242,7 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
-    width: 50%;
+    width: 25%;
     margin-bottom: 0;
     &:nth-child(-n+2){
       margin-bottom: 14px;
@@ -179,8 +257,8 @@
       margin-bottom: 0;
     }
     @include mobile {
-      width: 100%;
-      margin-bottom: 40px;
+      width: 50%;
+      margin-bottom: 30px!important;
     }
     &-rating{
       position: relative;
@@ -189,8 +267,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: 0.5s;
-      opacity: 0;
       @include desktop{
         width: 84px;
         height: 60px;
@@ -201,22 +277,31 @@
       &.active{
         opacity: 1;
       }
-      svg{
+      img{
         position: absolute;
-        width: 100%;
-        height: 100%;
+        width: vw(78px);
+        height: vw(87px);
         left: 0;
+        @include desktop{
+          width: 78px;
+          height: 87px;
+        }
       }
       p{
-        font-weight: 600;
-        font-size: vw(12px);
-        line-height: vw(10px);
+        font-size: vw(26px);
+        line-height: vw(32px);
+        margin-left: vw(-5px);
         position: relative;
         z-index: 2;
         margin-bottom: 0;
+        color: white;
         @include desktop{
-          font-size: 12px;
-          line-height: 10px;
+          margin-left: -5px;
+          font-size: 26px;
+          line-height: 31px;
+        }
+        @include mobile{
+          font-size: 20px;
         }
       }
     }
@@ -237,17 +322,19 @@
     }
     &-text{
       font-weight: 500;
-      line-height: vw(40px);
-      font-size: vw(26px);
+      line-height: vw(24px);
+      font-size: vw(20px);
+      margin-top: vw(20px);
       @include desktop{
-        font-size: 26px;
-        line-height: 40px;
+        margin-top: 20px;
+        font-size: 20px;
+        line-height: 24px;
       }
       @include notebook{
-        font-size: 22px;
+        font-size: 16px;
       }
-      @include tablet {
-        font-size: 18px;
+      @include mobile{
+        padding: 0 5px;
       }
     }
   }

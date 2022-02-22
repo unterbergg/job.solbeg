@@ -609,6 +609,8 @@
         padding: 11px 0;
         font-size: 16px;
         line-height: 200%;
+        height: 54px;
+        margin-top: 20px;
       }
     }
   }
@@ -1164,7 +1166,10 @@ textarea::placeholder {
         background-repeat: no-repeat;
         background-position: center;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7 0V5H12V7H7V12H5V6.999L0 7V5L5 4.999V0H7Z' fill='black' fill-opacity='0.8'/%3E%3C/svg%3E");
-
+        @include desktop{
+          left: 12px;
+          width: 20px;
+        }
       }
     }
     &-after {

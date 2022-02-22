@@ -21,19 +21,26 @@
                 <div class="history__items">
                     <?php foreach ($main_page_history_company_slides as $company_slide) {
                         $content = $company_slide['date_and_title'];
-                        $title = $company_slide['title']; ?>
+                        $title = $company_slide['title'];
+                        $image = $company_slide['image'];
+                        ?>
                         <div class="history__item">
                             <div class="history__item_info">
-                                <div class="history__item_info-title">
-                                    <?php echo wp_kses_post($title) ?>
-                                </div>
-                                <div class="history__item_info-text">
-                                    <?php echo wp_kses_post($content) ?>
-                                </div>
+                                <?php if ($title): ?>
+                                    <div class="history__item_info-title">
+                                        <?php echo wp_kses_post($title) ?>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if ($content): ?>
+                                    <div class="history__item_info-text">
+                                        <?php echo wp_kses_post($content) ?>
+                                    </div>
+                                <?php endif; ?>
                             </div>
-                            <img src="<?php echo get_template_directory_uri() ?>/img/history.jpg" alt=""
-                                 class="history__item_img">
-
+                            <?php if ($image): ?>
+                                <img src="<?php echo esc_url($image['url']); ?>" alt=""
+                                     class="history__item_img">
+                            <?php endif; ?>
                         </div>
                     <?php } ?>
                 </div>

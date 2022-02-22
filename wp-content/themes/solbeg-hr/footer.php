@@ -1,4 +1,4 @@
-<?php if (get_field('footer_poland') != '') {
+<?php if (get_field('footer_poland', 2) != '') {
     get_template_part('footer-template-poland');
     }else {
     get_template_part( 'footer-template');

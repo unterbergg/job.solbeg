@@ -356,6 +356,8 @@
       background: url("../img/ellipse.png");
       width: vw(537px);
       height: vw(428px);
+      background-repeat: no-repeat;
+      background-size: cover;
       @include desktop {
         width: 537px;
         height: 428px;
@@ -378,6 +380,7 @@
   &__years {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: vw(60px) !important;
     @include desktop {
       margin-bottom: 60px !important;
@@ -390,11 +393,12 @@
       font-weight: 500;
       font-size: vw(20px);
       line-height: vw(20px);
-      margin-right: vw(40px);
       color: #9a95a9;
       cursor: pointer;
-      display: block;
-
+      width: vw(80px);
+      display: flex!important;
+      justify-content: center;
+      flex-shrink: 0;
       &:last-child {
         margin-right: 0;
       }
@@ -402,12 +406,14 @@
       @include desktop {
         font-size: 20px;
         line-height: 20px;
-        margin-right: 40px;
+
+        width: 80px;
       }
       @include mobile{
+        width: 60px;
         font-size: 16px;
         line-height: 20px;
-        margin-right: 32px;
+        margin-right: 15px;
       }
 
       &.slick-current {
@@ -415,48 +421,45 @@
         align-items: center;
         justify-content: center;
         content: '';
-        max-width: vw(80px)!important;
         height: vw(80px);
-        margin-right: vw(24px);
-        margin-left: vw(-16px);
-        padding: 0 vw(15px)!important;
+        width: vw(80px);
+
         border-radius: 50%;
         background: #FE3138;
         color: #ffffff;
         @include desktop{
-          padding: 0 15px!important;
-
           height: 80px;
-          margin-right: 24px;
-          margin-left: -16px;
+          width: 80px;
+
         }
         @include notebook{
-          padding: 0 15px!important;
-          max-width: 80px!important;
+
+
         }
         @include tablet{
-          padding: 0 15px!important;
+
         }
         @include mobile{
           width: 60px!important;
           height: 60px;
-          margin-right: 24px;
-          margin-left: -16px;
-          padding: 0 10px!important;
+
+
         }
       }
     }
-
+    .slick-slider{
+        max-width: 920px;
+    }
     .slick-track {
       display: flex;
       align-items: center;
-      transform: translate3d(0px, 0px, 0px)!important;
-      width: auto!important;
-      overflow: auto!important;
-      padding-left: vw(16px);
+      //transform: translate3d(0px, 0px, 0px)!important;
+      width: min-content!important;
+      //overflow: scroll!important;
+      padding-left: vw(20px);
       scrollbar-width: none;
       @include desktop{
-        padding-left: 16px;
+        padding-left: 20px;
       }
       &::-webkit-scrollbar{
         display: none;
@@ -535,6 +538,7 @@
       width: vw(550px);
       height: vw(360px);
       border-radius: vw(6px);
+      object-fit: cover;
       @include desktop {
         width: 550px;
         height: 360px;

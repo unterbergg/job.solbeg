@@ -22,6 +22,9 @@
   @include notebook {
     padding: 140px 0 92px;
   }
+  @include tablet{
+    padding: 60px 0 70px;
+  }
 
   &__header {
     display: flex;
@@ -38,7 +41,7 @@
       margin-bottom: 18px;
     }
     @include mobile {
-      margin-bottom: 96px;
+      margin-bottom: 50px;
     }
     @media (min-width: 50px) and (max-width: 400px) {
       flex-direction: column;
@@ -411,6 +414,9 @@
         letter-spacing: -0.2px;
         padding-top: 24px;
       }
+      @include mobile{
+        padding-top: 0;
+      }
     }
 
     .vacancy-info-block__manager {
@@ -432,7 +438,7 @@
       padding: 60px 0 52px;
     }
     @include mobile {
-      padding: 44px 0;
+      padding: 44px 0 0 0;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
@@ -486,6 +492,7 @@
           padding-left: 18px;
           padding-bottom: 42px;
         }
+
 
         li {
           line-height: vw(24px);
@@ -744,7 +751,7 @@
       padding: 60px 0 52px;
     }
     @include mobile {
-      padding: 44px 0;
+      padding: 44px 0 0 0;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
@@ -786,7 +793,9 @@
       padding-left: 18px;
       padding-bottom: 42px;
     }
+    @include mobile{
 
+    }
     li {
       line-height: vw(24px);
       letter-spacing: vw(-0.1px);
@@ -796,7 +805,7 @@
         line-height: 24px;
         font-size: 16px;
         letter-spacing: -0.1px;
-        padding-bottom: 14px;
+        padding-bottom: 0px;
       }
     }
   }
@@ -831,7 +840,12 @@
       padding: 0 25px;
       max-width: 350px;
     }
-
+    @include mobile{
+      padding: 0 25px 0 0;
+    }
+    ul{
+      padding-left: 0;
+    }
     &-info {
       display: flex;
       flex-direction: column;
@@ -931,20 +945,21 @@
     &-icon {
       border: 1px solid #f3dfd9;
       border-radius: 50%;
-      margin-right: 12px;
-      width: 35px;
-      height: 35px;
+      margin-right: vw(12px);
+      width: vw(35px);
+      height: vw(35px);
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
-      background-size: 22px 28px;
+      background-size: vw(22px) vw(28px);
+
       @include desktop {
         border: vw(1px) solid #f3dfd9;
         border-radius: 50%;
-        margin-right: vw(12px);
-        width: vw(35px);
-        height: vw(35px);
-        background-size: vw(22px) vw(28px);
+        margin-right: 12px;
+        width: 35px;
+        height: 35px;
+        background-size: 22px 28px;
       }
     }
 
@@ -1042,6 +1057,9 @@
 }
 
 .heateor_sss_sharing_ul {
+  @include mobile{
+    padding-bottom: 0!important;
+  }
   i {
     width: vw(35px) !important;
     height: vw(35px) !important;
@@ -1107,12 +1125,17 @@
 }
 
 .vacancy-info-block__manager-icon {
-  width: vw(62px);
-  height: vw(62px);
-  background-size: vw(31px) vw(28px);
+  width: vw(36px);
+  height: vw(36px);
+  background-size: auto;
   @include desktop {
-    width: 62px;
-    height: 62px;
-    background-size: 31px 28px;
+    width: 36px;
+    height: 36px;
+    background-size: auto;
+  }
+  @include mobile {
+    width: 36px;
+    height: 36px;
+    background-size: auto;
   }
 }

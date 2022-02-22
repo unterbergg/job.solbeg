@@ -64,6 +64,28 @@
                     <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo.png" alt="">
 					</a>
 				</div>
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'menu-1',
+                        'menu'            => '',
+                        'container'       => 'nav',
+                        'container_class' => 'header__menu',
+                        'container_id'    => '',
+                        'menu_class'      => 'menu',
+                        'menu_id'         => '',
+                        'echo'            => true,
+                        'fallback_cb'     => 'wp_page_menu',
+                        'before'          => '',
+                        'after'           => '',
+                        'link_before'     => '',
+                        'link_after'      => '',
+                        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                        'depth'           => 0,
+                        'walker'          => '',
+                    )
+                );
+                ?>
                 <div id="burger-menu">
                     <span></span>
                     <span></span>

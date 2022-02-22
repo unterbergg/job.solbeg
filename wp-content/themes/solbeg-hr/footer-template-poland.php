@@ -20,60 +20,74 @@
 <?php $footer_copyright = get_field('footer_copyright', 2); ?>
 <?php $train_form_code = get_field('train_form_code', 2); ?>
 <?php $contact_form_code = get_field('contact_form_code',2); ?>
-
+<?php $footer_countries_title = get_field('footer_countries_title', 2); ?>
+<?php $footer_countries = get_field('footer_countries', 2); ?>
 <footer class="alt">
     <div class="footer poland">
-        <div class="footer__contacts">
-            <div class="footer__contacts_info">
-                <?php if ($footer_address): ?>
-                    <div class="footer__contacts_addresses">
-                        <?php foreach ($footer_address as $item) :
-                            $adress = $item['item']; ?>
-                            <div class="footer__contacts_address">
-                                <?php echo wp_kses_post($adress ) ?>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                <?php endif; ?>
-                <?php if ($footer_email): ?>
-                    <a class="footer__contacts_email" href="mailto:<?php echo esc_html($footer_email); ?>">
-                        <?php echo esc_html($footer_email); ?>
-                    </a>
-                <?php endif; ?>
+        <?php if ($footer_address): ?>
+            <?php foreach ($footer_address as $item) :
+                $address = $item['item']; ?>
+                <div class="footer__address footer__item">
+                    <?php echo wp_kses_post($address) ?>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
+        <div class="footer__country footer__item">
+            <div class="footer__country_title">
+                <?php echo wp_kses_post($footer_countries_title) ?>
             </div>
-            <div class="footer__button popup-open__link">
-                <button>
-                    <?php echo esc_html("Send CV"); ?>
-                </button>
+            <div class="footer__country_item">
+                <?php foreach ($footer_countries as $item) :
+                    $name = $item['name'];
+                    $link = $item['link'];
+                    ?>
+                    <a target="_blank" href="<?php echo esc_url($link); ?>" class="footer__country_item-link"><?php echo esc_html($name); ?></a>
+                <?php endforeach; ?>
             </div>
         </div>
-        <div class="footer__info">
-            <ul class="footer__info_socials">
+        <div class="footer__contact footer__item">
+            <?php if ($footer_phone): ?>
+                <?php foreach ($footer_phone as $phone) :
+                    $text = $phone['text'];
+                    $number = $phone['item'];
+                    ?>
+                    <a href="tel:<?php echo esc_html($number); ?>"
+                       class="footer__contact_phone"><?php echo esc_html($text); ?></a>
+                <?php endforeach; ?>
+            <?php endif; ?>
+            <?php if ($footer_email): ?>
+                <a href="mailto:<?php echo esc_html($footer_email); ?>"
+                   class="footer__contact_email"><?php echo esc_html($footer_email); ?></a>
+            <?php endif; ?>
+        </div>
+        <div class="footer__button footer__item">
+            <button class="footer__button_btn popup-open__link"><?php echo esc_html("Send CV"); ?></button>
+        </div>
+        <?php if ($footer_social_icons): ?>
+            <div class="footer__socials footer__item">
                 <?php foreach ($footer_social_icons as $social_icon) :
                     $link = $social_icon['social_icon_link'];
                     $icon = $social_icon['social_icon_img'];
                     ?>
-                    <li>
-                        <a href="<?php echo esc_url($link); ?>"
-                           aria-label="<?php echo esc_attr($link); ?>">
-                            <img src="<?php echo esc_url($icon["url"]); ?>"
-                                 alt="<?php echo esc_attr($icon["alt"]); ?>">
-                        </a>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-            <div class="footer__info_copyright">
-                <?php if ($footer_privacy_policy): ?>
-                    <a href="<?php echo esc_url($footer_privacy_policy_link); ?>">
-                        <?php echo esc_html($footer_privacy_policy); ?>
+                    <a target="_blank" href="<?php echo esc_url($link); ?>"
+                       aria-label="<?php echo esc_attr($link); ?>">
+                        <img src="<?php echo esc_url($icon["url"]); ?>"
+                             alt="<?php echo esc_attr($icon["alt"]); ?>">
                     </a>
-                <?php endif; ?>
-                <?php if ($footer_copyright): ?>
-                    <span>
-                    <?php echo esc_html($footer_copyright); ?>
-                </span>
-                <?php endif; ?>
+                <?php endforeach; ?>
             </div>
+        <?php endif; ?>
+        <div class="footer__copyright footer__item">
+            <?php if ($footer_privacy_policy): ?>
+                <a target="_blank" href="<?php echo esc_url($footer_privacy_policy_link); ?>">
+                    <?php echo esc_html($footer_privacy_policy); ?>
+                </a>
+            <?php endif; ?>
+            <?php if ($footer_copyright): ?>
+                <div>
+                    <?php echo esc_html($footer_copyright); ?>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </footer>

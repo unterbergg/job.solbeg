@@ -25,7 +25,12 @@
                             <div class="what-they-say__slide-left">
                                 <div class="what-they-say__slide-quote paragraph">
                                     <div class="quote-open">
-                                        <?php echo esc_html("Читать полностью"); ?>
+                                        <?php if (get_field('poland_theme', 2) != '') {
+                                            echo esc_html("Read more");
+                                        } else {
+                                            echo esc_html("Читать полностью");
+                                        }
+                                        ?>
                                     </div>
                                     <p><?php echo esc_html($slide_quote); ?></p>
                                 </div>
